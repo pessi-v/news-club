@@ -1,1 +1,74 @@
-// Specific CSS for your home-page
+$cyan: rgba(0,174,239,0.85);
+$magenta: rgba(236,0,140,0.85);
+$yellow: rgba(255,242,0,0.85);
+
+body {
+  background-color: #FEFEFE;
+}
+
+.top {
+  font-family: 'Chivo', sans-serif;
+  max-width: 80vh;
+
+
+  h1 {
+    font-weight: 900 !important;
+    font-style: italic !important;
+    font-size: 200pt !important;
+    line-height: 190px;
+    margin-bottom: 0px !important;
+  }
+
+  h2 {
+    font-size: 32pt;
+    margin: 5px;
+    padding: 0px;
+    font-family: 'Karla', cursive;
+  }
+}
+
+
+#trapezoid-c {
+  border-top: 100px solid $cyan;
+  border-left: 25px solid transparent;
+  // border-right: 25px solid transparent;
+  height: 0;
+  width: 1000px;
+  // opacity: 90%;
+  padding: -15px;
+  margin: -40px;
+  position: absolute;
+  right: 0px;
+  top: 100px;
+  z-index: -1;
+
+}
+
+#trapezoid-m {
+  border-top: 100px solid $magenta;
+  border-left: 25px solid transparent;
+  // border-right: 25px solid transparent;
+  height: 0;
+  width: 1000px;
+  padding: -15px;
+  margin: -20px;
+  position: absolute;
+  right: 0px;
+  top: 100px;
+  z-index: -1;
+
+}
+
+#trapezoid-y {
+  border-top: 100px solid $yellow;
+  border-left: 25px solid transparent;
+  // border-right: 25px solid transparent;
+  height: 0;
+  width: 1000px;
+  padding: -15px;
+  margin: 0px;
+  position: absolute;
+  right: 0px;
+  top: 100px;
+  z-index: -1;
+}
