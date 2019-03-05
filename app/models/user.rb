@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one :plan, through: :subscription
+  has_one :subscription
   has_many :bookmarks
   has_many :readings
   has_many :articles, through: :bookmarks
