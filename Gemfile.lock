@@ -51,9 +51,6 @@ GEM
     bindex (0.5.0)
     bootsnap (1.4.1)
       msgpack (~> 1.0)
-    bootstrap-sass (3.4.1)
-      autoprefixer-rails (>= 5.2.1)
-      sassc (>= 2.0.0)
     builder (3.2.3)
     byebug (11.0.0)
     coderay (1.1.2)
@@ -113,7 +110,6 @@ GEM
     multipart-post (2.0.0)
     net-http-persistent (3.0.0)
       connection_pool (~> 2.2)
-    news-api (0.0.0)
     nio4r (2.3.1)
     nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
@@ -221,14 +217,12 @@ DEPENDENCIES
   acts-as-taggable-on (~> 6.0)
   autoprefixer-rails
   bootsnap
-  bootstrap-sass (~> 3.3)
   devise
   dotenv-rails
   font-awesome-sass (~> 5.5.0)
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
   money-rails
-  news-api
   pg (~> 0.21)
   pry-byebug
   pry-rails
