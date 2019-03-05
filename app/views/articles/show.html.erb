@@ -1,6 +1,6 @@
 <% html_file = open(@article.url).read %>
 <% html_doc = Nokogiri::HTML(html_file) %>
-
+<%= @article.url %>
 <div class="article-card mdl-shadow--4dp">
 
   <%= image_tag @article.image %>
@@ -25,4 +25,9 @@
   <% html_doc.search('.article__content p').each do |element| %>
     <p><%= element.text %></p>
   <% end %>
+
+  <% html_doc.search('.article-content p').each do |element| %>
+    <p><%= element.text %></p>
+  <% end %>
+
 </div>

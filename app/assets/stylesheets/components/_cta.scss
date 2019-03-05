@@ -1,4 +1,4 @@
-.anything {
+.cta {
   // background: #efebe9;
   background: $cyan;
   width: 210px;
@@ -16,7 +16,7 @@
 
 }
 
-.anything:hover {
+.cta:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
@@ -26,6 +26,7 @@
   // background: #06c;
   font-family: 'Karla', cursive;
   font-size: 20px;
+  text-align: center;
   color: #333333;
   width: 120px;
   margin-left: auto;
