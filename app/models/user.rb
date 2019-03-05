@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :articles, through: :readings
   validates_uniqueness_of :email
   validates_presence_of :email
+  validates :first_name, :last_name, presence: true
 end
