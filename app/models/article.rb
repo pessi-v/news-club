@@ -4,6 +4,6 @@ class Article < ApplicationRecord
   has_many :readings
   has_many :users, through: :bookmarks
   has_many :users, through: :readings
-  validates_presence_of :title, :author, :source
-  validates_uniqueness_of :title
+  validates_presence_of :title, :author, :source, :url, :content
+  validates_uniqueness_of :title, :url
 end
