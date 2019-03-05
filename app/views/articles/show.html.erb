@@ -1,0 +1,33 @@
+<% html_file = open(@article.url).read %>
+<% html_doc = Nokogiri::HTML(html_file) %>
+
+<div class="article-card mdl-shadow--4dp">
+
+  <%= image_tag @article.image %>
+  <h3><%= @article.title %></h3>
+
+  <% html_doc.search('.body-content p').each do |element| %>
+    <%= element.text.strip %>
+    <br>
+  <% end %>
+
+  <% html_doc.search('.content__article-body p').each do |element| %>
+    <%= element.text %>
+    <br>
+  <% end %>
+
+  <% html_doc.search('.story-text p').each do |element| %>
+    <%= element.text %>
+    <br>
+  <% end %>
+
+  <% html_doc.search('.article-body p').each do |element| %>
+    <%= element.text %>
+    <br>
+  <% end %>
+
+  <% html_doc.search('.article__content p').each do |element| %>
+    <%= element.text %>
+    <br>
+  <% end %>
+</div>
