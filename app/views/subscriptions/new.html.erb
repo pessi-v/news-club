@@ -28,9 +28,12 @@
         hfuifnpoiwvnkioewcjopewklco+pewmop+
       </div>
       <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-          Buy it !!
-        </a>
+        <!-- <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"> -->
+          <%= form_tag subscriptions_path do %>
+          <%= hidden_field_tag 'plan_id', @plan1.id %>
+          <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+          <% end %>
+        <!-- </a> -->
       </div>
     </div>
 
@@ -46,10 +49,14 @@
         hfuifnpoiwvnkioewcjopewklco+pewmop+
       </div>
       <div class="mdl-card__actions mdl-card--border">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-          Buy it !!
-        </a>
+        <!-- <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"> -->
+          <%= form_tag subscriptions_path do %>
+          <%= hidden_field_tag 'plan_id', @plan2.id %>
+          <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+          <% end %>
+       <!--  </a> -->
       </div>
     </div>
 </div>
+
 

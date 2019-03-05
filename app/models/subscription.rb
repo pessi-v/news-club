@@ -1,4 +1,5 @@
 class Subscription < ApplicationRecord
-  belongs_to :plan
+  monetize :amount_cents
   belongs_to :user
+  belongs_to :plan
 end

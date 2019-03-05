@@ -7,7 +7,9 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    @subscription = Subscription.new
+    @plan = Plan.find(params[:plan_id])
+    @subscription = Subscription.create!(amount_cents: @plan.price_cents, user: current_user, plan: @plan)
+    redirect_to new_subscription_payment_path(@subscription)
 
   end
 
