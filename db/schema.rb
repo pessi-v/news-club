@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_151834) do
     t.string "url", null: false
     t.text "content", null: false
     t.string "image"
+    t.string "description"
   end
 
   create_table "bookmarks", force: :cascade do |t|
