@@ -1,3 +1,7 @@
+<div>
+  <%= render 'shared/banner'%>
+</div>
+
 <div class="top">
     <h1>News Club</h1>
     <h2>Instant access to the best journalism online</h2>
@@ -26,6 +30,9 @@
   <div id="content">Join the News Club! 10 articles/5€/month</div>
 </div>
 
+<div>
+  <%= render 'shared/navigation'%>
+</div>
 
 <% require 'open-uri' %>
 <% require 'json' %>
@@ -41,7 +48,6 @@
   <%= render 'shared/testcard', article: a %>
   <br>
 <% end %>
-
 
 <div>
   <%= link_to 'Register', new_user_registration_path %>
