@@ -14,9 +14,10 @@ class ArticlesController < ApplicationController
 
   def fetch_articles
     url = 'https://newsapi.org/v2/everything?'\
-      'q=Berlin&'\
+      'q=Climate&'\
+      'sources=die-zeit,le-monde,liberation,the-guardian,new-scientist,le-monde,politico,the-economist,the-new-york-times,the-huffington-post,the-guardian-uk,the-jerusalem-post,financial-times,focus,independent,la-repubblica,national-geographic' \
       'from=2019-03-05&'\
-      'sortBy=popularity&'\
+      'sortBy=publishedAt&'\
       "apiKey=#{ENV['NEWSAPI_API_KEY']}"
 
     req = open(url)
@@ -25,7 +26,6 @@ class ArticlesController < ApplicationController
     articles_array = articles_json["articles"]
     last_articles = []
     articles_array.each do |a|
-      p a
       article = Article.find_by(url: a["url"])
       unless article # check if article is already in the database
         article = Article.new(title: a["title"], author: a["author"] || a["source"], source: a["source"]["name"], url: a["url"], date: a["publishedAt"], content: a["content"] || "no content available", image: a["urlToImage"], description: a["description"])
