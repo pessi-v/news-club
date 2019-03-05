@@ -3,12 +3,12 @@ require 'json'
 
 class ArticlesController < ApplicationController
   def index
-    fetch_articles
+    @articles = fetch_articles
   end
 
   private
 
-  def user_params
+  def article_params
     params.require(:article).permit(:title, :author, :date, :source, :tag_list) ## Rails 4 strong params usage
   end
 
@@ -25,11 +25,14 @@ class ArticlesController < ApplicationController
     articles_array = articles_json["articles"]
     last_articles = []
     articles_array.each do |a|
-      if article = Article.find_by(url: a["url"]) #check if article is already in the database
-        last_articles << article
-      else article = Article.new(title: a["title"], author: a["author"], source: a["source"]["name"], url: a["url"], date: a["publishedAt"], content: a["content"], image: a["urlToImage"])
-        last_articles << article
+      p a
+      article = Article.find_by(url: a["url"])
+      unless article # check if article is already in the database
+        article = Article.new(title: a["title"], author: a["author"] || a["source"], source: a["source"]["name"], url: a["url"], date: a["publishedAt"], content: a["content"] || "no content available", image: a["urlToImage"], description: a["description"])
+        article.save!
       end
+      last_articles << article
     end
+    last_articles
   end
 end
