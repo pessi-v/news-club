@@ -6,6 +6,10 @@ class ArticlesController < ApplicationController
     @articles = fetch_articles
   end
 
+  def show
+    @article = Article.find(params[:id])
+  end
+
   private
 
   def article_params
@@ -15,7 +19,7 @@ class ArticlesController < ApplicationController
   def fetch_articles
     url = 'https://newsapi.org/v2/everything?'\
       'q=Climate&'\
-      'sources=die-zeit,le-monde,liberation,the-guardian,new-scientist,le-monde,politico,the-economist,the-new-york-times,the-huffington-post,the-guardian-uk,the-jerusalem-post,financial-times,focus,independent,la-repubblica,national-geographic' \
+      'sources=die-zeit,le-monde,liberation,the-guardian,new-scientist,le-monde,politico,the-economist,the-new-york-times,the-huffington-post,the-guardian-uk,the-jerusalem-post,financial-times,focus,independent,la-repubblica,national-geographic,new-york-magazine,the-times-of-india' \
       'from=2019-03-05&'\
       'sortBy=publishedAt&'\
       "apiKey=#{ENV['NEWSAPI_API_KEY']}"

@@ -38,7 +38,9 @@
 <%# articles_json = JSON.parse(response_body) %>
 <%# articles_array = articles_json["articles"] %>
 <% @articles.each do |a| %>
-  <%= render 'shared/newscard', article: a %>
+  <%= link_to article_path(a) do %>
+    <%= render 'shared/newscard', article: a %>
+  <% end %>
   <br>
 <% end %>
 
