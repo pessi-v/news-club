@@ -73,3 +73,10 @@ body {
   top: 100px;
   z-index: -1;
 }
+
+.article-container {
+  margin: 20px auto ;
+  width: 80% !important;
+  height: auto;
+  display: flex;
+}

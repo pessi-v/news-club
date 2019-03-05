@@ -1,10 +1,49 @@
 <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+    <div class="mdl-tabs__tab-bar">
+        <a href="#starks-panel" class="mdl-tabs__tab is-active">Starks</a>
+        <a href="#lannisters-panel" class="mdl-tabs__tab">Lannisters</a>
+        <a href="#targaryens-panel" class="mdl-tabs__tab">Targaryens</a>
+    </div>
+    <div class="mdl-tabs__panel is-active" id="starks-panel">
+        <div class="mdl-grid">
+            <% @articles[0..5].each do |a| %>
+            <%= link_to article_path(a) do %>
+            <%= render 'shared/newscard', article: a %>
+            <% end %>
+            <br>
+            <% end %>
+        </div>
+        <div class="mdl-tabs__panel" id="lannisters-panel">
+            <div class="article-container">
+                <% @articles[6..12].each do |a| %>
+                <%= link_to article_path(a) do %>
+                <%= render 'shared/newscard', article: a %>
+                <% end %>
+                <br>
+                <% end %>
+            </div>
+        </div>
+        <div class="mdl-tabs__panel" id="targaryens-panel">
+            <div class="article-container">
+                <% @articles[13..20].each do |a| %>
+                <%= link_to article_path(a) do %>
+                <%= render 'shared/newscard', article: a %>
+                <% end %>
+                <br>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
   <div class="mdl-tabs__tab-bar">
       <a href="#starks-panel" class="mdl-tabs__tab is-active">TECH</a>
-      <a href="#lannisters-panel" class="mdl-tabs__tab">FINANCE</a>
-      <a href="#targaryens-panel" class="mdl-tabs__tab">HEALTH</a>
-      <a href="#targaryens-panel" class="mdl-tabs__tab">SPORT</a>
-      <a href="#targaryens-panel" class="mdl-tabs__tab">TRAVEL</a>
+      <a href="#trapezoid-y" class="mdl-tabs__tab">FINANCE</a>
+      <a href="#trapezoid-m" class="mdl-tabs__tab">HEALTH</a>
+      <a href="#" class="mdl-tabs__tab">SPORT</a>
+      <a href="#" class="mdl-tabs__tab">TRAVEL</a>
+      <%#= link_to "POLITICS", "#", class: "mdl-tabs__tab"%>
   </div>
 
   <div class="mdl-tabs__panel is-active" id="starks-panel">
@@ -13,4 +52,4 @@
   </div>
   <div class="mdl-tabs__panel" id="targaryens-panel">
   </div>
-</div>
+</div> -->

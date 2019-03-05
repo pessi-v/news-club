@@ -7,27 +7,22 @@
   <h3><%= @article.title %></h3>
 
   <% html_doc.search('.body-content p').each do |element| %>
-    <%= element.text.strip %>
-    <br>
+    <p><%= element.text.strip %></p>
   <% end %>
 
   <% html_doc.search('.content__article-body p').each do |element| %>
-    <%= element.text %>
-    <br>
+    <p><%= element.text %></p>
   <% end %>
 
   <% html_doc.search('.story-text p').each do |element| %>
-    <%= element.text %>
-    <br>
+    <p><%= element.text %></p>
   <% end %>
 
   <% html_doc.search('.article-body p').each do |element| %>
-    <%= element.text %>
-    <br>
+    <p><%= element.text %></p>
   <% end %>
 
   <% html_doc.search('.article__content p').each do |element| %>
-    <%= element.text %>
-    <br>
+    <p><%= element.text %></p>
   <% end %>
 </div>

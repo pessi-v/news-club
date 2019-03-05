@@ -1,3 +1,4 @@
+<%#= render 'shared/banner'%>
 <div class="top">
     <h1>News Club</h1>
     <h2>Instant access to the best journalism online</h2>
@@ -27,22 +28,16 @@
 </div>
 
 
-<%# require 'open-uri' %>
-<%# require 'json' %>
 
-<%# url = 'https://newsapi.org/v2/top-headlines?'\
-      'sources=bbc-news,the-washington-post&'\
-      "apiKey=#{ENV['NEWSAPI_API_KEY']}" %>
-<%# req = open(url) %>
-<%# response_body = req.read %>
-<%# articles_json = JSON.parse(response_body) %>
-<%# articles_array = articles_json["articles"] %>
-<% @articles.each do |a| %>
-  <%= link_to article_path(a) do %>
-    <%= render 'shared/newscard', article: a %>
-  <% end %>
-  <br>
-<% end %>
+
+<%= render 'shared/navigation', articles: @articles%>
+
+
+<%# @articles.each do |a| %>
+  <%#= link_to article_path(a) do %>
+    <%#= render 'shared/newscard', article: a %>
+  <%# end %>
+<%# end %>
 
 
 <div>
