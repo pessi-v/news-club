@@ -27,18 +27,18 @@
 </div>
 
 
-<% require 'open-uri' %>
-<% require 'json' %>
+<%# require 'open-uri' %>
+<%# require 'json' %>
 
-<% url = 'https://newsapi.org/v2/top-headlines?'\
+<%# url = 'https://newsapi.org/v2/top-headlines?'\
       'sources=bbc-news,the-washington-post&'\
       "apiKey=#{ENV['NEWSAPI_API_KEY']}" %>
-<% req = open(url) %>
-<% response_body = req.read %>
-<% articles_json = JSON.parse(response_body) %>
-<% articles_array = articles_json["articles"] %>
-<% articles_array.each do |a| %>
-  <%= render 'shared/testcard', article: a %>
+<%# req = open(url) %>
+<%# response_body = req.read %>
+<%# articles_json = JSON.parse(response_body) %>
+<%# articles_array = articles_json["articles"] %>
+<% @articles.each do |a| %>
+  <%= render 'shared/newscard', article: a %>
   <br>
 <% end %>
 

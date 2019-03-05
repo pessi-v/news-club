@@ -16,9 +16,9 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-gem 'news-api'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'money-rails'
+gem 'stripe'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
