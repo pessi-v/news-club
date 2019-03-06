@@ -1,5 +1,31 @@
 .mdl-tabs {
   margin: 20px auto ;
   width: 80% !important;
+  min-height: 10px;
 
+}
+.demo-card-wide.mdl-card {
+    height: 350px;
+}
+
+.mdl-card__title {
+  height: 180px;
+}
+
+.mdl-card__actions.mdl-card--border {
+  position: absolute;
+  bottom: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.mdl-card__supporting-text {
+  width: 100% !important;
+}
+
+.mdl-card__title-text {
+  color: white !important;
+  opacity: 0.7;
 }
