@@ -11,11 +11,11 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    if (current_user.readings.length > current_user.subscription.plan.amount)
+    if current_user.subscription && (current_user.readings.length > current_user.subscription.plan.amount)
       @allow = false
     else
       @allow = true
-      unless current_user.readings.find_by(article_id: article.id) # don't create a new reading if user already has read this article
+      unless current_user.readings.find_by(article_id: @article.id) # don't create a new reading if user already has read this article
         @current_reading = Reading.new(user: current_user, article: @article)
         @current_reading.save!
         @snackbar = true
