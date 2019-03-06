@@ -12,11 +12,15 @@
     </a>
   </div>
   <div class="mdl-card__menu">
-    <% if current_user.readings.find_by(article_id: article.id) %>
-      <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-        <i class="material-icons">check_circle</i>
-      </button>
+    <!-- add a 'read' symbol if user logged in and article already read -->
+    <% unless current_user.nil? %>
+      <% if current_user.readings.find_by(article_id: article.id) %>
+        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+          <i class="material-icons">check_circle</i>
+        </button>
+      <% end %>
     <% end %>
+    <!--  -->
     <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
       <i class="material-icons">share</i>
     </button>
