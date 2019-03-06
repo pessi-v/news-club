@@ -11,6 +11,14 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    if current_user.readings.length > current_user.subscription.plan.amount
+      @allow = false
+    else
+      @allow = true
+      @current_reading = Reading.new(user: current_user, article: @article)
+      @current_reading.save!
+    end
+    # @current_reading.save!
   end
 
   private
