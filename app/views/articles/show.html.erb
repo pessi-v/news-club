@@ -1,6 +1,24 @@
 <% html_file = open(@article.url).read %>
 <% html_doc = Nokogiri::HTML(html_file) %>
-<%= @article.url %>
+<%#= @article.url %>
+
+<% if @allow %>
+
+  <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+    <div class="mdl-snackbar__text"></div>
+    <button class="mdl-snackbar__action" type="button"></button>
+  </div>
+
+  <script>
+  r(function(){
+      var snackbarContainer = document.querySelector('#demo-toast-example');
+      var data = { message: 'Article added to reading history.', timeout: 5000 };
+      snackbarContainer.MaterialSnackbar.showSnackbar(data);
+  });
+  function r(f){ /in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
+  </script>
+
+
 <div class="article-card mdl-shadow--4dp">
 
   <%= image_tag @article.image %>
@@ -31,3 +49,7 @@
   <% end %>
 
 </div>
+
+<% else %>
+  <h3>Unfortunately your subsrciption has run out!</h3>
+<% end %>
