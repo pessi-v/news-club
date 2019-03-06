@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    if current_user.readings.length > current_user.subscription.plan.amount
+    if (current_user.readings.length > current_user.subscription.plan.amount)
       @allow = false
     else
       @allow = true
