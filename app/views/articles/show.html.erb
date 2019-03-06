@@ -5,7 +5,8 @@
 <%#= @article.url %>
 
 
-<% if @allow %>
+<% if @snackbar %>
+
 
   <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
     <div class="mdl-snackbar__text"></div>
@@ -20,6 +21,16 @@
   });
   function r(f){ /in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
   </script>
+
+<% end %>
+
+<% if @allow %>
+
+<%= link_to articles_path do %>
+  <button class="navigation-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+    <i class="material-icons">arrow_back</i>
+  </button>
+<% end %>
 
 
 <div class="article-card mdl-shadow--4dp">

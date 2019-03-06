@@ -5,19 +5,14 @@
 <div>
 <%= render 'shared/navigation', articles: @articles%>
 </div>
-<!-- <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" style="position: fixed;top:200px;left:200px;z-index:9001">
-  <i class="material-icons">remove</i>
-</button> -->
 
-<!-- <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" style="position: fixed;top:300px;left:300px;z-index:9001">
-  <i class="material-icons">add</i>
-</button> -->
+<div id="trapezoid-c"></div>
+<div id="trapezoid-m"></div>
+<div id="trapezoid-y"></div>
+<br>
+<br>
 
-<!-- Wide card with share menu button -->
 
-<!-- <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" style="position: fixed;top:350px;left:300px;z-index:9001">
-  <i class="material-icons">add</i>
-</button> -->
 <% unless signed_in? %>
   <%= link_to new_user_registration_path do %>
     <div class="cta">

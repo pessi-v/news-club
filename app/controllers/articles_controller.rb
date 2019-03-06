@@ -15,8 +15,11 @@ class ArticlesController < ApplicationController
       @allow = false
     else
       @allow = true
-      @current_reading = Reading.new(user: current_user, article: @article)
-      @current_reading.save!
+      unless current_user.readings.find_by(article_id: article.id) # don't create a new reading if user already has read this article
+        @current_reading = Reading.new(user: current_user, article: @article)
+        @current_reading.save!
+        @snackbar = true
+      end
     end
     # @current_reading.save!
   end
