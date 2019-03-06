@@ -1,8 +1,11 @@
 <%#= render 'shared/banner'%>
-<div class="top">
-    <h1>News Club</h1>
-    <h2>Instant access to the best journalism online</h2>
+<div>
+<%= render 'shared/banner'%>
 </div>
+<div>
+<%= render 'shared/navigation', articles: @articles%>
+</div>
+
 <div id="trapezoid-c"></div>
 <div id="trapezoid-m"></div>
 <div id="trapezoid-y"></div>
@@ -18,10 +21,6 @@
   <% end %>
 <% end %>
 
-
-
-
-<%= render 'shared/navigation', articles: @articles%>
 
 
 <%# @articles.each do |a| %>

@@ -45,7 +45,6 @@ class ArticlesController < ApplicationController
     last_articles = []
     articles_array.each do |a|
       article = Article.find_by(title: a["title"])
-      # article = Article.where(title: a["title"])
       unless article # check if article is already in the database
         article = Article.new(title: a["title"], author: a["author"] || a["source"], source: a["source"]["name"], url: a["url"], date: a["publishedAt"], content: a["content"] || "no content available", image: a["urlToImage"], description: a["description"])
         article.save!

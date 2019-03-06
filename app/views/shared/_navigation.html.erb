@@ -7,6 +7,8 @@
         <a href="#targaryens-panel" class="mdl-tabs__tab">ENTERTAINMENT</a>
         <a href="#lannisters-panel" class="mdl-tabs__tab">SCIENCE</a>
         <a href="#targaryens-panel" class="mdl-tabs__tab">SPORTS</a>
+        <a href="#starks-panel" class="mdl-tabs__tab">CURATED</a>
+        <a href="#targaryens-panel" class="mdl-tabs__tab">FINANCE</a>
     </div>
     <div class="mdl-tabs__panel is-active" id="starks-panel">
       <div class="mdl-grid">
@@ -21,30 +23,31 @@
       </div>
     </div>
 
-    <div class="mdl-tabs__panel" id="lannisters-panel">
-      <div class="mdl-grid">
-        <% @articles[6..12].each do |a| %>
-        <%= link_to article_path(a) do %>
-        <div class="mdl-cell mdl-cell--4-col"><%= render 'shared/newscard', article: a %>
-        </div>
-        <% end %>
-        <br>
-        <% end %>
-      </div>
-    </div>
+      <div class="mdl-tabs__panel" id="lannisters-panel">
+       <div class="mdl-grid">
+         <% @articles[6..12].each do |a| %>
+         <%= link_to article_path(a) do %>
+         <div class="mdl-cell mdl-cell--4-col"><%= render 'shared/newscard', article: a %>
+         </div>
+         <% end %>
+         <br>
+         <% end %>
+       </div>
+         </div>
 
-    <div class="mdl-tabs__panel" id="targaryens-panel">
-      <div class="mdl-grid">
-        <% @articles[13..20].each do |a| %>
-        <%= link_to article_path(a) do %>
-        <div class="mdl-cell mdl-cell--4-col"><%= render 'shared/newscard', article: a %>
-        </div>
-        <% end %>
-        <br>
-        <% end %>
-      </div>
-    </div>
-</div>
+         <div class="mdl-tabs__panel" id="targaryens-panel">
+       <div class="mdl-grid">
+         <% @articles[13..20].each do |a| %>
+         <%= link_to article_path(a) do %>
+         <div class="mdl-cell mdl-cell--4-col"><%= render 'shared/newscard', article: a %>
+         </div>
+         <% end %>
+         <br>
+         <% end %>
+       </div>
+         </div>
+         </div>
+
 <!--
 <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
   <div class="mdl-tabs__tab-bar">
