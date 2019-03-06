@@ -4,9 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one :plan, through: :subscription
-  has_one :subscription
-  has_many :bookmarks
-  has_many :readings
+  has_one :subscription, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy
+  has_many :readings, dependent: :destroy
   has_many :articles, through: :bookmarks
   has_many :articles, through: :readings
   validates_uniqueness_of :email
