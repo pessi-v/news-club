@@ -2,7 +2,7 @@
 
 <% html_file = open(@article.url).read %>
 <% html_doc = Nokogiri::HTML(html_file) %>
-<%= @article.url %>
+<%#= @article.url %>
 <div class="article-card mdl-shadow--4dp">
 
   <%= image_tag @article.image %>
