@@ -1,0 +1,13 @@
+<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+    <div class="mdl-snackbar__text"></div>
+    <button class="mdl-snackbar__action" type="button"></button>
+</div>
+<script>
+r(function() {
+  var snackbarContainer = document.querySelector('#demo-toast-example');
+  var data = { message: 'Article added to reading history.', timeout: 8000 };
+  snackbarContainer.MaterialSnackbar.showSnackbar(data);
+});
+
+function r(f) { /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) : f() }
+</script>
