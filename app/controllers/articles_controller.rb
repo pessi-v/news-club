@@ -2,6 +2,9 @@ require 'open-uri'
 require 'json'
 
 class ArticlesController < ApplicationController
+
+  skip_before_action :authenticate_user!, only: [:index]
+
   def index
     @articles = fetch_articles
   end
