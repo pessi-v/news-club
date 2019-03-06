@@ -11,6 +11,17 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    if (current_user.readings.length > current_user.subscription.plan.amount)
+      @allow = false
+    else
+      @allow = true
+      unless current_user.readings.find_by(article_id: article.id) # don't create a new reading if user already has read this article
+        @current_reading = Reading.new(user: current_user, article: @article)
+        @current_reading.save!
+        @snackbar = true
+      end
+    end
+    # @current_reading.save!
   end
 
   private
@@ -33,7 +44,7 @@ class ArticlesController < ApplicationController
     articles_array = articles_json["articles"]
     last_articles = []
     articles_array.each do |a|
-      article = Article.find_by(url: a["url"])
+      article = Article.find_by(title: a["title"])
       unless article # check if article is already in the database
         article = Article.new(title: a["title"], author: a["author"] || a["source"], source: a["source"]["name"], url: a["url"], date: a["publishedAt"], content: a["content"] || "no content available", image: a["urlToImage"], description: a["description"])
         article.save!

@@ -20,6 +20,7 @@ gem 'acts-as-taggable-on', '~> 6.0'
 gem 'money-rails'
 gem 'stripe'
 gem 'nokogiri'
+# gem 'pundit'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

@@ -1,7 +1,13 @@
 <!-- Uses a transparent header that draws on top of the layout's background -->
 <style>
+.mdl-layout__container {
+    position: relative;
+    width: 100%;
+    height: 380px;
+
+}
 .demo-layout-transparent {
-  background: url('../assets/demos/transparent.jpg') center / cover;
+  background: #efebe9;
 }
 .demo-layout-transparent .mdl-layout__header,
 .demo-layout-transparent .mdl-layout__drawer-button {
@@ -9,21 +15,48 @@
      your background is light. */
   color: white;
 }
+.center {
+  position: absolute;
+  left: 42%;
+  top: 8%;
+  margin-right: auto;
+  width: 50%;
+  padding: 10px;
+}
+.center-text {
+  position: absolute;
+  left: 36%;
+  top: 58%;
+  margin-right: auto;
+  width: 50%;
+  padding: 10px;
+  font-family: Roboto;
+  font-size: 20px;
+  color: #333333;
+}
+
+.mdl-layout__content {
+  position: relative;
+}
+
+.banner-button {
+  position: absolute;
+  left: 45%;
+  top: 77%;
+  margin-right: auto;
+}
 </style>
 
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
   <header class="mdl-layout__header mdl-layout__header--transparent">
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title">Title</span>
       <!-- Add spacer, to align navigation to the right -->
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation -->
       <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
-        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Sign up</a>
+        <a class="mdl-navigation__link" href="">Register</a>
       </nav>
     </div>
   </header>
@@ -37,5 +70,14 @@
     </nav>
   </div>
   <main class="mdl-layout__content">
+    <div class="center"><%= image_tag "Logo_news_club.png", height: 150 %>
+    </div>
+    <div class="center-text"> Instant access to the best journalism online
+    </div>
+    <div class="banner-button">
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+    REGISTER NOW
+  </button>
+  </div>
   </main>
 </div>

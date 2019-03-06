@@ -1,18 +1,18 @@
 .mdl-tabs {
   margin: 20px auto ;
   width: 80% !important;
-  min-height: 10px;
 
 }
 .demo-card-wide.mdl-card {
     height: 350px;
+    width: 100%;
 }
 
 .mdl-card__title {
   height: 180px;
 }
 
-.mdl-card__actions.mdl-card--border {
+.mdl-card__actions .mdl-card--border {
   position: absolute;
   bottom: 0px;
 }
@@ -23,9 +23,12 @@ a {
 
 .mdl-card__supporting-text {
   width: 100% !important;
+  height: 90px;
+  overflow: hidden;
 }
 
 .mdl-card__title-text {
   color: white !important;
   opacity: 0.7;
+
 }
