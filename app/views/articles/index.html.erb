@@ -1,14 +1,10 @@
 <%#= render 'shared/banner'%>
-<div class="top">
-    <h1>News Club</h1>
-    <h2>Instant access to the best journalism online</h2>
+<div>
+<%= render 'shared/banner'%>
 </div>
-<div id="trapezoid-c"></div>
-<div id="trapezoid-m"></div>
-<div id="trapezoid-y"></div>
-<br>
-<br>
-
+<div>
+<%= render 'shared/navigation', articles: @articles%>
+</div>
 <!-- <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" style="position: fixed;top:200px;left:200px;z-index:9001">
   <i class="material-icons">remove</i>
 </button> -->
@@ -30,10 +26,6 @@
   <% end %>
 <% end %>
 
-
-
-
-<%= render 'shared/navigation', articles: @articles%>
 
 
 <%# @articles.each do |a| %>
