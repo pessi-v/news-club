@@ -1,3 +1,5 @@
+<%= render 'shared/navbar' %>
+
 <% html_file = open(@article.url).read %>
 <% html_doc = Nokogiri::HTML(html_file) %>
 <%= @article.url %>
