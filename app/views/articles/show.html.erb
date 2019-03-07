@@ -4,7 +4,6 @@
 <% html_doc = Nokogiri::HTML(html_file) %>
 <%#= @article.url %>
 
-
 <% if @snackbar %>
 
 
@@ -37,6 +36,16 @@
 
   <%= image_tag @article.image %>
   <h3><%= @article.title %></h3>
+
+  <div class="container-datename">
+    <div class="author">
+      <%= @article.author %>
+    </div>
+
+    <div class="date">
+      <%= @article.date.strftime("%A %d %B %y") %>
+    </div>
+  </div>
 
   <% html_doc.search('.body-content p').each do |element| %>
     <p><%= element.text.strip %></p>
