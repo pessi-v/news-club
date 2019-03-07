@@ -6,4 +6,6 @@ class Article < ApplicationRecord
   has_many :users, through: :readings
   validates_presence_of :title, :author, :source, :url
   validates_uniqueness_of :title, :url
+
+  CATEGORIES = ["general", "technology", "business", "sports", "entertainment", "health", "science"].freeze
 end

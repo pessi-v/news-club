@@ -1,12 +1,4 @@
 //  kirsty's amazing transforming sticky navbar goes here
-
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-bottom: 50px;
-  margin-top: 50px;
-}
-
 .fa-bars {
   font-size: 48px;
 }
@@ -16,3 +8,24 @@
   align-items: center;
 }
 
+.mdl-layout__header-row {
+  flex-direction: flex-end;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.logo {
+  flex: 0 0 50%;
+}
+
+.mdl-layout__header {
+  background-color: white !important;
+}
+
+.mdl-layout__drawer-button {
+  color: black !important;
+}
+
+.mdl-navigation__link {
+  color: black !important;
+}

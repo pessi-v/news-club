@@ -1,8 +1,9 @@
 .article-card {
+  display: grid;
   width: 800px;
   height: auto;
-  background: #efebe9;
   margin: 15px auto;
+  box-shadow: none !important;
 
   img {
     min-width: 100%;
@@ -10,18 +11,30 @@
     height: auto;
   }
 
+  h3 {
+    font-family: $headers-font;
+    font-weight: bold;
+    font-size: 40px;
+  }
+
   h3,p {
     padding: 0 15px;
   }
 
   p {
-    text-indent: 2em;
+    font-family: $body-font;
+    font-size: 20px;
   }
 
-  p::first-letter {
-  font-size: 120%;
-
+  .container-datename {
+    text-indent: 1em;
+    margin-bottom: 10px;
   }
+
+  .author {
+    font-weight: bold;
+  }
+
 }
 
 .form-card {

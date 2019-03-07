@@ -7,13 +7,26 @@ class PreferencesController < ApplicationController
 
   def update
     mmmmhash = params.to_unsafe_h
-    # puts mmmmhash
     tag_arr = []
     mmmmhash.select { |k, v| v == "on" }.keys.each { |k| tag_arr << k }
-    # puts "-------------"
-    # puts tag_arr
-    # puts "-------------"
     current_user.publication_list.add(tag_arr)
     current_user.save!
+
+  def new
+    @preferences = fetch_sources
+  end
+
+  private
+
+  def fetch_sources
+    url = "https://newsapi.org/v2/sources?language=en&apiKey=#{ENV['NEWSAPI_API_KEY']}"
+    req = open(url)
+    response_body = req.read
+    preferences_json = JSON.parse(response_body)
+    preferences = preferences_json["sources"]
+    preferences.map! do |preference|
+      preference["url"]#.match('/\/+(\S+)\//')
+    end
+    preferences.uniq
   end
 end
