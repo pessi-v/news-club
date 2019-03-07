@@ -34,8 +34,11 @@
 
 <div class="article-card mdl-shadow--4dp">
 
-  <%= image_tag @article.image %>
-  <h3><%= @article.title %></h3>
+  <div>
+    <%= image_tag @article.image %>
+  </div>
+    <h3><%= @article.title %></h3>
+
 
   <div class="container-datename">
     <div class="author">
@@ -47,17 +50,25 @@
     </div>
   </div>
 
-  <% html_doc.search('.body-content p').each do |element| %>
-    <p><%= element.text.strip %></p>
-  <% end %>
+  <p><span class="first-letter"><%#= html_doc.search('.body-content p')[0].text[0] %>
+  <%#= html_doc.search('.body-content p')[0].text[1..-1] %></p>
+
+
+ <%# html_doc.search('.body-content p')[1..-1].each do |element| %>
+    <p><%#= element.text.strip %></p>
+  <%# end %>
 
   <% html_doc.search('.content__article-body p').each do |element| %>
     <p><%= element.text %></p>
   <% end %>
-
-  <% html_doc.search('.story-text p').each do |element| %>
+  <% html_doc.search('.content__article-body p').each do |element| %>
     <p><%= element.text %></p>
   <% end %>
+
+  <div class="color"><% html_doc.search('.story-text p').each do |element| %>
+    <p><%= element.text %></p>
+  <% end %>
+</div>
 
   <% html_doc.search('.article-body p').each do |element| %>
     <p><%= element.text %></p>
