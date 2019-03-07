@@ -1,6 +1,13 @@
-
-
 <%= render 'shared/user-navigation'%>
 
 
+<%# raise %>
 
+<%# @sources.each do |p| %>
+<!-- <img src="//logo.clearbit.com/<%#= p %>"> -->
+<%# end %>
+<%= link_to home_path(current_user) do %>
+  <button class="navigation-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+    <i class="material-icons">arrow_back</i>
+  </button>
+<% end %>

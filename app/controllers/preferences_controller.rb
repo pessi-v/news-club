@@ -3,6 +3,7 @@ class PreferencesController < ApplicationController
 
   def index
     @user = current_user
+    @sources = fetch_sources
   end
 
   def update
@@ -11,22 +12,28 @@ class PreferencesController < ApplicationController
     mmmmhash.select { |k, v| v == "on" }.keys.each { |k| tag_arr << k }
     current_user.publication_list.add(tag_arr)
     current_user.save!
+  end
 
   def new
-    @preferences = fetch_sources
+    @sources = fetch_sources
   end
 
   private
 
   def fetch_sources
-    url = "https://newsapi.org/v2/sources?language=en&apiKey=#{ENV['NEWSAPI_API_KEY']}"
+    url = "https://newsapi.org/v2/sources?" \
+          "language=en&" \
+          "apiKey=#{ENV['NEWSAPI_API_KEY']}"
+
     req = open(url)
     response_body = req.read
-    preferences_json = JSON.parse(response_body)
-    preferences = preferences_json["sources"]
-    preferences.map! do |preference|
-      preference["url"]#.match('/\/+(\S+)\//')
-    end
-    preferences.uniq
+    sources_json = JSON.parse(response_body)
+    sources = sources_json["sources"]
+    return sources
+    # preferences.map! do |preference|
+    #   preference["url"]#.match('/\/+(\S+)\//')
+    # end
+    # preferences.uniq
   end
+
 end
