@@ -6,13 +6,6 @@
 <%= render 'shared/navigation', articles: @articles%>
 </div>
 
-<div id="trapezoid-c"></div>
-<div id="trapezoid-m"></div>
-<div id="trapezoid-y"></div>
-<br>
-<br>
-
-
 <% unless signed_in? %>
   <%= link_to new_user_registration_path do %>
     <div class="cta">
@@ -32,11 +25,15 @@
 
 <div>
   <% if signed_in? %>
-  <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      <!-- <i class="fa fa-sign-out"></i> -->
+      <%= t(".sign_out", default: "Log out") %>
+    <%= link_to "preferences", preferences_path %>
+  <% end %>
+
   <% else %>
     <%= link_to 'Register', new_user_registration_path %>
     <%= link_to 'Log in',  new_user_session_path %>
   <% end  %>
 </div>
+

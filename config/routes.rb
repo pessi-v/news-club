@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :payments, only: [:new, :create]
   end
   resources :articles, only: [:index, :show]
+  resources :preferences, only: [:index, :update]
 end

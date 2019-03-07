@@ -1,0 +1,42 @@
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+    <div class="mdl-tabs__tab-bar">
+        <a href="#publications-panel" class="mdl-tabs__tab is-active">PUBLICATIONS</a>
+        <a href="#authors-panel" class="mdl-tabs__tab">AUTHORS</a>
+        <a href="#themes-panel" class="mdl-tabs__tab">THEMES</a>
+        <!-- <a href="#lannisters-panel" class="mdl-tabs__tab">TECHNOLOGY</a>
+        <a href="#targaryens-panel" class="mdl-tabs__tab">ENTERTAINMENT</a>
+        <a href="#lannisters-panel" class="mdl-tabs__tab">SCIENCE</a>
+        <a href="#targaryens-panel" class="mdl-tabs__tab">SPORTS</a>
+        <a href="#starks-panel" class="mdl-tabs__tab">CURATED</a>
+        <a href="#targaryens-panel" class="mdl-tabs__tab">FINANCE</a> -->
+    </div>
+    <div class="mdl-tabs__panel is-active" id="publications-panel">
+      <%#= form_tag(preference_path(current_user), method: :patch) do %>
+  <%# ['bloomberg', 'nyt', 'wp'].each do |name| %>
+    <%#= check_box_tag('preferences[]', name) %>
+    <%#= label_tag('preferences[]', name) %>
+  <%# end %>
+
+
+
+      <%= form_tag(preference_path(current_user), method: :patch) do %>
+        <div class="mdl-grid">
+          <% 40.times do |i|%>
+            <%= render 'shared/publication-card', i: i %>
+          <% end %>
+        </div>
+        <%= submit_tag 'send' %>
+      <% end -%>
+    </div>
+
+    <div class="mdl-tabs__panel" id="authors-panel">
+        <div class="mdl-grid">
+          authors
+        </div>
+    </div>
+    <div class="mdl-tabs__panel" id="themes-panel">
+        <div class="mdl-grid">
+          themes
+        </div>
+    </div>
+</div>

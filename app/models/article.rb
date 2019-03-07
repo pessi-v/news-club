@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-  acts_as_taggable
+  acts_as_taggable_on :publication, :writer, :theme
   has_many :bookmarks
   has_many :readings
   has_many :users, through: :bookmarks
