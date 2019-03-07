@@ -35,6 +35,14 @@
     font-weight: bold;
   }
 
+  .first-letter {
+    font-size: 30px;
+    font-weight: 800;
+  }
+
+}
+.color:nth-child(2)::first-letter{
+  font-size: 400px;
 }
 
 .form-card {
