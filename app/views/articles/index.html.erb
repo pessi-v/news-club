@@ -25,11 +25,15 @@
 
 <div>
   <% if signed_in? %>
-  <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
+    <%= link_to destroy_user_session_path, method: :delete do %>
+      <!-- <i class="fa fa-sign-out"></i> -->
+      <%= t(".sign_out", default: "Log out") %>
+    <%= link_to "preferences", preferences_path %>
+  <% end %>
+
   <% else %>
     <%= link_to 'Register', new_user_registration_path %>
     <%= link_to 'Log in',  new_user_session_path %>
   <% end  %>
 </div>
+
