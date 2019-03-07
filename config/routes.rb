@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   end
   resources :articles, only: [:index, :show]
   resources :preferences, only: [:index, :update, :new, :create]
+  get '/home/:id', to: 'articles#home', as: 'home'
 end

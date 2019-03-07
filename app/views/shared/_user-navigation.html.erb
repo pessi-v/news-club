@@ -21,11 +21,12 @@
 
       <%= form_tag(preference_path(current_user), method: :patch) do %>
         <div class="mdl-grid">
-          <% 40.times do |i|%>
-            <%= render 'shared/publication-card', i: i %>
+          <% @sources.each do |source|%>
+            <%= render 'shared/publication-card', source: source %>
           <% end %>
         </div>
-        <%= submit_tag 'send' %>
+
+        <%= submit_tag 'send', class: "cta" %>
       <% end -%>
     </div>
 

@@ -21,7 +21,11 @@ class ArticlesController < ApplicationController
         @snackbar = true
       end
     end
-    # @current_reading.save!
+  end
+
+  def home
+    @all_user_articles
+    Article.where()
   end
 
   private
@@ -47,6 +51,11 @@ class ArticlesController < ApplicationController
       article = Article.find_by(title: a["title"])
       unless article # check if article is already in the database
         article = Article.new(title: a["title"], author: a["author"] || a["source"], source: a["source"]["name"], url: a["url"], date: a["publishedAt"], content: a["content"] || "no content available", image: a["urlToImage"], description: a["description"])
+        article.publication_list.add(a["source"]["id"])
+        extractor = Phrasie::Extractor.new
+        tagging = extractor.phrases(a["content"], occur: 1)
+        tags = tagging.each { |p| p[0] }
+        article.publication_list.add(tags)
         article.save!
       end
       last_articles << article
