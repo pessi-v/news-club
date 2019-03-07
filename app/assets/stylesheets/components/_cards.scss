@@ -1,4 +1,5 @@
 .article-card {
+  display: grid;
   width: 800px;
   height: auto;
   margin: 15px auto;
@@ -23,6 +24,15 @@
   p {
     font-family: $body-font;
     font-size: 20px;
+  }
+
+  .container-datename {
+    text-indent: 1em;
+    margin-bottom: 10px;
+  }
+
+  .author {
+    font-weight: bold;
   }
 
 }
