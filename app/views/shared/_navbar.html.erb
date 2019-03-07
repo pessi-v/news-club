@@ -1,12 +1,51 @@
-<div class="container">
+<!--<div class="container">
   <div class="flex-c bars"> <i class="fas fa-bars"></i></div>
   <%= link_to articles_path do %>
-  <div class="flex-c logo"> <%= image_tag ('logo.png'), height: 150 %></div>
+  <div class="flex-c logo"> <%= image_tag ('logo.png'), height: 50 %></div>
   <% end %>
   </div>
+</div>-->
+
+<div class="mdl-layout mdl-js-layout">
+  <header class="mdl-layout__header mdl-layout__header--scroll">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <div class="logo">
+      <%= link_to articles_path do %>
+       <%= image_tag ('logo.png'), height: 50 %>
+      <% end %>
+      </div>
+      <!-- Add spacer, to align navigation to the right -->
+      <!-- <div class="mdl-layout-spacer"></div> -->
+      <!-- <div class="flex-c"> -->
+      <!-- </div> -->
+      <!-- Navigation -->
+      <nav class="mdl-navigation">
+        >Log out</a>
+      </nav>
+
+
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Title</span>
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">
+      Log out</a>
+
+    </nav>
+  </div>
+
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      <!-- Your content goes here -->
+
+  </div>
+    <!-- </div> -->
+  </main>
 </div>
-
-
 
 
 
