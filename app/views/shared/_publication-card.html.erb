@@ -1,5 +1,6 @@
 <% uri = URI.parse(source["url"]) %>
-<% addr = "//logo.clearbit.com/" + uri.to_s %>
+<%= source %>
+<% addr = "//logo.clearbit.com/" + uri.to_s[/https?:\/\/(www.)?.+.(com|net|co.uk|\w{2}\/)/] %>
 
 <div class="publication-card mdl-shadow--4dp" style="background: url(<%= addr %>) center / cover">
   <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect" for="icon-toggle-<%= source["id"] %>">

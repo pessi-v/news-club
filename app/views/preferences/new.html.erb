@@ -1,5 +1,5 @@
 <% @preferences.each do |p| %>
-<img src="//logo.clearbit.com/<%= p %>">
+<img src="//logo.clearbit.com/<%= p.delete("/news") %>">
 <% end %>
 
 <%#= p["category"] %>
