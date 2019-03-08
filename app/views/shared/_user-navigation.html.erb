@@ -1,3 +1,9 @@
+<div>
+<%= render 'shared/navbar' %>
+</div>
+<br>
+<br>
+<br>
 <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
     <div class="mdl-tabs__tab-bar">
         <a href="#publications-panel" class="mdl-tabs__tab is-active">PUBLICATIONS</a>
@@ -11,24 +17,19 @@
         <a href="#targaryens-panel" class="mdl-tabs__tab">FINANCE</a> -->
     </div>
     <div class="mdl-tabs__panel is-active" id="publications-panel">
-      <%#= form_tag(preference_path(current_user), method: :patch) do %>
-  <%# ['bloomberg', 'nyt', 'wp'].each do |name| %>
-    <%#= check_box_tag('preferences[]', name) %>
-    <%#= label_tag('preferences[]', name) %>
-  <%# end %>
-
-
-
       <%= form_tag(preference_path(current_user), method: :patch) do %>
         <div class="mdl-grid">
           <% @sources.each do |source|%>
             <%= render 'shared/publication-card', source: source %>
           <% end %>
         </div>
-
-        <%= submit_tag 'send', class: "cta" %>
+        <div>
+        <%= submit_tag 'SAVE FAVORITES', class: "cta-preferences" %>
       <% end -%>
+        </div>
     </div>
+
+
 
     <div class="mdl-tabs__panel" id="authors-panel">
         <div class="mdl-grid">

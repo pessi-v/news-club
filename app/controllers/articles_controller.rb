@@ -24,7 +24,6 @@ class ArticlesController < ApplicationController
   end
 
   def home
-    #@all_user_articles = Article.all
     @all_user_articles = Article.tagged_with(current_user.publication_list, any: true)
   end
 
