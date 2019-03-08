@@ -1,3 +1,4 @@
+<%= render 'shared/navbar' %>
 <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
     <div class="mdl-tabs__tab-bar">
         <a href="#publications-panel" class="mdl-tabs__tab is-active">PUBLICATIONS</a>
@@ -25,9 +26,11 @@
             <%= render 'shared/publication-card', source: source %>
           <% end %>
         </div>
-
+        <div>
         <%= submit_tag 'send', class: "cta" %>
+        star</i>
       <% end -%>
+        </div>
     </div>
 
     <div class="mdl-tabs__panel" id="authors-panel">
