@@ -39,7 +39,9 @@ class ArticlesController < ApplicationController
       'sources=die-zeit,le-monde,liberation,the-guardian,new-scientist,le-monde,politico,the-economist,the-new-york-times,the-huffington-post,the-guardian-uk,the-jerusalem-post,financial-times,focus,la-repubblica,national-geographic,new-york-magazine,the-times-of-india' \
       'from=2019-03-05&'\
       'sortBy=publishedAt&'\
-      "apiKey=#{ENV['NEWSAPI_API_KEY']}"
+      "apiKey=#{ENV['NEWSAPI_API_KEY']}"\
+      "pageSize=50"
+
 
     req = open(url)
     response_body = req.read
