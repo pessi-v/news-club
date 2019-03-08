@@ -10,16 +10,16 @@
         <a href="#starks-panel" class="mdl-tabs__tab">CURATED</a>
         <a href="#targaryens-panel" class="mdl-tabs__tab">FINANCE</a>
     </div>
+
     <div class="mdl-tabs__panel is-active" id="starks-panel">
       <div class="mdl-grid">
         <% @articles[0..5].each do |a| %>
         <%= link_to article_path(a) do %>
         <div class="mdl-cell mdl-cell--4-col"><%= render 'shared/article-card', a: a %>
         </div>
-
-          <% end %>
-          <br>
-          <% end %>
+        <% end %>
+        <br>
+        <% end %>
       </div>
     </div>
 
@@ -33,7 +33,11 @@
          <br>
          <% end %>
        </div>
-         </div>
+       <% end %>
+       <br>
+       <% end %>
+     </div>
+   </div>
 
          <div class="mdl-tabs__panel" id="targaryens-panel">
        <div class="mdl-grid">

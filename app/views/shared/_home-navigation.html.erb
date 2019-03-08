@@ -1,30 +1,84 @@
 <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
     <div class="mdl-tabs__tab-bar">
-        <a href="#starks-panel" class="mdl-tabs__tab is-active">LATEST</a>
-        <a href="#lannisters-panel" class="mdl-tabs__tab">THEMES</a>
-        <a href="#targaryens-panel" class="mdl-tabs__tab">HISTORY</a>
-        <a href="#lannisters-panel" class="mdl-tabs__tab">CURATED</a>
-        <a href="#targaryens-panel" class="mdl-tabs__tab">FAVOURITES</a>
-        <a href="#lannisters-panel" class="mdl-tabs__tab">BOOKMARKS</a>
+        <a href="#latest" class="mdl-tabs__tab is-active">LATEST</a>
+        <a href="#themes" class="mdl-tabs__tab">THEMES</a>
+        <a href="#history" class="mdl-tabs__tab">HISTORY</a>
+        <a href="#curated" class="mdl-tabs__tab">CURATED</a>
+        <a href="#favourites" class="mdl-tabs__tab">FAVOURITES</a>
+        <a href="#bookmarks" class="mdl-tabs__tab">BOOKMARKS</a>
     </div>
 
-    <div class="mdl-tabs__panel is-active" id="starks-panel">
+    <div class="mdl-tabs__panel is-active" id="latest">
       <div class="mdl-grid">
         <% @all_user_articles.each do |a| %>
-          <%= link_to article_path(a) do %>
-            <div class="mdl-cell mdl-cell--4-col"><%= render 'shared/article-card', a: a %></div>
-          <% end %>
-          <br>
+        <%= link_to article_path(a) do %>
+        <div class="mdl-cell mdl-cell--4-col"><%= render 'shared/newscard', article: a %>
+        </div>
+        <% end %>
+        <br>
         <% end %>
       </div>
     </div>
 
-    <div class="mdl-tabs__panel" id="lannisters-panel">
-        <div class="mdl-grid">
-        </div>
+
+    <div class="mdl-tabs__panel" id="themes">
+      <div class="mdl-grid">
+        <% @all_user_articles.each do |a| %>
+         <%= link_to article_path(a) do %>
+         <div class="mdl-cell mdl-cell--4-col"><%= render 'shared/newscard', article: a %>
+         </div>
+         <% end %>
+         <br>
+         <% end %>
+      </div>
     </div>
-    <div class="mdl-tabs__panel" id="targaryens-panel">
-        <div class="mdl-grid">
+
+     <div class="mdl-tabs__panel" id="history">
+       <div class="mdl-grid">
+        <% @all_user_articles.each do |a| %>
+         <%= link_to article_path(a) do %>
+         <div class="mdl-cell mdl-cell--4-col"><%= render 'shared/newscard', article: a %>
+         </div>
+         <% end %>
+         <br>
+         <% end %>
+       </div>
+     </div>
+
+    <div class="mdl-tabs__panel" id="curated">
+      <div class="mdl-grid">
+        <% @all_user_articles.each do |a| %>
+        <%= link_to article_path(a) do %>
+        <div class="mdl-cell mdl-cell--4-col"><%= render 'shared/newscard', article: a %>
         </div>
+        <% end %>
+        <br>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="mdl-tabs__panel" id="favourites">
+      <div class="mdl-grid">
+        <% @all_user_articles.each do |a| %>
+        <%= link_to article_path(a) do %>
+        <div class="mdl-cell mdl-cell--4-col"><%= render 'shared/newscard', article: a %>
+        </div>
+        <% end %>
+        <br>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="mdl-tabs__panel" id="bookmarks">
+      <div class="mdl-grid">
+        <% @all_user_articles.each do |a| %>
+        <%= link_to article_path(a) do %>
+        <div class="mdl-cell mdl-cell--4-col"><%= render 'shared/newscard', article: a %>
+        </div>
+        <% end %>
+        <br>
+        <% end %>
+      </div>
     </div>
 </div>
+
