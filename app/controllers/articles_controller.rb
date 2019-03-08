@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
   end
 
   def home
-    @all_user_articles
+    @all_user_articles = Article.all
     Article.where()
   end
 

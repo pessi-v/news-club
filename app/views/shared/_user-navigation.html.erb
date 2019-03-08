@@ -11,14 +11,6 @@
         <a href="#targaryens-panel" class="mdl-tabs__tab">FINANCE</a> -->
     </div>
     <div class="mdl-tabs__panel is-active" id="publications-panel">
-      <%#= form_tag(preference_path(current_user), method: :patch) do %>
-  <%# ['bloomberg', 'nyt', 'wp'].each do |name| %>
-    <%#= check_box_tag('preferences[]', name) %>
-    <%#= label_tag('preferences[]', name) %>
-  <%# end %>
-
-
-
       <%= form_tag(preference_path(current_user), method: :patch) do %>
         <div class="mdl-grid">
           <% @sources.each do |source|%>

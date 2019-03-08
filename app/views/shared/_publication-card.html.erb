@@ -1,7 +1,7 @@
 <% uri = URI.parse(source["url"]) %>
 <% addr = "//logo.clearbit.com/" + uri.to_s %>
 
-<div class="publication-card mdl-shadow--4dp" style="background: url(<%= addr %>) center / cover">
+<div class="publication-card mdl-shadow--4dp" style="background: url(<%= addr %>) center no-repeat">
   <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect" for="icon-toggle-<%= source["id"] %>">
   <input type="checkbox" id="icon-toggle-<%= source["id"] %>" name="<%= source["id"] %>" class="mdl-icon-toggle__input">
   <i class="mdl-icon-toggle__label material-icons">star</i>

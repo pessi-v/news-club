@@ -1,0 +1,53 @@
+.container {
+  margin: 8px;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  // background-color: $yellow;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: $gray;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  width: 230px;
+  // -webkit-transform: translate(-50%, -50%);
+  // -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: left;
+}
+
+.mdl-card__actions {
+  height: 52px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.source-text {
+  color: $off-white;
+  font-size: 18px;
+  position: absolute;
+  bottom: 0px;
+  left: 2px;
+}
