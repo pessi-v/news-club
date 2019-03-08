@@ -73,7 +73,7 @@
       <div class="mdl-grid">
         <% @all_user_articles.each do |a| %>
         <%= link_to article_path(a) do %>
-        <div class="mdl-cell mdl-cell--4-col"><%= render 'shared/article-card', article: a %>
+        <div class="mdl-cell mdl-cell--4-col"><%= render 'shared/article-card', a: a %>
         </div>
         <% end %>
         <br>
