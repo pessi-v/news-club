@@ -1,15 +1,31 @@
-<h1>Purchase of Plan <%= @subscription.plan_id == 1 ? "A" : "B" %></h1>
-<%= form_tag subscription_payments_path(@subscription) do %>
-  <article>
-    <label class="amount">
-      <span>Amount: <%= humanized_money_with_symbol(@subscription.amount) %> </span>
-    </label>
-  </article>
+<style>
+  .stripe-button-el {
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-    data-name="My Plan"
-    data-email="<%= current_user.email %>"
-    data-amount="<%= @subscription.amount_cents %>"
-    data-currency="<%= @subscription.amount.currency %>"></script>
-<% end %>
+  }
+</style>
+
+<div id="trapezoid-c"></div>
+<div id="trapezoid-m"></div>
+<div id="trapezoid-y"></div>
+<%# raise %>
+<div style="display: flex; flex-direction: column; justify-content: space-around; margin-top: 110px; margin-bottom: 160px;">
+    <h2 style="text-align: center;">Purchase of Plan
+        <%= @subscription.plan_id == 1 ? "A" : "B" %>
+    </h2>
+    <%= form_tag subscription_payments_path(@subscription) do %>
+    <article>
+        <label class="amount">
+            <br>
+            <br>
+            <br>
+            <h3 style="text-align: center;">
+                <%= @subscription.plan.amount %> articles for
+                <%= humanized_money_with_symbol(@subscription.amount) %>/month</h3>
+        </label>
+    </article>
+    <div>
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-name="My Plan" data-email="<%= current_user.email %>" data-amount="<%= @subscription.amount_cents %>" data-currency="<%= @subscription.amount.currency %>">
+        </script>
+    </div>
+    <% end %>
+</div>
