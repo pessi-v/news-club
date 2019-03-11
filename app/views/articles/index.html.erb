@@ -2,9 +2,29 @@
 <div>
 <%= render 'shared/banner'%>
 </div>
-<div>
-<%= render 'shared/navigation', articles: @articles%>
+ <div class="quote">
+  <%= render 'shared/navigation', articles: @articles%>
 </div>
+</div>
+ <div class="quote-two">
+  <div class="mktg-container mktg-bg--m-gray">
+    <section class="mktg-panel">
+        <div class="mktg-panel__content mktg-panel__content--smaller">
+            <div class="mktg-panel__text-group">
+                <h2 class="mktg-panel__title">Speichere Inhalte – egal woher.</h2>
+                <p class="mktg-panel__blurb">Speichere Artikel, Videos und Geschichten von jeder Publikation, Seite oder App. Schaff dir deinen eigenen Raum – mit allem, was du noch unbedingt lernen möchtest.</p>
+            </div>
+        </div>
+        <div class="mockup"><%= image_tag " news_club_mockup.png", height: 600 %>
+    </div>
+    </section>
+</div>
+</div>
+<div class="quote-three">
+  <h1>Angled Edges</h1>
+  <p>With 2 Pseudo Elements</p>
+</div>
+
 
 <% unless signed_in? %>
   <%= link_to new_user_registration_path do %>
