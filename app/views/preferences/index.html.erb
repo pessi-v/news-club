@@ -1,5 +1,10 @@
 <%= render 'shared/user-navigation'%>
 
+  <button class="quota-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+    <i><%= current_user.readings.count %>/<%= current_user.subscription.plan.amount { |match|  } %></i>
+
+  </button>
+
 <%# raise %>
 
 <%# @sources.each do |p| %>
