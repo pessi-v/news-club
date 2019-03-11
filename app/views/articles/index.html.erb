@@ -49,37 +49,31 @@
 <div class="top">
     <h1>news club</h1>
 </div>
-<h2 style="left: 50%; text-align: center; font-family:'Helvetica';">Instant access to the best journalism online</h2>
-<div id="trapezoid-c"></div>
-<div id="trapezoid-m"></div>
-<div id="trapezoid-y"></div>
-<br>
-<br>
 
+ <div class="quote">
+  <%= render 'shared/navigation', articles: @articles%>
+</div>
+</div>
+ <div class="quote-two">
+  <div class="mktg-container mktg-bg--m-gray">
+    <section class="mktg-panel">
+        <div class="mktg-panel__content mktg-panel__content--smaller">
+            <div class="mktg-panel__text-group">
+                <h2 class="mktg-panel__title">Speichere Inhalte – egal woher.</h2>
+                <p class="mktg-panel__blurb">Speichere Artikel, Videos und Geschichten von jeder Publikation, Seite oder App. Schaff dir deinen eigenen Raum – mit allem, was du noch unbedingt lernen möchtest.</p>
+            </div>
+        </div>
+        <div class="mockup"><%= image_tag " news_club_mockup.png", height: 600 %>
+    </div>
+    </section>
 
-
-<div class="info-banner">
-  <div class="info-content">
-    <h4>CHOOSE</h4>
-    <p>Our subscription plans give you access to high-quality paywalled articles from all around the world of online publications Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur error obcaecati alias commodi animi minima exercitationem, voluptatum ipsam provident explicabo.</p>
-  </div>
-  <div class="info-content">
-    <h4>NEWSPAPERS</h4>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero recusandae, aspernatur nesciunt soluta, quisquam asperiores? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae odit suscipit eum ipsum beatae ratione.</p>
-  </div>
-  <div class="info-content">
-    <h4>MAGAZINES</h4>
-    <p>All the periodicals Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda sequi sit libero aut nulla in porro incidunt asperiores. Officiis illum doloribus odit, tempora nobis enim! Lorem ipsum dolor sit amet.</p>
-  </div>
-  <div class="info-content">
-    <h4>MORE</h4>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum totam, voluptate laboriosam et, deserunt velit.</p>
-  </div>
+</div>
+</div>
+<div class="quote-three">
+  <h1>Angled Edges</h1>
+  <p>With 2 Pseudo Elements</p>
 </div>
 
-<div>
-<%= render 'shared/navigation', articles: @articles%>
-</div>
 
 <% unless signed_in? %>
   <%= link_to new_user_registration_path do %>
