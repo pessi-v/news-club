@@ -7,6 +7,8 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = fetch_articles
+    @plan1 = Plan.find(1)
+    @plan2 = Plan.find(2)
   end
 
   def show
