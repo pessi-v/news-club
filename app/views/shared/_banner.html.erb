@@ -3,11 +3,11 @@
 .mdl-layout__container {
     position: relative;
     width: 100%;
-    height: 540px;
-
+    height: 620px;
 }
+
 .demo-layout-transparent {
-  background: #efebe9;
+
 }
 .demo-layout-transparent .mdl-layout__header,
 .demo-layout-transparent .mdl-layout__drawer-button {
@@ -17,37 +17,69 @@
 }
 .center {
   position: absolute;
-  left: 42%;
-  top: 23%;
+  left: 2%;
+  top: 0%;
   margin-right: auto;
   width: 50%;
   padding: 10px;
 }
 .center-text {
   position: absolute;
-  left: 36%;
-  top: 58%;
+  left: 2%;
+  top: 28%;
+  margin-right: auto;
+  width: 50%;
+  padding: 10px;
+  font-family: News Cycle;
+  font-weight: bold;
+  font-size: 80px;
+  color: #333333;
+  line-height: 76px;
+}
+
+.center-subtitle {
+  position: absolute;
+  left: 2%;
+  top: 56%;
   margin-right: auto;
   width: 50%;
   padding: 10px;
   font-family: Roboto;
-  font-size: 20px;
+  font-weight: lighter;
+  font-size: 25px;
   color: #333333;
+  line-height: 32px;
+}
+.banner-color {
+  position: absolute;
+  left: 0%;
+  top: 31%;
+  margin-right: auto;
+  width: 50%;
+  padding: 0px;
 }
 
 .mdl-layout__content {
   position: relative;
+  background: #F9F9F9;
 }
+
+
 
 .banner-button {
   position: absolute;
-  left: 46%;
+  left: 3%;
   top: 72%;
   margin-right: auto;
+  background-color: #3FA9F5;
+  color: white;
 }
 
 .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:after{
   background: #C137FC;
+}
+.mdl-button {
+  padding: 6px 26px !important;
 }
 
 </style>
@@ -64,12 +96,16 @@
     </nav>
   </div> -->
   <main class="mdl-layout__content">
-    <div class="center"><%= image_tag "Logo_news_club.png", height: 150 %>
+    <div class="center"><%= image_tag "news_club_logo_new.png", height: 80 %>
     </div>
-    <div class="center-text"> Instant access to the best journalism online
+    <div class="banner-color"><%= image_tag "banner_side_color-.png", height: 140 %>
+    </div>
+    <div class="center-text"> Instant access to the best journalism
+    </div>
+    <div class="center-subtitle"> Discover a custom made curated feed just for <br> our club members
     </div>
     <div class="banner-button">
-      <%= link_to 'REGISTER NOW', new_user_registration_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"  %>
+      <%= link_to 'JOIN THE CLUB', new_user_registration_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"  %>
     <!-- <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
     REGISTER NOW
   </button> -->
