@@ -1,7 +1,55 @@
 <%#= render 'shared/banner'%>
-<div>
-<%= render 'shared/banner'%>
+<!-- <div> -->
+<%#= render 'shared/banner'%>
+<!-- </div> -->
+
+<!-- MENU -->
+<div class="menu-div">
+  <button class="menu-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored"
+          id="demo-menu-lower-left">
+    <i class="material-icons">more_vert</i>
+
+  </button>
+  <!-- <button id="demo-menu-lower-left"
+          class="mdl-button  mdl-js-button mdl-button--icon">
+    <i class="material-icons">more_vert</i>
+  </button> -->
+
+  <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+      for="demo-menu-lower-left">
+    <% if signed_in? %>
+        <%= link_to preferences_path do%>
+          <li class="mdl-menu__item">Preferences</li>
+        <% end %>
+        <%= link_to preferences_path do%>
+          <li class="mdl-menu__item">My Account</li>
+        <% end %>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <li class="mdl-menu__item">Log out</li>
+        <% end %>
+
+      </li>
+    <% else %>
+      <%= link_to new_user_session_path do %>
+        <li class="mdl-menu__item">Sign in</li>
+      <% end %>
+      <%= link_to new_user_registration_path do%>
+        <li class="mdl-menu__item">Register</li>
+      <% end %>
+    <% end %>
+    <li class="mdl-menu__item">About news club</li>
+    <li class="mdl-menu__item">Partners</li>
+    <!-- <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li> -->
+    <!-- <li disabled class="mdl-menu__item">Disabled Action</li> -->
+    <li class="mdl-menu__item">FAQ</li>
+  </ul>
 </div>
+<!--  -->
+
+<div class="top">
+    <h1>news club</h1>
+</div>
+
  <div class="quote">
   <%= render 'shared/navigation', articles: @articles%>
 </div>
@@ -18,6 +66,7 @@
         <div class="mockup"><%= image_tag " news_club_mockup.png", height: 600 %>
     </div>
     </section>
+
 </div>
 </div>
 <div class="quote-three">
@@ -43,17 +92,17 @@
 <%# end %>
 
 
-<div>
-  <% if signed_in? %>
-    <%= link_to destroy_user_session_path, method: :delete do %>
+<!-- <div> -->
+  <%# if signed_in? %>
+    <%#= link_to destroy_user_session_path, method: :delete do %>
       <!-- <i class="fa fa-sign-out"></i> -->
-      <%= t(".sign_out", default: "Log out") %>
-    <%= link_to "preferences", preferences_path %>
-  <% end %>
+      <%#= t(".sign_out", default: "Log out") %>
+    <%#= link_to "preferences", preferences_path %>
+  <%# end %>
 
-  <% else %>
-    <%= link_to 'Register', new_user_registration_path %>
-    <%= link_to 'Log in',  new_user_session_path %>
-  <% end  %>
-</div>
+  <%# else %>
+    <%#= link_to 'Register', new_user_registration_path %>
+    <%#= link_to 'Log in',  new_user_session_path %>
+  <%# end  %>
+<!-- </div> -->
 

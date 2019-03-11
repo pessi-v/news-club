@@ -40,8 +40,7 @@ class ArticlesController < ApplicationController
       'from=2019-03-05&'\
       'sortBy=publishedAt&'\
       "apiKey=#{ENV['NEWSAPI_API_KEY']}&"\
-      "pageSize=50"
-
+      "pageSize=20"
 
     req = open(url)
     response_body = req.read

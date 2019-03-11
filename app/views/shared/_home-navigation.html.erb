@@ -6,6 +6,8 @@
         <a href="#curated" class="mdl-tabs__tab">CURATED</a>
         <a href="#favourites" class="mdl-tabs__tab">FAVOURITES</a>
         <a href="#bookmarks" class="mdl-tabs__tab">BOOKMARKS</a>
+        <%= link_to("MY PREFRENCES", preferences_path, class: "mdl-tabs__tab") %>
+        <!-- <a href="#preferences" class="mdl-tabs__tab">MY PREFRENCES</a> -->
     </div>
 
     <div class="mdl-tabs__panel is-active" id="latest">
@@ -80,5 +82,7 @@
         <% end %>
       </div>
     </div>
+
+
 </div>
 
