@@ -1,38 +1,25 @@
 
-
-<%# a = @all_user_articles[0] %>
-
+<% addr = URI.parse(a["url"]).host %>
 
 
-<div class="demo-card-image mdl-card mdl-shadow--2dp container" style="background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.15)), url(<%= a["image"] %>) center / cover">
-    <h2 class="mdl-card__title-text"><%= a["title"].strip %></h2>
-  <div class="mdl-card__title mdl-card--expand">
-    <h4 class="source-text"><%= a["source"] %> <%= a["date"].strftime("%b %d, %Y") %></h4>
+<!-- <div class="mdl-cell mdl-cell--4-col"> -->
+<div class="container mdl-cell mdl-cell--4-col mdl-shadow--4dp" style="background: url(<%= a["image"] %>) center / cover">
+  <div class="mask-block"></div>
+  <div class="upper">
+    <h4><%= a["date"].strftime('%A, %b %d %Y') %></h4>
+    <h3><%= a["title"].split('|')[0] %></h3>
   </div>
 
+  <div class="bottom">
+    <%= image_tag("http://logo.clearbit.com/#{addr}", class: "avatar-small") %>
 
-  <div class="overlay" style="background-color: <%= ['rgba(0,174,239,0.85)', 'rgba(255,242,0,0.85)'].sample %>">
-    <div class="text"><%= a["description"] %></div>
-    <div class="button-menu">
+    <div style="display: flex; flex-direction: column;">
 
-    <!-- add a 'read' symbol if user logged in and article already read -->
-    <% unless current_user.nil? %>
-      <% if current_user.readings.find_by(article_id: a.id) %>
-        <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-          <i class="material-icons">check_circle</i>
-        </button>
-      <% end %>
-    <% end %>
-    <!--  -->
-    <!-- share icon -->
-    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-        <i class="material-icons">share</i>
-    </button>
-    <!--  -->
+      <h5><%= a["source"] %></h5>
+    </div>
   </div>
-  </div>
+
+   <div class="overlay" style="background-color: <%= ['rgba(0,174,239)', 'rgba(255,242,0)'].sample %>">
+     <p><%= a["content"].split(' [')[0] %></p>
+   </div>
 </div>
-
-
-
-
