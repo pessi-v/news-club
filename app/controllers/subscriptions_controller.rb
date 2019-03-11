@@ -4,6 +4,7 @@ class SubscriptionsController < ApplicationController
     @plan1 = Plan.find(1)
     @plan2 = Plan.find(2)
     @subscription = Subscription.new
+
   end
 
   def create
