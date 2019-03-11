@@ -80,7 +80,48 @@
 
   </div>
 
-    <div class="center-plan1">
+  <div class="plan-container">
+        <div class="plan-card mdl-shadow--4dp">
+            <h3>5€ for 10 Articles/month</h3>
+            <ul>
+                <li>
+                    <p>Access to over 2500 publications</p>
+                </li>
+                <li>
+                    <p>Curated recommendations</p>
+                </li>
+                <li>
+                    <p>Invitations to news club events</p>
+                </li>
+            </ul>
+            <%= form_tag subscriptions_path do %>
+            <%= hidden_field_tag 'plan_id', @plan1.id %>
+            <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+            <% end %>
+        </div>
+        <div class="plan-card mdl-shadow--4dp">
+            <h3>10€ for 25 Articles/month</h3>
+            <ul>
+                <li>
+                    <p>Access to over 2500 publications</p>
+                </li>
+                <li>
+                    <p>Curated recommendations</p>
+                </li>
+                <li>
+                    <p>Invitations to news club events</p>
+                </li>
+                <li>
+                    <p>Best value plan</p>
+                </li>
+            </ul>
+            <%= form_tag subscriptions_path do %>
+            <%= hidden_field_tag 'plan_id', @plan2.id %>
+            <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+            <% end %>
+        </div>
+
+    <!-- <div class="center-plan1">
       <div class="p-card-heading">
         <div class="p-card__title">Standard</div>
         <div class="p-card__price"><span class="currency">$</span>15</div>
@@ -124,7 +165,7 @@
       <div class="p-card__footer">
         <a href="#" class="p-card__button">Upgrade to Plus</a>
       </div>
-    </div>
+    </div> -->
 
 
 </div>
