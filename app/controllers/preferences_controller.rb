@@ -4,6 +4,7 @@ class PreferencesController < ApplicationController
   def index
     @user = current_user
     @sources = fetch_sources
+    @images = Dir.glob("app/assets/images/cover-images/*.jpg")
   end
 
   def update
@@ -18,6 +19,10 @@ class PreferencesController < ApplicationController
   def new
     @sources = fetch_sources
   end
+
+  # def image
+  #   @images = Dir.glob("app/assets/images/cover-images/*.jpg")
+  # end
 
   private
 

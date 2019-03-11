@@ -27,7 +27,7 @@
 
       <%= form_tag(preference_path(current_user), method: :patch) do %>
         <div class="mdl-grid">
-          <% @sources.each do |source|%>
+         <% @sources.each do |source|%>
             <%= render 'shared/publication-card', source: source %>
           <% end %>
         </div>
