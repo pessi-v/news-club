@@ -1,3 +1,37 @@
+<div class="menu-div">
+  <button class="menu-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored"
+          id="demo-menu-lower-left">
+    <i class="material-icons">more_vert</i>
+
+  </button>
+  <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+      for="demo-menu-lower-left">
+    <% if signed_in? %>
+        <%= link_to preferences_path do%>
+          <li class="mdl-menu__item">Preferences</li>
+        <% end %>
+        <%= link_to preferences_path do%>
+          <li class="mdl-menu__item">My Account</li>
+        <% end %>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <li class="mdl-menu__item">Log out</li>
+        <% end %>
+
+      </li>
+    <% else %>
+      <%= link_to new_user_session_path do %>
+        <li class="mdl-menu__item">Sign in</li>
+      <% end %>
+      <%= link_to new_user_registration_path do%>
+        <li class="mdl-menu__item">Register</li>
+      <% end %>
+    <% end %>
+    <li class="mdl-menu__item">About news club</li>
+    <li class="mdl-menu__item">Partners</li>
+    <li class="mdl-menu__item">FAQ</li>
+  </ul>
+</div>
+
 <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
     <div class="mdl-tabs__tab-bar">
         <a href="#latest" class="mdl-tabs__tab is-active">LATEST</a>
