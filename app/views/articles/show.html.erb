@@ -6,10 +6,10 @@
 
 <% if @snackbar %>
 
-
   <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
     <div class="mdl-snackbar__text"></div>
     <button class="mdl-snackbar__action" type="button"></button>
+
   </div>
 
   <script>
@@ -31,12 +31,15 @@
   </button>
 <% end %>
 
-
 <div class="article-card mdl-shadow--4dp">
 
-  <div>
+  <div class="image-article">
     <%= image_tag @article.image %>
   </div>
+
+  <div class="article-content-container" style="position: relative;">
+      <applause-button style="width: 58px; height: 58px; position: absolute; top: 180px; left: -80px; z-index: 5;"></applause-button>
+
     <h3><%= @article.title %></h3>
 
 
@@ -49,6 +52,7 @@
       <%= @article.date.strftime("%A %d %B %y") %>
     </div>
   </div>
+
 
   <p><span class="first-letter"><%#= html_doc.search('.body-content p')[0].text[0] %>
   <%#= html_doc.search('.body-content p')[0].text[1..-1] %></p>
@@ -84,6 +88,9 @@
 
 </div>
 
+</div>
+
 <% else %>
   <h3>Unfortunately your subscription has run out!</h3>
 <% end %>
+
