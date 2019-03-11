@@ -12,7 +12,7 @@
     </div>
     <div class="mdl-tabs__panel is-active" id="starks-panel">
         <div class="mdl-grid">
-            <% @articles[0..5].each do |a| %>
+            <% @articles.shuffle.each do |a| %>
             <%= link_to article_path(a) do %>
             <div class="mdl-cell mdl-cell--4-col">
                 <%= render 'shared/article-card', a: a %>
@@ -24,7 +24,7 @@
     </div>
     <div class="mdl-tabs__panel" id="lannisters-panel">
         <div class="mdl-grid">
-            <% @articles[6..12].each do |a| %>
+            <% @articles.shuffle.each do |a| %>
             <%= link_to article_path(a) do %>
             <div class="mdl-cell mdl-cell--4-col">
                 <%= render 'shared/article-card', a: a %>
@@ -36,7 +36,7 @@
     </div>
     <div class="mdl-tabs__panel" id="targaryens-panel">
         <div class="mdl-grid">
-            <% @articles[13..20].each do |a| %>
+            <% @articles.shuffle.each do |a| %>
             <%= link_to article_path(a) do %>
             <div class="mdl-cell mdl-cell--4-col">
                 <%= render 'shared/article-card', a: a %>

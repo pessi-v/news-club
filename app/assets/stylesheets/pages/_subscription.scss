@@ -1,7 +1,25 @@
-.plan-container{
+.plan-container {
   width: 700px;
   height: auto;
-  margin: 0 auto;
+  margin: 20px auto;
   display: flex;
   justify-content: space-around;
+}
+
+.subscription {
+
+  h2 {
+  margin-top: 120px;
+  font-weight: 900 !important;
+  font-size: 80px;
+  font-family: 'Chivo';
+  font-style: italic;
+  text-align: center;
+  }
+
+  h4 {
+  margin-top: 30px;
+  font-family: 'Helvetica';
+  text-align: center;
+  }
 }
