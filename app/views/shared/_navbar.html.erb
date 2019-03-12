@@ -1,59 +1,61 @@
-<!--<div class="container">
-  <div class="flex-c bars"> <i class="fas fa-bars"></i></div>
-  <%= link_to articles_path do %>
-  <div class="flex-c logo"> <%= image_tag ('logo.png'), height: 50 %></div>
-  <% end %>
-  </div>
-</div>-->
+  <style>
+  .mdl-button {
+  padding: 6px 26px !important;
+  color: #F9F9F9 !important;
+}
+.menu-div {
+   z-index: 1 !important;
+   position: absolute;
+   left: 91%;
+   top: 0%;
+ }
+.center {
+  position: absolute;
+  left: 2%;
+  top: 2%;
+  margin-right: auto;
+  width: 92%;
+  padding: 10px;
+  overflow: hidden;
+}
 
-<div class="mdl-layout mdl-js-layout">
-  <header class="mdl-layout__header mdl-layout__header--scroll">
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <div class="logo">
-      <%= link_to articles_path do %>
-       <%= image_tag ('logo.png'), height: 50 %>
+</style>
+
+    <div class="menu-div">
+  <button class="menu-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored"
+          id="demo-menu-lower-right">
+    <i class="material-icons">more_vert</i>
+
+  </button>
+  <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+      for="demo-menu-lower-right">
+    <% if signed_in? %>
+        <%= link_to preferences_path do%>
+          <li class="mdl-menu__item">Preferences</li>
+        <% end %>
+        <%= link_to preferences_path do%>
+          <li class="mdl-menu__item">My Account</li>
+        <% end %>
+      </li>
+    <% else %>
+      <%= link_to new_user_session_path do %>
+        <li class="mdl-menu__item">Sign in</li>
       <% end %>
-      </div>
-      <!-- Add spacer, to align navigation to the right -->
-      <!-- <div class="mdl-layout-spacer"></div> -->
-      <!-- <div class="flex-c"> -->
-      <!-- </div> -->
-      <!-- Navigation -->
-      <nav class="mdl-navigation">
-        >Log out</a>
-      </nav>
-
-
-  </header>
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Title</span>
-    <nav class="mdl-navigation">
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">
-      Log out</a>
-
-    </nav>
-  </div>
-
-  <main class="mdl-layout__content">
-    <div class="page-content">
-      <!-- Your content goes here -->
-
-  </div>
-    <!-- </div> -->
-  </main>
+      <%= link_to new_user_registration_path do%>
+        <li class="mdl-menu__item">Register</li>
+      <% end %>
+    <% end %>
+    <li class="mdl-menu__item">About news club</li>
+    <li class="mdl-menu__item">Partners</li>
+    <!-- <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li> -->
+    <!-- <li disabled class="mdl-menu__item">Disabled Action</li> -->
+    <li class="mdl-menu__item">FAQ</li>
+    <% if signed_in? %>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <li class="mdl-menu__item" style="color: rgb(236,0,140);">Log out</li>
+      <% end %>
+    <% end %>
+  </ul>
 </div>
-
-
-
-
-
-<!-- here's the aborted log-in button for the show page -->
-<!-- might come in handy later... -->
-<!--   <div class="flex-c">
-    <%#= link_to new_user_registration_path do %>
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent login-btn">Log in</button>
-    <%# end %> -->
+    <div class="center"><%= image_tag "news_club_logo_new.png", height: 60 %>
+    </div>
