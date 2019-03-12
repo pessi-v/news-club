@@ -26,7 +26,8 @@ class ArticlesController < ApplicationController
   end
 
   def home
-    @all_user_articles = Article.tagged_with(current_user.publication_list, any: true)
+    # @all_user_articles = Article.tagged_with(current_user.publication_list, any: true)
+    @all_user_articles = Article.all.shuffle
     @user_read_articles = []
     current_user.readings.each do |reading|
       @user_read_articles << Article.find(reading.article_id)
@@ -41,9 +42,9 @@ class ArticlesController < ApplicationController
 
   def fetch_articles
     url = 'https://newsapi.org/v2/everything?'\
-      'q=Climate&'\
-      'sources=die-zeit,le-monde,liberation,the-guardian,new-scientist,le-monde,politico,the-economist,the-new-york-times,the-huffington-post,the-guardian-uk,the-jerusalem-post,financial-times,focus,la-repubblica,national-geographic,new-york-magazine,the-times-of-india' \
-      'from=2019-03-05&'\
+      'q=Climate OR forest OR mushroom OR flower OR animals OR anarchist OR peace OR ethereum OR rojava OR techno OR sanders OR corbyn OR beer OR whisky OR pluto OR mars OR future OR linux OR future OR berlin OR finland Or indonesia OR brazil&'\
+      'from=2019-03-01&'\
+      'sources=ars-technica,associated-press,bild,bloomberg,business-insider,business-insider,daily-mail,der-tagesspiegel,die-zeit,entertainment-weekly,espn,financial-post,financial-times,focus,fortune,gruenderszene,mirror,national-geographic,new-scientist,newsweek,new-york-magazine,politico,polygon,reuters,spiegel-online,techcrunch,techradar,the-economist,the-globe-and-mail,the-guardian-uk,the-hill,the-huffington-post,the-new-york-times,the-telegraph,the-verge,the-wall-street-journal,the-washington-times,time,wired'\
       'sortBy=publishedAt&'\
       "apiKey=#{ENV['NEWSAPI_API_KEY']}&"\
       "pageSize=20"
@@ -61,7 +62,7 @@ class ArticlesController < ApplicationController
         extractor = Phrasie::Extractor.new
         tagging = extractor.phrases(a["content"], occur: 1)
         tags = tagging.each { |p| p[0] }
-        article.publication_list.add(tags)
+        article.theme_list.add(tags)
         article.save!
       end
       last_articles << article

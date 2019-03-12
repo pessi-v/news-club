@@ -1,14 +1,15 @@
 <div class="long-card">
     <div class="text-container">
-        <h3>
-            <%= a["title"] %>
-        </h3>
         <h4>
             <%= a["source"] %>
         </h4>
+        <h3>
+            <%= a["title"] %>
+        </h3>
         <p>
-            <%= a["description"] %>
+          <%= a["date"].strftime('%A, %b %d %Y') %>
         </p>
+
     </div>
     <div class="image-container">
         <%= image_tag a["image"] %>
