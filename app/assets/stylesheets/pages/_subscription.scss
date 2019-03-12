@@ -4,6 +4,7 @@
   margin: 20px auto;
   display: flex;
   justify-content: space-around;
+  background-color: #F9F9F9;
 }
 
 .subscription {
@@ -22,4 +23,24 @@
   font-family: 'Helvetica';
   text-align: center;
   }
+}
+
+
+.subscription-container{
+
+height: 500px;
+width: 300px;
+}
+
+.center-plan1 {
+  position: absolute;
+  left: 29%;
+  top: 58%;
+  background-color: #F9F9F9;
+}
+.center-plan2 {
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  background-color: #F9F9F9;
 }

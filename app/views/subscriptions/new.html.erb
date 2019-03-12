@@ -1,97 +1,71 @@
 <style>
 .demo-card-square.mdl-card {
-    width: 420px;
-    height: 320px;
-    margin: 10px;
+  width: 420px;
+  height: 320px;
+  margin: 10px;
 }
 
 .demo-card-square>.mdl-card__title {
-    color: #fff;
-    background:
-        url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+  color: #fff;
+  background:
+  url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
 }
 </style>
 <!-- BODY -->
 <div class="subscription">
-    <div id="trapezoid-c"></div>
-    <div id="trapezoid-m"></div>
-    <div id="trapezoid-y"></div>
-    <h2>Welcome to The News Club</h2>
-    <br>
-    <h4>Please choose a plan:</h4>
-    <div class="plan-container">
-        <div class="plan-card mdl-shadow--4dp">
-            <h3>5€ for 10 Articles/month</h3>
-            <ul>
-                <li>
-                    <p>Access to over 2500 publications</p>
-                </li>
-                <li>
-                    <p>Curated recommendations</p>
-                </li>
-                <li>
-                    <p>Invitations to news club events</p>
-                </li>
-            </ul>
-            <%= form_tag subscriptions_path do %>
-            <%= hidden_field_tag 'plan_id', @plan1.id %>
-            <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-            <% end %>
-        </div>
-        <div class="plan-card mdl-shadow--4dp">
-            <h3>10€ for 25 Articles/month</h3>
-            <ul>
-                <li>
-                    <p>Access to over 2500 publications</p>
-                </li>
-                <li>
-                    <p>Curated recommendations</p>
-                </li>
-                <li>
-                    <p>Invitations to news club events</p>
-                </li>
-                <li>
-                    <p>Best value plan</p>
-                </li>
-            </ul>
-            <%= form_tag subscriptions_path do %>
-            <%= hidden_field_tag 'plan_id', @plan2.id %>
-            <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-            <% end %>
-        </div>
-        <!-- <div class="demo-card-square mdl-card mdl-shadow--2dp"> -->
-            <!-- <div class="mdl-card__title mdl-card--expand"> -->
-                <!-- <h2 class="mdl-card__title-text"></h2> -->
-                <!-- <h5>5€ for 10 Articles/month</h5> -->
-            <!-- </div> -->
-            <!-- <div class="mdl-card__supporting-text"> -->
-                <!-- hfuifnpoiwvnkioewcjopewklco+pewmop+ -->
-            <!-- </div> -->
-            <!-- <div class="mdl-card__actions mdl-card--border"> -->
-                <!-- <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"> -->
-                <%#= form_tag subscriptions_path do %>
-                <%#= hidden_field_tag 'plan_id', @plan1.id %>
-                <%#= submit_tag 'Purchase', class: 'btn btn-primary' %>
-                <%# end %>
-                <!-- </a> -->
-            <!-- </div> -->
-        <!-- </div> -->
-        <!-- <div class="demo-card-square mdl-card mdl-shadow--2dp"> -->
-        <!-- <div class="mdl-card__title mdl-card--expand"> -->
-        <!-- <h2 class="mdl-card__title-text"></h2> -->
-        <!-- <h5>10€ for 25 Articles/month</h5> -->
-        <!-- </div> -->
-        <!-- <div class="mdl-card__supporting-text"> -->
-        <!-- hfuifnpoiwvnkioewcjopewklco+pewmop+ -->
-        <!-- </div> -->
-        <!-- <div class="mdl-card__actions mdl-card--border"> -->
-        <!-- <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"> -->
-        <%#= form_tag subscriptions_path do %>
-        <%#= hidden_field_tag 'plan_id', @plan2.id %>
-        <%#= submit_tag 'Purchase', class: 'btn btn-primary' %>
-        <%# end %>
-        <!--  </a> -->
-        <!-- </div> -->
-        <!-- </div> -->
+  <div id="trapezoid-c"></div>
+  <div id="trapezoid-m"></div>
+  <div id="trapezoid-y"></div>
+  <h2>Welcome to The News Club</h2>
+  <br>
+  <h4>Please choose a plan:</h4>
+
+  <div class="subscription-container">
+    <div class="center-plan1 mdl-shadow--2dp">
+      <div class="p-card-heading">
+        <div class="p-card__title">Standard</div>
+        <div class="p-card__price"><span class="currency">5</span>€</div>
+        <div class="p-card__per">User / month</div>
+        <div class="p-card__separator"></div>
+      </div>
+      <div class="p-card__body">
+        <ul class="p-card__feature">
+          <li class="p-card__feature-item tx-500">All basic features</li>
+          <li class="p-card__feature-item">5 Mailboxes, 1 Docs site</li>
+          <li class="p-card__feature-item">Reports (full history)</li>
+          <li class="p-card__feature-item">Automated Workflows</li>
+          <li class="p-card__feature-item">Satisfaction Ratings</li>
+          <li class="p-card__feature-item">API and 50+ integrations</li>
+        </ul>
+      </div>
+      <div class="p-card__footer">
+        <a href="#" class="p-card__button">Upgrade to Standard</a>
+      </div>
     </div>
+
+
+
+    <div class="center-plan2 mdl-shadow--2dp">
+      <div class="p-card-heading">
+        <div class="p-card__title">Plus</div>
+        <div class="p-card__price"><span class="currency">10</span>€</div>
+        <div class="p-card__per">User / month</div>
+        <div class="p-card__separator"></div>
+      </div>
+      <div class="p-card__body">
+        <ul class="p-card__feature">
+          <li class="p-card__feature-item tx-500">All Standard features</li>
+          <li class="p-card__feature-item">Unlimited Mailboxes</li>
+          <li class="p-card__feature-item">3 Docs sites</li>
+          <li class="p-card__feature-item">Custom Fields and Teams</li>
+          <li class="p-card__feature-item">Premium Apps</li>
+          <li class="p-card__feature-item">SSO/SAML, IP restrictions</li>
+        </ul>
+      </div>
+      <div class="p-card__footer">
+        <a href="#" class="p-card__button">Upgrade to Plus</a>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
