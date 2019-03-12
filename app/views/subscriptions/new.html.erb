@@ -21,7 +21,7 @@
   <h4>Please choose a plan:</h4>
 
   <div class="subscription-container">
-    <div class="center-plan1 mdl-shadow--2dp">
+    <div class="center-plan3 mdl-shadow--2dp">
       <div class="p-card-heading">
         <div class="p-card__title">Standard</div>
         <div class="p-card__price"><span class="currency">5</span>€</div>
@@ -39,13 +39,16 @@
         </ul>
       </div>
       <div class="p-card__footer">
-        <a href="#" class="p-card__button">Upgrade to Standard</a>
+        <%= form_tag subscriptions_path do %>
+            <%= hidden_field_tag 'plan_id', @plan1.id %>
+            <%= submit_tag 'Upgrade to Standard', class: "p-card__button" %>
+            <% end %>
       </div>
     </div>
 
 
 
-    <div class="center-plan2 mdl-shadow--2dp">
+    <div class="center-plan4 mdl-shadow--2dp">
       <div class="p-card-heading">
         <div class="p-card__title">Plus</div>
         <div class="p-card__price"><span class="currency">10</span>€</div>
@@ -63,9 +66,15 @@
         </ul>
       </div>
       <div class="p-card__footer">
-        <a href="#" class="p-card__button">Upgrade to Plus</a>
+         <%= form_tag subscriptions_path do %>
+            <%= hidden_field_tag 'plan_id', @plan2.id %>
+            <%= submit_tag 'Upgrade to Plus', class: "p-card__button" %>
+            <% end %>
       </div>
     </div>
   </div>
 </div>
 </div>
+
+
+<
