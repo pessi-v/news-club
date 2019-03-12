@@ -70,7 +70,7 @@ p {
 
   &:before,
   &:after {
-    background: inherit;
+    background-color: #F9F9F9;
     content: '';
     display: block;
     height: 50%;
@@ -173,6 +173,7 @@ body {
   font-weight: 400;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  background-color: #F9F9F9 !important;
 }
 
 .p-card-container {
