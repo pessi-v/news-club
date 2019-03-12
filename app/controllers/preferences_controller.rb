@@ -13,7 +13,7 @@ class PreferencesController < ApplicationController
     mmmmhash.select { |k, v| v == "on" }.keys.each { |k| tag_arr << k }
     current_user.publication_list.add(tag_arr)
     current_user.save!
-    redirect_to preferences_path
+    redirect_to home_path(id: current_user.id)
   end
 
   def new
