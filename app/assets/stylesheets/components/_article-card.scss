@@ -155,7 +155,7 @@
     margin: 0 5px;
     position: absolute;
     bottom: -44px;
-    left: 26px;
+    left: 50px;
 }
 
 .image-article {
@@ -174,4 +174,6 @@
 .applause-btn {
   fill: $magenta !important;
   color: $magenta !important;
+  position: sticky;
+  top: 0;
 }
