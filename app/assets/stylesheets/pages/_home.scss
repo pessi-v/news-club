@@ -136,28 +136,68 @@ body {
     align-items: flex-end;
     width: 70%;
     height: 100%;
-    border: 1px dotted $magenta;
+    // border: 1px dotted $magenta;
   }
 
   .recommendations-list {
 
     width: 30%;
     height: 100%;
-    border: 1px dotted $yellow;
+    // border: 1px dotted $yellow;
 
     h3 {
       padding-top: 20px;
-      border-bottom: 1px solid $gray;
+      // border-bottom: 1px solid $gray;
     }
 
     .recommendation-item {
       width: 100%;
-      border: 1px dotted $gray;
+      // border: 1px dotted $gray;
       height: 80px;
       margin: 2px 0px;
+      font-family: "Roboto";
+      display: flex;
+
+      .number-div {
+        width: 30%;
+        position: relative;
+        h6 {
+          position: absolute;
+          right: 7px;
+          top: 0px;
+          font-size: 50px;
+          color: $magenta;
+          font-family: "Merriweather";
+        }
+
+      }
+
+      .text-container {
+        width: 70%;
+        color: $gray;
+        h5 {
+          font-size: 14px;
+          margin: 0px;
+          margin-top: 18px;
+          font-family: "Merriweather";
+        }
+        h4 {
+          font-size: 12px;
+          margin: 7px 0px;
+          line-height: 0.7;
+        }
+        p {
+          color: darkgray;
+          font-size: 12px;
+          // margin: 2px;
+          line-height: 0.7;
+        }
+
+      }
     }
   }
 }
+
 .todays-curated {
   width: 100%;
   // position:absolute;
@@ -168,15 +208,45 @@ body {
   // border: 1px dashed $magenta;
   position: relative;
   background-color: $cyan-faded;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("annie-spratt-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
 
+
+  .text-container {
+    position: absolute;
+    left: 141px;
+    line-height: 0.2;
+    color: $off-white;
+    h3 {
+      font-family: "Merriweather";
+
+      font-size: 40px;
+      line-height: 0.4;
+    }
+    h4 {
+      line-height: 0.4;
+    }
+    h5 {
+      font-family: "Roboto";
+      font-weight: lighter;
+    }
+    h6 {
+      font-family: "Merriweather";
+      color: $off-white;
+    }
+    p {
+
+    }
+  }
   .image-container {
     position: absolute;
     height: 360px;
     width: 600px;
     right: 20px;
     top: 20px;
-    background-image: url(https://mondediplo.com/local/cache-vignettes/L890xH594/lmd_0219_22_getty_639278718_-1f8e9.jpg?1549229846);
-    background-size: cover;
+
+
   }
 }
 
