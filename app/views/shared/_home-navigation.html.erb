@@ -13,7 +13,7 @@
         <div class="test">
             <div class="articles-field">
                 <!-- <div class="mdl-grid"> -->
-                <% @all_user_articles.each do |a| %>
+                <% @all_user_articles[0..3].each do |a| %>
                 <%= link_to article_path(a) do %>
                 <!-- <div class="mdl-cell mdl-cell--4-col"> -->
                 <%= render 'shared/article-card', a: a %>
@@ -23,22 +23,77 @@
                 <!-- </div> -->
             </div>
             <div class="recommendations-list">
-                <h3>Most read today:</h3>
+                <h3 style="text-align: right; font-weight: lighter; border-bottom: 1px solid rgb(236,0,140)">Most read today:</h3>
                 <ul style="list-style: none;">
                     <li>
-                        <div class="recommendation-item"></div>
+                      <a href="#">
+                        <div class="recommendation-item">
+                          <div class="number-div">
+                            <h6>01</h6>
+                          </div>
+                          <div class="text-container">
+                              <h5>A True Story of the Future</h5>
+                              <h4>Karl Kautsky</h4>
+                              <p>Jacobin, March 2019</p>
+                          </div>
+                        </div>
+                      </a>
                     </li>
                     <li>
-                        <div class="recommendation-item"></div>
+                      <a href="#">
+                        <div class="recommendation-item">
+                          <div class="number-div">
+                            <h6>02</h6>
+                          </div>
+                          <div class="text-container">
+                              <h5>Climate study warns of vanishing safety window</h5>
+                              <h4>Stephen Leahy</h4>
+                              <p>National Geographic, February 2019</p>
+                          </div>
+                        </div>
+                      </a>
                     </li>
                     <li>
-                        <div class="recommendation-item"></div>
+                      <a href="#">
+                        <div class="recommendation-item">
+                          <div class="number-div">
+                            <h6>03</h6>
+                          </div>
+                          <div class="text-container">
+                              <h5>Journey to Antarctica</h5>
+                              <h4>Jeff Goodell</h4>
+                              <p>Rolling Stone, March 2019</p>
+                          </div>
+                        </div>
+                        </a>
                     </li>
                     <li>
-                        <div class="recommendation-item"></div>
+                      <a href="#">
+                        <div class="recommendation-item">
+                          <div class="number-div">
+                            <h6>04</h6>
+                          </div>
+                          <div class="text-container">
+                              <h5>My Dog, the Illness Psychic</h5>
+                              <h4>Amanda Mull</h4>
+                              <p>The Atlantic, March 2019</p>
+                          </div>
+                        </div>
+                        </a>
                     </li>
                     <li>
-                        <div class="recommendation-item"></div>
+                      <a href="#">
+                        <div class="recommendation-item">
+                          <div class="number-div">
+                            <h6>05</h6>
+                          </div>
+                          <div class="text-container">
+                              <h5>The Blood Is Still There</h5>
+                              <h4>Noel Gallagher Shannon</h4>
+                              <p>Harper's Magazine, March 2019</p>
+                          </div>
+                        </div>
+                        </a>
                     </li>
                 </ul>
             </div>
