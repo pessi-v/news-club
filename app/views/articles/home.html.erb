@@ -1,1 +1,69 @@
+<!-- <div class="full-page"> -->
+<div class="top-mini-banner">
+    <%= image_tag "news_club_logo_new.png", class: "top-mini-banner" %>
+</div>
+<!-- menu -->
+<!-- MENU -->
+<div class="menu-div">
+    <button class="menu-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored" id="demo-menu-lower-right">
+        <i class="material-icons">more_vert</i>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+        <% if signed_in? %>
+        <%= link_to preferences_path do%>
+        <li class="mdl-menu__item">Preferences</li>
+        <% end %>
+        <%= link_to preferences_path do%>
+        <li class="mdl-menu__item">My Account</li>
+        <% end %>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+        <li class="mdl-menu__item">Log out</li>
+        <% end %>
+        <% else %>
+        <%= link_to new_user_session_path do %>
+        <li class="mdl-menu__item">Sign in</li>
+        <% end %>
+        <%= link_to new_user_registration_path do%>
+        <li class="mdl-menu__item">Register</li>
+        <% end %>
+        <% end %>
+        <li class="mdl-menu__item">About news club</li>
+        <li class="mdl-menu__item">Partners</li>
+        <li class="mdl-menu__item">FAQ</li>
+    </ul>
+</div>
+<!--  -->
+<!-- QUOTA -->
+<button class="quota-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+    <i>
+        <%= current_user.readings.count %>/
+        <%= current_user.subscription.plan.amount { |match|  } %></i>
+</button>
+<!--  -->
+<!-- end menu -->
 <%= render 'shared/home-navigation' %>
+<div class="todays-curated">
+    <h3>Featured story of the day</h3>
+    <h4>Le Monde Diplomatique</h4>
+    <p>Tanzania revives rail</p>
+    <p>Freight or passengers, old or new track?</p>
+    <p>February 2019</p>
+    <p>There’s exploding demand for new rail infrastructure in East Africa, but whose interests will ambitious — and very expensive — new projects serve?</p>
+    <div class="image-container"></div>
+</div>
+
+<div class="lower-content">
+  <div class="left">
+    <h3>Header</h3>
+    <div class="more-articles-list">
+        <% @all_user_articles.each do |a|%>
+        <%= link_to article_path(a) do %>
+        <%= render 'shared/long-card', a: a%>
+        <% end %>
+        <% end %>
+        <!-- @all_user_articles.each do -->
+    </div>
+    <!-- </div> -->
+  </div>
+  <div class="right"></div>
+</div>

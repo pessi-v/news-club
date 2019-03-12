@@ -6,96 +6,96 @@
     height: 700px;
 }
 
-.demo-layout-transparent {
+.demo-layout-transparent {}
 
-}
 .demo-layout-transparent .mdl-layout__header,
 .demo-layout-transparent .mdl-layout__drawer-button {
-  /* This background is dark, so we set text to white. Use 87% black instead if
+    /* This background is dark, so we set text to white. Use 87% black instead if
      your background is light. */
-  color: white;
+    color: white;
 }
+
 .center {
-  position: absolute;
-  left: 2%;
-  top: 0%;
-  margin-right: auto;
-  width: 92%;
-  padding: 10px;
-  overflow: hidden;
+    position: absolute;
+    left: 2%;
+    top: 0%;
+    margin-right: auto;
+    width: 92%;
+    padding: 10px;
+    overflow: hidden;
 }
+
 .center-text {
-  position: absolute;
-  left: 2%;
-  top: 28%;
-  margin-right: auto;
-  width: 50%;
-  padding: 10px;
-  font-family: Merriweather;
-  font-weight: bold !important;
-  font-size: 60px;
-  color: #333333;
-  line-height: 76px;
+    position: absolute;
+    left: 2%;
+    top: 28%;
+    margin-right: auto;
+    width: 50%;
+    padding: 10px;
+    font-family: Merriweather;
+    font-weight: bold !important;
+    font-size: 60px;
+    color: #333333;
+    line-height: 76px;
 }
 
 .center-subtitle {
-  position: absolute;
-  left: 2%;
-  top: 56%;
-  margin-right: auto;
-  width: 50%;
-  padding: 10px;
-  font-family: Roboto;
-  font-weight: lighter;
-  font-size: 25px;
-  color: #333333;
-  line-height: 32px;
+    position: absolute;
+    left: 2%;
+    top: 56%;
+    margin-right: auto;
+    width: 50%;
+    padding: 10px;
+    font-family: Roboto;
+    font-weight: lighter;
+    font-size: 25px;
+    color: #333333;
+    line-height: 32px;
 }
+
 .banner-color {
-  position: absolute;
-  left: 0%;
-  top: 31%;
-  margin-right: auto;
-  width: 50%;
-  padding: 0px;
+    position: absolute;
+    left: 0%;
+    top: 31%;
+    margin-right: auto;
+    width: 50%;
+    padding: 0px;
 }
 
 .mdl-layout__content {
-  position: relative;
-  background: #F9F9F9;
+    position: relative;
+    background: #F9F9F9;
 }
 
 
 
 .banner-button {
-  position: absolute;
-  left: 3%;
-  top: 72%;
-  margin-right: auto;
-  background-color: #3FA9F5;
-  color: white;
+    position: absolute;
+    left: 3%;
+    top: 72%;
+    margin-right: auto;
+    background-color: #3FA9F5;
+    color: white;
 }
 
-.mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:after{
-  background: #C137FC;
+.mdl-tabs.is-upgraded .mdl-tabs__tab.is-active:after {
+    background: #C137FC;
 }
+
 .mdl-button {
-  padding: 6px 26px !important;
-  color: #F9F9F9 !important;
-}
-.menu-div {
-   z-index: 1 !important;
-   position: absolute;
-   left: 91%;
-   top: 0%;
+    padding: 6px 26px !important;
+    color: #F9F9F9 !important;
 }
 
+/*.menu-div {*/
+/*z-index: 1 !important;*/
+/*position: absolute;*/
+/*left: 91%;*/
+/*top: 0%;*/
+/*}*/
 </style>
-
-
 <div class="demo-layout-transparent mdl-layout mdl-js-layout">
-
-  <!-- <div class="mdl-layout__drawer">
+    <!-- <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Title</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="">Link</a>
@@ -104,56 +104,55 @@
       <a class="mdl-navigation__link" href="">Link</a>
     </nav>
   </div> -->
-  <main class="mdl-layout__content">
-    <div class="menu-div">
-  <button class="menu-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored"
-          id="demo-menu-lower-right">
-    <i class="material-icons">more_vert</i>
-
-  </button>
-  <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-      for="demo-menu-lower-right">
-    <% if signed_in? %>
-        <%= link_to preferences_path do%>
-          <li class="mdl-menu__item">Preferences</li>
-        <% end %>
-        <%= link_to preferences_path do%>
-          <li class="mdl-menu__item">My Account</li>
-        <% end %>
-      </li>
-    <% else %>
-      <%= link_to new_user_session_path do %>
-        <li class="mdl-menu__item">Sign in</li>
-      <% end %>
-      <%= link_to new_user_registration_path do%>
-        <li class="mdl-menu__item">Register</li>
-      <% end %>
-    <% end %>
-    <li class="mdl-menu__item">About news club</li>
-    <li class="mdl-menu__item">Partners</li>
-    <!-- <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li> -->
-    <!-- <li disabled class="mdl-menu__item">Disabled Action</li> -->
-    <li class="mdl-menu__item">FAQ</li>
-    <% if signed_in? %>
-      <%= link_to destroy_user_session_path, method: :delete do %>
-        <li class="mdl-menu__item" style="color: rgb(236,0,140);">Log out</li>
-      <% end %>
-    <% end %>
-  </ul>
-</div>
-    <div class="center"><%= image_tag "news_club_logo_new.png", height: 80 %>
-    </div>
-    <div class="banner-color"><%= image_tag "banner_side_color-.png", height: 140 %>
-    </div>
-    <div class="center-text"> Instant access to the best journalism
-    </div>
-    <div class="center-subtitle"> Discover a custom made curated feed just for <br> our club members
-    </div>
-    <div class="banner-button">
-      <%= link_to 'JOIN THE CLUB', new_user_registration_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"  %>
-    <!-- <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+    <main class="mdl-layout__content">
+        <div class="menu-div">
+            <button class="menu-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored" id="demo-menu-lower-right">
+                <i class="material-icons">more_vert</i>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+                <% if signed_in? %>
+                <%= link_to preferences_path do%>
+                <li class="mdl-menu__item">Preferences</li>
+                <% end %>
+                <%= link_to preferences_path do%>
+                <li class="mdl-menu__item">My Account</li>
+                <% end %>
+                </li>
+                <% else %>
+                <%= link_to new_user_session_path do %>
+                <li class="mdl-menu__item">Sign in</li>
+                <% end %>
+                <%= link_to new_user_registration_path do%>
+                <li class="mdl-menu__item">Register</li>
+                <% end %>
+                <% end %>
+                <li class="mdl-menu__item">About news club</li>
+                <li class="mdl-menu__item">Partners</li>
+                <!-- <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li> -->
+                <!-- <li disabled class="mdl-menu__item">Disabled Action</li> -->
+                <li class="mdl-menu__item">FAQ</li>
+                <% if signed_in? %>
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                <li class="mdl-menu__item" style="color: rgb(236,0,140);">Log out</li>
+                <% end %>
+                <% end %>
+            </ul>
+        </div>
+        <div class="center">
+            <%= image_tag "news_club_logo_new.png", height: 80 %>
+        </div>
+        <div class="banner-color">
+            <%= image_tag "banner_side_color-.png", height: 140 %>
+        </div>
+        <div class="center-text"> Instant access to the best journalism
+        </div>
+        <div class="center-subtitle"> Discover a custom made curated feed just for <br> our club members
+        </div>
+        <div class="banner-button">
+            <%= link_to 'JOIN THE CLUB', new_user_registration_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"  %>
+            <!-- <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
     REGISTER NOW
   </button> -->
-  </div>
-  </main>
+        </div>
+    </main>
 </div>

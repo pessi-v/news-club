@@ -7,10 +7,12 @@
 }
 
 .quota-button {
-  background: $magenta !important;
-  position: fixed !important;
-  top: 65px !important;
-  right: 30px !important;
+  background: $magenta-opaque !important;
+  width: 70px !important;
+  height: 70px !important;
+  // position: fixed !important;
+  // top: 65px !important;
+  // right: 30px !important;
   color: $gray !important;
 }
 
@@ -19,17 +21,15 @@
 }
 
 .menu-button {
-  background: rgb(0, 174, 239) !important;
-  position: absolute !important;
-  top: 15px !important;
-  left: 15px !important;
+  background: $cyan-opaque !important;
   color: $gray !important;
 }
 
 .q-button {
   background: $magenta !important;
-  position: absolute !important;
-  top: 100px !important;
-  left: 35px !important;
+
+  // position: absolute !important;
+  // top: 100px !important;
+  // left: 35px !important;
   color: $gray !important;
 }

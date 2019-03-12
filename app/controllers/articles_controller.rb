@@ -27,6 +27,10 @@ class ArticlesController < ApplicationController
 
   def home
     @all_user_articles = Article.tagged_with(current_user.publication_list, any: true)
+    @user_read_articles = []
+    current_user.readings.each do |reading|
+      @user_read_articles << Article.find(reading.article_id)
+    end
   end
 
   private
