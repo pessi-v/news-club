@@ -146,13 +146,24 @@
     height: 50px;
     border-radius: 50%;
     margin: 0 5px;
-    // position: absolute;
-    // bottom: 8px;
-    // left: 8px;
+
+}
+
+.avatar-small-show {
+    width: 90px;
+    border-radius: 50%;
+    margin: 0 5px;
+    position: absolute;
+    bottom: -44px;
+    left: 26px;
 }
 
 .image-article {
-width: 100vw;
+  width: 100vw;
+  height: calc(100vh - 140px);
+  background-size: cover;
+  position: relative;
+  background-position: bottom left;
 }
 
 .article-content-container {
