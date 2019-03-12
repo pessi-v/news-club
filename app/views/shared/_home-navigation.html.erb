@@ -1,86 +1,101 @@
-<!-- MENU -->
-<div class="menu-div">
-    <button class="menu-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored" id="demo-menu-lower-left">
-        <i class="material-icons">more_vert</i>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-left">
-        <% if signed_in? %>
-        <%= link_to preferences_path do%>
-        <li class="mdl-menu__item">Preferences</li>
-        <% end %>
-        <%= link_to preferences_path do%>
-        <li class="mdl-menu__item">My Account</li>
-        <% end %>
-        <%= link_to destroy_user_session_path, method: :delete do %>
-        <li class="mdl-menu__item">Log out</li>
-        <% end %>
-        </li>
-        <% else %>
-        <%= link_to new_user_session_path do %>
-        <li class="mdl-menu__item">Sign in</li>
-        <% end %>
-        <%= link_to new_user_registration_path do%>
-        <li class="mdl-menu__item">Register</li>
-        <% end %>
-        <% end %>
-        <li class="mdl-menu__item">About news club</li>
-        <li class="mdl-menu__item">Partners</li>
-        <li class="mdl-menu__item">FAQ</li>
-    </ul>
-</div>
-<!--  -->
-<!-- QUOTA -->
-<button class="q-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-    <i>
-        <%= current_user.readings.count %>/
-        <%= current_user.subscription.plan.amount { |match|  } %></i>
-</button>
-<!--  -->
 <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
     <div class="mdl-tabs__tab-bar">
         <a href="#latest" class="mdl-tabs__tab is-active">LATEST</a>
         <a href="#themes" class="mdl-tabs__tab">THEMES</a>
-        <a href="#history" class="mdl-tabs__tab">HISTORY</a>
         <a href="#curated" class="mdl-tabs__tab">CURATED</a>
         <a href="#favourites" class="mdl-tabs__tab">FAVOURITES</a>
-        <a href="#bookmarks" class="mdl-tabs__tab">BOOKMARKS</a>
+        <a href="#bookmarks" class="mdl-tabs__tab">BOOKMARKED</a>
+        <a href="#history" class="mdl-tabs__tab">MY HISTORY</a>
         <%= link_to("MY PREFRENCES", preferences_path, class: "mdl-tabs__tab") %>
         <!-- <a href="#preferences" class="mdl-tabs__tab">MY PREFRENCES</a> -->
     </div>
     <div class="mdl-tabs__panel is-active" id="latest">
-        <div class="mdl-grid">
-            <% @all_user_articles.each do |a| %>
-            <%= link_to article_path(a) do %>
-            <div class="mdl-cell mdl-cell--4-col">
+        <div class="test">
+            <div class="articles-field">
+                <!-- <div class="mdl-grid"> -->
+                <% @all_user_articles.each do |a| %>
+                <%= link_to article_path(a) do %>
+                <!-- <div class="mdl-cell mdl-cell--4-col"> -->
                 <%= render 'shared/article-card', a: a %>
+                <!-- </div> -->
+                <% end %>
+                <% end %>
+                <!-- </div> -->
             </div>
-            <% end %>
-            <br>
-            <% end %>
+            <div class="recommendations-list">
+                <h3>Most read today:</h3>
+                <ul style="list-style: none;">
+                    <li>
+                        <div class="recommendation-item"></div>
+                    </li>
+                    <li>
+                        <div class="recommendation-item"></div>
+                    </li>
+                    <li>
+                        <div class="recommendation-item"></div>
+                    </li>
+                    <li>
+                        <div class="recommendation-item"></div>
+                    </li>
+                    <li>
+                        <div class="recommendation-item"></div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
     <div class="mdl-tabs__panel" id="themes">
-        <div class="mdl-grid">
-            <% @all_user_articles.each do |a| %>
-            <%= link_to article_path(a) do %>
-            <div class="mdl-cell mdl-cell--4-col">
+        <div class="test">
+            <div class="articles-field">
+                <!-- <div class="mdl-grid"> -->
+                <% @all_user_articles.each do |a| %>
+                <%= link_to article_path(a) do %>
+                <!-- <div class="mdl-cell mdl-cell--4-col"> -->
                 <%= render 'shared/article-card', a: a %>
+                <!-- </div> -->
+                <% end %>
+                <% end %>
+                <!-- </div> -->
             </div>
-            <% end %>
-            <br>
-            <% end %>
+            <div class="recommendations-list">
+                <h3>Most read on theme:</h3>
+                <ul style="list-style: none;">
+                    <li>
+                        <div class="recommendation-item"></div>
+                    </li>
+                    <li>
+                        <div class="recommendation-item"></div>
+                    </li>
+                    <li>
+                        <div class="recommendation-item"></div>
+                    </li>
+                    <li>
+                        <div class="recommendation-item"></div>
+                    </li>
+                    <li>
+                        <div class="recommendation-item"></div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
     <div class="mdl-tabs__panel" id="history">
-        <div class="mdl-grid">
-            <% @all_user_articles.each do |a| %>
-            <%= link_to article_path(a) do %>
-            <div class="mdl-cell mdl-cell--4-col">
-                <%= render 'shared/article-card', a: a %>
+        <div class="lower-content">
+            <div class="left">
+                <h3>Header</h3>
+                <div class="more-articles-list">
+                    <% @user_read_articles.each do |a| %>
+
+                      <%= link_to article_path(a) do %>
+
+                        <%= render 'shared/long-card', a: a %>
+                      <% end %>
+                    <% end %>
+                    <!-- @all_user_articles.each do -->
+                </div>
+                <!-- </div> -->
             </div>
-            <% end %>
-            <br>
-            <% end %>
+            <div class="right"></div>
         </div>
     </div>
     <div class="mdl-tabs__panel" id="curated">

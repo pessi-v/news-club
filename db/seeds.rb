@@ -8,6 +8,7 @@
 
  plan1 = Plan.create(amount: 10, price_cents: 500)
  plan2 = Plan.create(amount: 25, price_cents: 1000)
+ plan3 = Plan.create(amount: 500, price_cents: 1000)
 
 Reading.destroy_all
 User.destroy_all
@@ -18,4 +19,4 @@ Subscription.destroy_all
  new_test_user.theme_list.add("space", "climate", "beer", "mushroom")
  new_test_user.save!
 
- Subscription.create(plan_id: 2, user: new_test_user)
+ Subscription.create(plan_id: 3, user: new_test_user)
