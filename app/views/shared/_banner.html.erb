@@ -149,11 +149,11 @@
     </div>
     <div class="center-subtitle"> Discover a custom made curated feed just for <br> our club members
     </div>
+    <% unless signed_in? %>
     <div class="banner-button">
       <%= link_to 'JOIN THE CLUB', new_user_registration_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"  %>
-    <!-- <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-    REGISTER NOW
-  </button> -->
-  </div>
+    </div>
+    <% end %>
+
   </main>
 </div>
