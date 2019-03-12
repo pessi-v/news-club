@@ -4,9 +4,10 @@
 
 <!-- <div class="mdl-cell mdl-cell--4-col"> -->
 <div class="container mdl-cell mdl-cell--4-col mdl-shadow--4dp" style="background: url(<%= a["image"] %>) center / cover">
-
+  <% unless current_user.nil? %>
   <% if current_user.readings.find_by(article_id: a.id) %>
     <i class="material-icons" style="position: absolute; bottom: 10px; left: 10px; z-index: 10;">check_circle</i>
+  <% end %>
   <% end %>
 
   <div class="mask-block"></div>

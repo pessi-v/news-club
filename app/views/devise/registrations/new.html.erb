@@ -39,13 +39,6 @@
         <label class="mdl-textfield__label" for="sample1">Password...</label>
       </div>
 
-      <div class="mdl-textfield mdl-js-textfield">
-        <%= f.password_field :password_confirmation,
-        required: true,
-        input_html: { autocomplete: "new-password" }, class: "mdl-textfield__input"%>
-        <label class="mdl-textfield__label" for="sample1">Password Confirmation...</label>
-      </div>
-
       <div class="space-me">
         <%= f.button :submit, "Sign up", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored btn-color btn-color-2"  %>
         <% end %>
