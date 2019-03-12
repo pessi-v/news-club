@@ -107,12 +107,12 @@
   <main class="mdl-layout__content">
     <div class="menu-div">
   <button class="menu-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored"
-          id="demo-menu-lower-left">
+          id="demo-menu-lower-right">
     <i class="material-icons">more_vert</i>
 
   </button>
-  <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
-      for="demo-menu-lower-left">
+  <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+      for="demo-menu-lower-right">
     <% if signed_in? %>
         <%= link_to preferences_path do%>
           <li class="mdl-menu__item">Preferences</li>
@@ -120,10 +120,6 @@
         <%= link_to preferences_path do%>
           <li class="mdl-menu__item">My Account</li>
         <% end %>
-        <%= link_to destroy_user_session_path, method: :delete do %>
-          <li class="mdl-menu__item">Log out</li>
-        <% end %>
-
       </li>
     <% else %>
       <%= link_to new_user_session_path do %>
@@ -138,6 +134,11 @@
     <!-- <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li> -->
     <!-- <li disabled class="mdl-menu__item">Disabled Action</li> -->
     <li class="mdl-menu__item">FAQ</li>
+    <% if signed_in? %>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <li class="mdl-menu__item" style="color: rgb(236,0,140);">Log out</li>
+      <% end %>
+    <% end %>
   </ul>
 </div>
     <div class="center"><%= image_tag "news_club_logo_new.png", height: 80 %>
