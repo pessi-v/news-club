@@ -31,10 +31,15 @@
   </button>
 <% end %>
 
+
 <div class="article-card mdl-shadow--4dp">
 
-  <div class="image-article">
-    <%= image_tag @article.image %>
+
+  <div class="image-article" style="background-image: url('<%= image_path @article.image %>')">
+    <div class="logo-img">
+      <% addr = URI.parse(@article.url).host %>
+      <%= image_tag("http://logo.clearbit.com/#{addr}", class: "avatar-small-show") %>
+    </div>
   </div>
 
   <div class="article-content-container" style="position: relative;">
