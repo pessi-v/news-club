@@ -18,19 +18,19 @@
   <div id="trapezoid-y"></div>
   <h2>Welcome to The News Club</h2>
   <br>
-  <h4>Please choose a plan:</h4>
+  <h1 style="text-align: center;">Please choose a plan:</h1>
 
   <div class="subscription-container">
-    <div class="center-plan1 mdl-shadow--2dp">
+    <div class="center-plan3 mdl-shadow--2dp">
       <div class="p-card-heading">
         <div class="p-card__title">Standard</div>
         <div class="p-card__price"><span class="currency">5</span>€</div>
-        <div class="p-card__per">User / month</div>
+        <div class="p-card__per">10 Articles / month</div>
         <div class="p-card__separator"></div>
       </div>
       <div class="p-card__body">
         <ul class="p-card__feature">
-          <li class="p-card__feature-item tx-500">All basic features</li>
+          <li class="p-card__feature-item tx-500">10 Articles / month</li>
           <li class="p-card__feature-item">5 Mailboxes, 1 Docs site</li>
           <li class="p-card__feature-item">Reports (full history)</li>
           <li class="p-card__feature-item">Automated Workflows</li>
@@ -39,22 +39,25 @@
         </ul>
       </div>
       <div class="p-card__footer">
-        <a href="#" class="p-card__button">Upgrade to Standard</a>
+        <%= form_tag subscriptions_path do %>
+            <%= hidden_field_tag 'plan_id', @plan1.id %>
+            <%= submit_tag 'Upgrade to Standard', class: "p-card__button" %>
+            <% end %>
       </div>
     </div>
 
 
 
-    <div class="center-plan2 mdl-shadow--2dp">
+    <div class="center-plan4 mdl-shadow--2dp">
       <div class="p-card-heading">
         <div class="p-card__title">Plus</div>
         <div class="p-card__price"><span class="currency">10</span>€</div>
-        <div class="p-card__per">User / month</div>
+        <div class="p-card__per">25 Articles / month</div>
         <div class="p-card__separator"></div>
       </div>
       <div class="p-card__body">
         <ul class="p-card__feature">
-          <li class="p-card__feature-item tx-500">All Standard features</li>
+          <li class="p-card__feature-item tx-500">25 Articles / month</li>
           <li class="p-card__feature-item">Unlimited Mailboxes</li>
           <li class="p-card__feature-item">3 Docs sites</li>
           <li class="p-card__feature-item">Custom Fields and Teams</li>
@@ -63,9 +66,15 @@
         </ul>
       </div>
       <div class="p-card__footer">
-        <a href="#" class="p-card__button">Upgrade to Plus</a>
+         <%= form_tag subscriptions_path do %>
+            <%= hidden_field_tag 'plan_id', @plan2.id %>
+            <%= submit_tag 'Upgrade to Plus', class: "p-card__button" %>
+            <% end %>
       </div>
     </div>
   </div>
 </div>
 </div>
+
+
+<

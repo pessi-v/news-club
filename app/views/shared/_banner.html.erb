@@ -104,55 +104,59 @@
       <a class="mdl-navigation__link" href="">Link</a>
     </nav>
   </div> -->
-    <main class="mdl-layout__content">
-        <div class="menu-div">
-            <button class="menu-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored" id="demo-menu-lower-right">
-                <i class="material-icons">more_vert</i>
-            </button>
-            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
-                <% if signed_in? %>
-                <%= link_to preferences_path do%>
-                <li class="mdl-menu__item">Preferences</li>
-                <% end %>
-                <%= link_to preferences_path do%>
-                <li class="mdl-menu__item">My Account</li>
-                <% end %>
-                </li>
-                <% else %>
-                <%= link_to new_user_session_path do %>
-                <li class="mdl-menu__item">Sign in</li>
-                <% end %>
-                <%= link_to new_user_registration_path do%>
-                <li class="mdl-menu__item">Register</li>
-                <% end %>
-                <% end %>
-                <li class="mdl-menu__item">About news club</li>
-                <li class="mdl-menu__item">Partners</li>
-                <!-- <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li> -->
-                <!-- <li disabled class="mdl-menu__item">Disabled Action</li> -->
-                <li class="mdl-menu__item">FAQ</li>
-                <% if signed_in? %>
-                <%= link_to destroy_user_session_path, method: :delete do %>
-                <li class="mdl-menu__item" style="color: rgb(236,0,140);">Log out</li>
-                <% end %>
-                <% end %>
-            </ul>
-        </div>
-        <div class="center">
-            <%= image_tag "news_club_logo_new.png", height: 80 %>
-        </div>
-        <div class="banner-color">
-            <%= image_tag "banner_side_color-.png", height: 140 %>
-        </div>
-        <div class="center-text"> Instant access to the best journalism
-        </div>
-        <div class="center-subtitle"> Discover a custom made curated feed just for <br> our club members
-        </div>
-        <div class="banner-button">
-            <%= link_to 'JOIN THE CLUB', new_user_registration_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"  %>
-            <!-- <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-    REGISTER NOW
-  </button> -->
-        </div>
-    </main>
+
+
+  <main class="mdl-layout__content">
+    <div class="menu-div">
+  <button class="menu-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored"
+          id="demo-menu-lower-right">
+    <i class="material-icons">more_vert</i>
+
+  </button>
+  <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+      for="demo-menu-lower-right">
+    <% if signed_in? %>
+        <%= link_to preferences_path do%>
+          <li class="mdl-menu__item">Preferences</li>
+        <% end %>
+        <%= link_to preferences_path do%>
+          <li class="mdl-menu__item">My Account</li>
+        <% end %>
+      </li>
+    <% else %>
+      <%= link_to new_user_session_path do %>
+        <li class="mdl-menu__item">Sign in</li>
+      <% end %>
+      <%= link_to new_user_registration_path do%>
+        <li class="mdl-menu__item">Register</li>
+      <% end %>
+    <% end %>
+    <li class="mdl-menu__item">About news club</li>
+    <li class="mdl-menu__item">Partners</li>
+    <!-- <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li> -->
+    <!-- <li disabled class="mdl-menu__item">Disabled Action</li> -->
+    <li class="mdl-menu__item">FAQ</li>
+    <% if signed_in? %>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <li class="mdl-menu__item" style="color: rgb(236,0,140);">Log out</li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+    <div class="center"><%= image_tag "news_club_logo_new.png", height: 80 %>
+    </div>
+    <div class="banner-color"><%= image_tag "banner_side_color-.png", height: 140 %>
+    </div>
+    <div class="center-text"> Instant access to the best journalism
+    </div>
+    <div class="center-subtitle"> Discover a custom made curated feed just for <br> our club members
+    </div>
+    <% unless signed_in? %>
+    <div class="banner-button">
+      <%= link_to 'JOIN THE CLUB', new_user_registration_path, class: "mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"  %>
+    </div>
+    <% end %>
+
+  </main>
+
 </div>
