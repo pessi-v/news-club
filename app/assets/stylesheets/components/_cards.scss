@@ -177,3 +177,21 @@ a {
     font-family: 'Helvetica';
   }
 }
+
+.opacity {
+  label {
+    height: 88%;
+    width: 100%;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    &.is-checked {
+      opacity: 1;
+    }
+    .mdl-icon-toggle {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

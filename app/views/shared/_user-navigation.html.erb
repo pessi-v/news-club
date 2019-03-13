@@ -38,10 +38,27 @@
     </div>
 
     <script type="text/javascript">
+      const pop_up = "<div class='pop_up'><h1>Saved</h1></div>"
       document.querySelector(".cta-preferences").addEventListener("click", (event) => {
-          alert ("Saved to Favorites")
+        document.querySelector("body").insertAdjacentHTML('afterbegin', pop_up)
       });
     </script>
+
+
+    <style type="text/css">
+      .pop_up {
+          position: fixed;
+          background-color: green;
+          z-index: 40;
+          width: 100%;
+          font-size: 33px;
+          height: 70px;
+          bottom: 0;
+      }
+      h1 {
+        font-size: 15px;
+      }
+    </style>
 
     <div class="mdl-tabs__panel" id="authors-panel">
         <div class="mdl-grid">
