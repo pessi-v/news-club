@@ -69,6 +69,14 @@ class ArticlesController < ApplicationController
     end
     last_articles
   end
+  # REDIRECT TO SIGN UP WHEN TRYING TO READ AN ARTICLE BEFORE TO CREATE AN ACCOUNT !!
+  # WE COULD CANCEL AFTER THE DEMODAY
+  def authenticate_user!
+    if user_signed_in?
+      super
+    else
+      redirect_to new_user_registration_path
+    end
+  end
 end
-
 
