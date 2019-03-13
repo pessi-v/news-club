@@ -57,25 +57,43 @@
   height:100%;
   background: center/cover;
 }
+.mdl-icon-toggle__label.material-icons {
+    font-size: 85px;
+    top: 147px;
+    left: 88px;
+    color: #F9F9F9;
+}
+.mdl-button--colored {
+  color: #333333 !important;
+}
+.mdl-icon-toggle.is-checked .mdl-icon-toggle__label{
+  color: #C137FC !important;
+}
+.opacity label {
+  background-color: rgba(93, 168, 239, 0.7);
+}
+.mdl-icon-toggle {
+ transition: 0.5s all ease-in;
+}
 </style>
 
 
 <% asset_present = Dir.glob('app/assets/images/cover-images/*').any? {|path| path.include?(source['name'])} %>
 <% asset_name = asset_present ? "cover-images/#{source['name']}.jpg" : "cover-images/default.jpg" %>
-<%# raise %>
+
 <div class="demo-card-event mdl-card mdl-shadow--2dp" >
-  <div class="background-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path(asset_name) %>')">
-  <div class="mdl-card__title mdl-card--expand">
-  </div>
+    <div class="background-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path(asset_name) %>')">
+    <div class="opacity">
+       <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect" for="icon-toggle-<%= source["id"] %>">
+      <input type="checkbox" id="icon-toggle-<%= source["id"] %>" name="<%= source["id"] %>" class="mdl-icon-toggle__input">
+      <i class="mdl-icon-toggle__label material-icons">check</i>
+    </label>
+    </div>
   </div>
   <div class="mdl-card__actions mdl-card--border">
     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
       <%= source["name"] %>
     </a>
     <div class="mdl-layout-spacer"></div>
-    <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect" for="icon-toggle-<%= source["id"] %>">
-    <input type="checkbox" id="icon-toggle-<%= source["id"] %>" name="<%= source["id"] %>" class="mdl-icon-toggle__input">
-    <i class="mdl-icon-toggle__label material-icons">star</i>
-</label>
   </div>
 </div>
