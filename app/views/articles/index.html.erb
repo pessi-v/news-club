@@ -1,130 +1,172 @@
 <%= render 'shared/banner'%>
- <div class="quote">
-  <%= render 'shared/navigation', articles: @articles%>
+<div class="quote">
+    <%= render 'shared/navigation', articles: @articles%>
 </div>
 </div>
- <div class="quote-two">
-  <div class="mktg-container mktg-bg--m-gray">
-    <section class="mktg-panel">
-        <div class="mktg-panel__content mktg-panel__content--smaller">
-            <div class="mktg-panel__text-group">
-
-                <div class="center_content">
-                  <h2 class="mktg-panel__title">Save Content </h2>
-                  <p class="mktg-panel__blurb">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet</p>
+<div class="quote-two">
+    <div class="mktg-container mktg-bg--m-gray">
+        <section class="mktg-panel">
+            <div class="mktg-panel__content mktg-panel__content--smaller">
+                <div class="mktg-panel__text-group">
+                    <div class="center_content">
+                        <h2 class="mktg-panel__title">Save Content </h2>
+                        <p class="mktg-panel__blurb">Bookmark the most interesting stories for future reading and download articles for you phone or e-reader. You will always have access to your past read articles.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    <div class="center_mockup"><%= image_tag " news_club_mockup.png", height: 600 %>
+            <div class="center_mockup">
+                <%= image_tag " news_club_mockup.png", height: 600 %>
+            </div>
+        </section>
     </div>
-    </section>
-
-</div>
 </div>
 <div class="quote-three">
-  <div class="plan__header">
-
-  <div class="plan__heading">
-    Have what's best for your customers
-  </div>
-</div>
-
-<div class="p-card-container">
-
-  </div>
-
-    <div class="center-plan1">
-      <div class="p-card-heading">
-        <div class="p-card__title">Standard</div>
-        <div class="p-card__price"><span class="currency">5</span>€</div>
-        <div class="p-card__per">10 Articles / month</div>
-        <div class="p-card__separator"></div>
-      </div>
-      <div class="p-card__body">
-        <ul class="p-card__feature">
-          <li class="p-card__feature-item tx-500">10 Articles / month</li>
-          <li class="p-card__feature-item">5 Mailboxes, 1 Docs site</li>
-          <li class="p-card__feature-item">Reports (full history)</li>
-          <li class="p-card__feature-item">Automated Workflows</li>
-          <li class="p-card__feature-item">Satisfaction Ratings</li>
-          <li class="p-card__feature-item">API and 50+ integrations</li>
-        </ul>
-      </div>
-      <div class="p-card__footer">
-        <%= form_tag subscriptions_path do %>
-        <%= hidden_field_tag 'plan_id', @plan1.id %>
-        <%= submit_tag 'Upgrade to Standard', class: "p-card__button" %>
-        <% end %>
-      </div>
+    <div class="plan__header" style="color: black;">
+        News Club members choose between two plans:
     </div>
-
-
-
-    <div class="center-plan2">
-      <div class="p-card-heading">
-        <div class="p-card__title">Plus</div>
-        <div class="p-card__price"><span class="currency">10</span>€</div>
-        <div class="p-card__per">25 Articles / month</div>
-        <div class="p-card__separator"></div>
+    <div class="subscription-container">
+        <!-- <div class="center-plan3 mdl-shadow--2dp"> -->
+          <div class ="plan-card mdl-shadow--2dp">
+            <div class="p-card-heading">
+                <div class="p-card__title">Regular</div>
+                <div class="p-card__price"><span class="currency">5</span>€</div>
+                <div class="p-card__per">10 Articles / month</div>
+                <div class="p-card__separator"></div>
+            </div>
+            <div class="p-card__body">
+                <ul class="p-card__feature">
+                    <li class="p-card__feature-item tx-500">Access to over 5000 publications</li>
+                    <li class="p-card__feature-item tx-500">Curated stories by the News Club</li>
+                    <li class="p-card__feature-item tx-500">Save and download your articles</li>
+                    <li class="p-card__feature-item tx-500">Monthly membership fee, cancel anytime</li>
+                    <!-- <li>stuff</li> -->
+                    <!-- <li class="p-card__feature-item">5 Mailboxes, 1 Docs site</li>
+                    <li class="p-card__feature-item">Reports (full history)</li>
+                    <li class="p-card__feature-item">Automated Workflows</li>
+                    <li class="p-card__feature-item">Satisfaction Ratings</li>
+                    <li class="p-card__feature-item">API and 50+ integrations</li> -->
+                </ul>
+            </div>
+            <div class="p-card__footer">
+                <%= form_tag subscriptions_path do %>
+                <%= hidden_field_tag 'plan_id', @plan1.id %>
+                <%= submit_tag 'Subscribe to REGULAR', class: "p-card__button" %>
+                <% end %>
+            </div>
+        </div>
+        <!-- <div class="center-plan4 mdl-shadow--2dp"> -->
+          <div class ="plan-card mdl-shadow--2dp">
+            <div class="p-card-heading">
+                <div class="p-card__title">More</div>
+                <div class="p-card__price"><span class="currency">10</span>€</div>
+                <div class="p-card__per">25 Articles / month</div>
+                <div class="p-card__separator"></div>
+            </div>
+            <div class="p-card__body">
+                <ul class="p-card__feature">
+                    <li class="p-card__feature-item tx-500">Access to over 5000 publications</li>
+                    <li class="p-card__feature-item tx-500">Curated stories by the News Club</li>
+                    <li class="p-card__feature-item tx-500">Save and download your articles</li>
+                    <li class="p-card__feature-item tx-500">Monthly membership fee, cancel anytime</li>
+                    <li class="p-card__feature-item tx-500">Best value deal</li>
+                </ul>
+            </div>
+            <div class="p-card__footer">
+                <%= form_tag subscriptions_path do %>
+                <%= hidden_field_tag 'plan_id', @plan2.id %>
+                <%= submit_tag 'Subscribe to MORE', class: "p-card__button" %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="p-card-container">
+      <div class="form-card">
+        yoooo
       </div>
-      <div class="p-card__body">
-        <ul class="p-card__feature">
-          <li class="p-card__feature-item tx-500">25 Articles / month</li>
-          <li class="p-card__feature-item">Unlimited Mailboxes</li>
-          <li class="p-card__feature-item">3 Docs sites</li>
-          <li class="p-card__feature-item">Custom Fields and Teams</li>
-          <li class="p-card__feature-item">Premium Apps</li>
-          <li class="p-card__feature-item">SSO/SAML, IP restrictions</li>
-        </ul>
+      <div>
+        <div class="form-card">
+        yoooo
       </div>
-      <div class="p-card__footer">
-       <%= form_tag subscriptions_path do %>
-       <%= hidden_field_tag 'plan_id', @plan2.id %>
-       <%= submit_tag 'Upgrade to Plus', class: "p-card__button" %>
-       <% end %>
+
       </div>
+     -->    <!-- <div class="center-plan1">
+            <div class="p-card-heading">
+                <div class="p-card__title">Standard</div>
+                <div class="p-card__price"><span class="currency">5</span>€</div>
+                <div class="p-card__per">10 Articles / month</div>
+                <div class="p-card__separator"></div>
+            </div>
+            <div class="p-card__body">
+                <ul class="p-card__feature">
+                    <li class="p-card__feature-item tx-500">10 Articles / month</li>
+                    <li class="p-card__feature-item">5 Mailboxes, 1 Docs site</li>
+                    <li class="p-card__feature-item">Reports (full history)</li>
+                    <li class="p-card__feature-item">Automated Workflows</li>
+                    <li class="p-card__feature-item">Satisfaction Ratings</li>
+                    <li class="p-card__feature-item">API and 50+ integrations</li>
+                </ul>
+            </div>
+            <div class="p-card__footer">
+                <%= form_tag subscriptions_path do %>
+                <%= hidden_field_tag 'plan_id', @plan1.id %>
+                <%= submit_tag 'Upgrade to Standard', class: "p-card__button" %>
+                <% end %>
+            </div>
+        </div>
+        <div class="center-plan2">
+            <div class="p-card-heading">
+                <div class="p-card__title">Plus</div>
+                <div class="p-card__price"><span class="currency">10</span>€</div>
+                <div class="p-card__per">25 Articles / month</div>
+                <div class="p-card__separator"></div>
+            </div>
+            <div class="p-card__body">
+                <ul class="p-card__feature">
+                    <li class="p-card__feature-item tx-500">25 Articles / month</li>
+                    <li class="p-card__feature-item">Unlimited Mailboxes</li>
+                    <li class="p-card__feature-item">3 Docs sites</li>
+                    <li class="p-card__feature-item">Custom Fields and Teams</li>
+                    <li class="p-card__feature-item">Premium Apps</li>
+                    <li class="p-card__feature-item">SSO/SAML, IP restrictions</li>
+                </ul>
+            </div>
+            <div class="p-card__footer">
+                <%= form_tag subscriptions_path do %>
+                <%= hidden_field_tag 'plan_id', @plan2.id %>
+                <%= submit_tag 'Upgrade to Plus', class: "p-card__button" %>
+                <% end %>
+            </div>
+        </div> -->
     </div>
 </div>
-
-
-
 <script type="text/javascript" src="//use.typekit.net/ysa1ltb.js"></script>
 <script type="text/javascript">
-  try {
-    Typekit.load();
-  } catch (e) {}
+try {
+  Typekit.load();
+} catch (e) {}
 </script>
 </div>
-
-
 <% unless signed_in? %>
-  <%= link_to new_user_registration_path do %>
-    <div class="cta">
-      <div id="content"><b>Join the News Club! 10 stories only 5€/mo.</b></div>
-    </div>
-  <% end %>
+<%= link_to new_user_registration_path do %>
+<div class="cta">
+    <div id="content"><b>Join the News Club! 10 stories only 5€/mo.</b></div>
+</div>
 <% end %>
-
-
-
+<% end %>
 <%# @articles.each do |a| %>
-  <%#= link_to article_path(a) do %>
-    <%#= render 'shared/newscard', article: a %>
-  <%# end %>
+<%#= link_to article_path(a) do %>
+<%#= render 'shared/newscard', article: a %>
 <%# end %>
-
-
+<%# end %>
 <!-- <div> -->
-  <%# if signed_in? %>
-    <%#= link_to destroy_user_session_path, method: :delete do %>
-      <!-- <i class="fa fa-sign-out"></i> -->
-      <%#= t(".sign_out", default: "Log out") %>
-    <%#= link_to "preferences", preferences_path %>
-  <%# end %>
-
-  <%# else %>
-    <%#= link_to 'Register', new_user_registration_path %>
-    <%#= link_to 'Log in',  new_user_session_path %>
-  <%# end  %>
+<%# if signed_in? %>
+<%#= link_to destroy_user_session_path, method: :delete do %>
+<!-- <i class="fa fa-sign-out"></i> -->
+<%#= t(".sign_out", default: "Log out") %>
+<%#= link_to "preferences", preferences_path %>
+<%# end %>
+<%# else %>
+<%#= link_to 'Register', new_user_registration_path %>
+<%#= link_to 'Log in',  new_user_session_path %>
+<%# end  %>
 <!-- </div> -->
-

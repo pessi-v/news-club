@@ -1,40 +1,30 @@
-<style>
-  .stripe-button-el {
-
-  }
-</style>
-
 <div id="trapezoid-c"></div>
 <div id="trapezoid-m"></div>
 <div id="trapezoid-y"></div>
+<div class="subscription">
+    <div style="display: flex; flex-direction: column; justify-content: space-around; margin-bottom: 160px;">
+        <h2 style="text-align: center;">Confirm your subscription</h2>
 
-<div style="display: flex; flex-direction: column; justify-content: space-around; margin-top: 110px; margin-bottom: 160px;">
-    <h2 style="text-align: center;">Purchase of Plan
-        <%= @subscription.plan_id == 1 ? "A" : "B" %>
-    </h2>
-    <%= form_tag subscription_payments_path(@subscription) do %>
-    <article>
-        <label class="amount">
-            <br>
-            <br>
-            <br>
+        <div class="plan-card mdl-shadow--2dp">
+            <%= form_tag subscription_payments_path(@subscription) do %>
+            <!-- <label class="amount"> -->
             <h3 style="text-align: center;">
                 <%= @subscription.plan.amount %> articles for
                 <%= humanized_money_with_symbol(@subscription.amount) %>/month
             </h3>
-            <ul style="text-align: center; list-style: none;">
-              <li>All basic features</li>
-              <li>5 Mailboxes, 1 Docs site</li>
-              <li>Reports (full history)</li>
-              <li>Automated Workflows</li>
-              <li>Satisfaction Ratings</li>
-              <li>API and 50+ integrations</li>
+            <ul style="text-align: center;">
+                <li class="p-card__feature-item tx-500">Access to over 5000 publications</li>
+                <li class="p-card__feature-item tx-500">Curated stories by the News Club</li>
+                <li class="p-card__feature-item tx-500">Save and download your articles</li>
+                <li class="p-card__feature-item tx-500">Monthly membership fee, cancel anytime</li>
+                <li class="p-card__feature-item tx-500">10 Articles / month</li>
             </ul>
-        </label>
-    </article>
-    <div style="display: flex; justify-content: space-around; margin-top: 110px; margin-bottom: 160px;">
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-name="My Plan" data-email="<%= current_user.email %>" data-amount="<%= @subscription.amount_cents %>" data-currency="<%= @subscription.amount.currency %>">
-        </script>
+            <!-- </label> -->
+            <div style="display: flex; justify-content: space-around;">
+                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="<%= Rails.configuration.stripe[:publishable_key] %>" data-name="My Plan" data-email="<%= current_user.email %>" data-amount="<%= @subscription.amount_cents %>" data-currency="<%= @subscription.amount.currency %>">
+                </script>
+            </div>
+            <% end %>
+        </div>
     </div>
-    <% end %>
 </div>

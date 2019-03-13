@@ -1,38 +1,11 @@
+<%= render 'shared/navbar' %>
 <!-- <div class="full-page"> -->
-<div class="top-mini-banner">
-    <%= image_tag "news_club_logo_new.png", class: "top-mini-banner" %>
-</div>
+<!-- <div class="top-mini-banner"> -->
+    <%#= image_tag "news_club_logo_new.png", class: "top-mini-banner" %>
+<!-- </div> -->
 <!-- menu -->
-<!-- MENU -->
-<div class="menu-div">
-    <button class="menu-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored" id="demo-menu-lower-right">
-        <i class="material-icons">more_vert</i>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
-        <% if signed_in? %>
-        <%= link_to preferences_path do%>
-        <li class="mdl-menu__item">Preferences</li>
-        <% end %>
-        <%= link_to preferences_path do%>
-        <li class="mdl-menu__item">My Account</li>
-        <% end %>
-        <%= link_to destroy_user_session_path, method: :delete do %>
-        <li class="mdl-menu__item">Log out</li>
-        <% end %>
-        <% else %>
-        <%= link_to new_user_session_path do %>
-        <li class="mdl-menu__item">Sign in</li>
-        <% end %>
-        <%= link_to new_user_registration_path do%>
-        <li class="mdl-menu__item">Register</li>
-        <% end %>
-        <% end %>
-        <li class="mdl-menu__item">About news club</li>
-        <li class="mdl-menu__item">Partners</li>
-        <li class="mdl-menu__item">FAQ</li>
-    </ul>
-</div>
-<!--  -->
+<button class="quota-button mdl-shadow--2dp"><%= current_user.readings.count %>/<%= current_user.subscription.plan.amount { |match|  } %> <br> read</button>
+
 <!-- QUOTA -->
 <button class="quota-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
     <i>
@@ -59,7 +32,7 @@
     <div class="left">
         <h3 style="font-family: 'Merriweather'; border-bottom: 1px solid rgb(0,174,239);">Top recent articles</h3>
         <div class="more-articles-list">
-            <% @all_user_articles.each do |a|%>
+            <% @all_user_articles[0..33].each do |a|%>
             <%= link_to article_path(a) do %>
             <%= render 'shared/long-card', a: a%>
             <% end %>

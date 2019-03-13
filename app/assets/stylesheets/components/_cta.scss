@@ -24,16 +24,17 @@
 
 #content {
   // background: #06c;
-  font-family: 'Karla', cursive;
+  font-family: 'Merriweather', cursive;
   font-size: 20px;
   text-align: center;
-  color: #333333;
-  width: 110px;
+  color: black;
+  width: 140px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  line-height: 1.2;
 }
 
 .cta-preferences {

@@ -1,4 +1,4 @@
-
+<!--
    <style>
   .mdl-button {
   padding: 6px 26px !important;
@@ -28,147 +28,139 @@
 
 }
 
-</style>
-<div class="nav-container">
+</style> -->
+<%= render 'shared/navbar' %>
+<!-- <div class="nav-container">
     <div class="menu-div">
-  <button class="menu-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored"
-          id="demo-menu-lower-right">
-    <i class="material-icons">more_vert</i>
-
-  </button>
-  <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-      for="demo-menu-lower-right">
-    <% if signed_in? %>
-        <%= link_to preferences_path do%>
-          <li class="mdl-menu__item">Preferences</li>
-        <% end %>
-        <%= link_to preferences_path do%>
-          <li class="mdl-menu__item">My Account</li>
-        <% end %>
-      </li>
-    <% else %>
-      <%= link_to new_user_session_path do %>
-        <li class="mdl-menu__item">Sign in</li>
-      <% end %>
-      <%= link_to new_user_registration_path do%>
-        <li class="mdl-menu__item">Register</li>
-      <% end %>
-    <% end %>
-    <li class="mdl-menu__item">About news club</li>
-    <li class="mdl-menu__item">Partners</li>
-    <!-- <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li> -->
-    <!-- <li disabled class="mdl-menu__item">Disabled Action</li> -->
-    <li class="mdl-menu__item">FAQ</li>
-    <% if signed_in? %>
-      <%= link_to destroy_user_session_path, method: :delete do %>
-        <li class="mdl-menu__item" style="color: rgb(236,0,140);">Log out</li>
-      <% end %>
-    <% end %>
-  </ul>
-</div>
-    <div class="center"><%= image_tag "news_club_logo_new.png", height: 60 %>
+        <button class="menu-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored" id="demo-menu-lower-right">
+            <i class="material-icons">more_vert</i>
+        </button>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right"> -->
+<%# if signed_in? %>
+<%#= link_to preferences_path do%>
+<!-- <li class="mdl-menu__item">Preferences</li> -->
+<%# end %>
+<%#= link_to preferences_path do%>
+<!-- <li class="mdl-menu__item">My Account</li> -->
+<%# end %>
+<!-- </li> -->
+<%# else %>
+<%#= link_to new_user_session_path do %>
+<!-- <li class="mdl-menu__item">Sign in</li> -->
+<%# end %>
+<%#= link_to new_user_registration_path do%>
+<!-- <li class="mdl-menu__item">Register</li> -->
+<%# end %>
+<%# end %>
+<!-- <li class="mdl-menu__item">About news club</li> -->
+<!-- <li class="mdl-menu__item">Partners</li> -->
+<!-- <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Another Action</li> -->
+<!-- <li disabled class="mdl-menu__item">Disabled Action</li> -->
+<!-- <li class="mdl-menu__item">FAQ</li> -->
+<%# if signed_in? %>
+<%#= link_to destroy_user_session_path, method: :delete do %>
+<!-- <li class="mdl-menu__item" style="color: rgb(236,0,140);">Log out</li> -->
+<%# end %>
+<%# end %>
+<!-- </ul>
     </div>
-
-</div>
+    <div class="center">
+        <%= image_tag "news_club_logo_new.png", height: 60 %>
+    </div>
+</div> -->
 <% html_file = open(@article.url).read %>
 <% html_doc = Nokogiri::HTML(html_file) %>
 <%#= @article.url %>
-
 <% if @snackbar %>
-
-  <div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
+<div id="demo-toast-example" class="mdl-js-snackbar mdl-snackbar">
     <div class="mdl-snackbar__text"></div>
     <button class="mdl-snackbar__action" type="button"></button>
+</div>
+<script>
+r(function() {
+  var snackbarContainer = document.querySelector('#demo-toast-example');
+  var data = { message: 'Article added to reading history.', timeout: 5000 };
+  snackbarContainer.MaterialSnackbar.showSnackbar(data);
+});
 
-  </div>
-
-
-  <script>
-  r(function(){
-      var snackbarContainer = document.querySelector('#demo-toast-example');
-      var data = { message: 'Article added to reading history.', timeout: 5000 };
-      snackbarContainer.MaterialSnackbar.showSnackbar(data);
-  });
-  function r(f){ /in/.test(document.readyState)?setTimeout('r('+f+')',9):f()}
-  </script>
-
+function r(f) { /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) : f() }
+</script>
 <% end %>
-
 <% if @allow %>
-
-<%= link_to articles_path do %>
-  <button class="navigation-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+<%= link_to home_path do %>
+<button class="navigation-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
     <i class="material-icons">arrow_back</i>
-  </button>
+</button>
 <% end %>
-
-
-<div class="article-card mdl-shadow--4dp">
-
-
-  <div class="image-article" style="background-image: url('<%= image_path @article.image %>')">
-    <div class="logo-img">
-      <% addr = URI.parse(@article.url).host %>
-      <%= image_tag("http://logo.clearbit.com/#{addr}", class: "avatar-small-show") %>
-    </div>
-  </div>
-
-  <div class="article-content-container" style="position: relative;">
-      <div class="applause-btn">
-      <applause-button color=$magenta, style="width: 58px; height: 58px; position: absolute; top: 180px; left: -140px; z-index: 5;"></applause-button>
-      </div>
-
-    <h3><%= @article.title %></h3>
-
-
-  <div class="container-datename">
-    <div class="author">
-      <%= @article.author %>
-    </div>
-
-    <div class="date">
-      <%= @article.date.strftime("%A %d %B %y") %>
-    </div>
-  </div>
-
-
-  <p><span class="first-letter"><%#= html_doc.search('.body-content p')[0].text[0] %>
-  <%#= html_doc.search('.body-content p')[0].text[1..-1] %></p>
-
-
- <%# html_doc.search('.body-content p')[1..-1].each do |element| %>
-    <p><%#= element.text.strip %></p>
-  <%# end %>
-
-  <% html_doc.search('.content__article-body p').each do |element| %>
-    <p><%= element.text %></p>
-  <% end %>
-  <% html_doc.search('.content__article-body p').each do |element| %>
-    <p><%= element.text %></p>
-  <% end %>
-
-  <div class="color"><% html_doc.search('.story-text p').each do |element| %>
-    <p><%= element.text %></p>
-  <% end %>
+<div class="applause-btn">
+    <applause-button color=$magenta, style="width: 60px; height: 60px;">
+    </applause-button>
 </div>
 
-  <% html_doc.search('.article-body p').each do |element| %>
-    <p><%= element.text %></p>
-  <% end %>
+    <div class="image-article" style="background-image: url('<%= image_path @article.image %>')">
+        <div class="logo-img">
+            <% addr = URI.parse(@article.url).host %>
+            <%= image_tag("http://logo.clearbit.com/#{addr}", class: "avatar-small-show") %>
+        </div>
+    </div>
 
-  <% html_doc.search('.article__content p').each do |element| %>
-    <p><%= element.text %></p>
-  <% end %>
+<div class="show-article-card mdl-shadow--4dp">
 
-  <% html_doc.search('.article-content p').each do |element| %>
-    <p><%= element.text %></p>
-  <% end %>
-
+    <div class="article-content-container" style="position: relative;">
+        <h3>
+            <%= @article.title %>
+        </h3>
+        <div class="container-datename">
+            <div class="author">
+                <%= @article.author %>
+            </div>
+            <div class="date">
+                <%= @article.date.strftime("%A %d %B %y") %>
+            </div>
+        </div>
+        <p><span class="first-letter">
+                <%#= html_doc.search('.body-content p')[0].text[0] %>
+                <%#= html_doc.search('.body-content p')[0].text[1..-1] %>
+        </p>
+        <%# html_doc.search('.body-content p')[1..-1].each do |element| %>
+        <p>
+            <%#= element.text.strip %>
+        </p>
+        <%# end %>
+        <% html_doc.search('.content__article-body p').each do |element| %>
+        <p>
+            <%= element.text %>
+        </p>
+        <% end %>
+        <% html_doc.search('.content__article-body p').each do |element| %>
+        <p>
+            <%= element.text %>
+        </p>
+        <% end %>
+        <div class="color">
+            <% html_doc.search('.story-text p').each do |element| %>
+            <p>
+                <%= element.text %>
+            </p>
+            <% end %>
+        </div>
+        <% html_doc.search('.article-body p').each do |element| %>
+        <p>
+            <%= element.text %>
+        </p>
+        <% end %>
+        <% html_doc.search('.article__content p').each do |element| %>
+        <p>
+            <%= element.text %>
+        </p>
+        <% end %>
+        <% html_doc.search('.article-content p').each do |element| %>
+        <p>
+            <%= element.text %>
+        </p>
+        <% end %>
+    </div>
 </div>
-
-</div>
-
 <% else %>
-  <h3>Unfortunately your subscription has run out!</h3>
+<h3>Unfortunately your subscription has run out!</h3>
 <% end %>
-

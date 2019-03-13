@@ -1,80 +1,61 @@
-<style>
-.demo-card-square.mdl-card {
-  width: 420px;
-  height: 320px;
-  margin: 10px;
-}
 
-.demo-card-square>.mdl-card__title {
-  color: #fff;
-  background:
-  url('../assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
-}
-</style>
 <!-- BODY -->
 <div class="subscription">
-  <div id="trapezoid-c"></div>
-  <div id="trapezoid-m"></div>
-  <div id="trapezoid-y"></div>
-  <h2>Welcome to The News Club</h2>
-  <br>
-  <h1 style="text-align: center;">Please choose a plan:</h1>
+    <div id="trapezoid-c"></div>
+    <div id="trapezoid-m"></div>
+    <div id="trapezoid-y"></div>
+    <h2>Welcome to The News Club</h2>
+    <br>
+    <h1 style="text-align: center;">Please choose a plan:</h1>
+    <div class="subscription-container">
+        <div class="plan-card mdl-shadow--2dp">
+            <div class="p-card-heading">
+                <div class="p-card__title">Regular</div>
+                <div class="p-card__price"><span class="currency">5</span>€</div>
+                <div class="p-card__per">10 Articles / month</div>
+                <div class="p-card__separator"></div>
+            </div>
+            <div class="p-card__body">
+                <ul class="p-card__feature">
+                  <li class="p-card__feature-item tx-500">Access to over 5000 publications</li>
+                    <li class="p-card__feature-item tx-500">Curated stories by the News Club</li>
+                    <li class="p-card__feature-item tx-500">Save and download your articles</li>
+                    <li class="p-card__feature-item tx-500">Monthly membership fee, cancel anytime</li>
+                    <li class="p-card__feature-item tx-500">10 Articles / month</li>
 
-  <div class="subscription-container">
-    <div class="center-plan3 mdl-shadow--2dp">
-      <div class="p-card-heading">
-        <div class="p-card__title">Standard</div>
-        <div class="p-card__price"><span class="currency">5</span>€</div>
-        <div class="p-card__per">10 Articles / month</div>
-        <div class="p-card__separator"></div>
-      </div>
-      <div class="p-card__body">
-        <ul class="p-card__feature">
-          <li class="p-card__feature-item tx-500">10 Articles / month</li>
-          <li class="p-card__feature-item">5 Mailboxes, 1 Docs site</li>
-          <li class="p-card__feature-item">Reports (full history)</li>
-          <li class="p-card__feature-item">Automated Workflows</li>
-          <li class="p-card__feature-item">Satisfaction Ratings</li>
-          <li class="p-card__feature-item">API and 50+ integrations</li>
-        </ul>
-      </div>
-      <div class="p-card__footer">
-        <%= form_tag subscriptions_path do %>
-            <%= hidden_field_tag 'plan_id', @plan1.id %>
-            <%= submit_tag 'Upgrade to Standard', class: "p-card__button" %>
-            <% end %>
-      </div>
+                </ul>
+            </div>
+            <div class="p-card__footer">
+                <%= form_tag subscriptions_path do %>
+                <%= hidden_field_tag 'plan_id', @plan1.id %>
+                <%= submit_tag 'Subscribe to REGULAR', class: "p-card__button" %>
+                <% end %>
+            </div>
+        </div>
+        <div class="plan-card mdl-shadow--2dp">
+            <div class="p-card-heading">
+                <div class="p-card__title">More</div>
+                <div class="p-card__price"><span class="currency">10</span>€</div>
+                <div class="p-card__per">25 Articles / month</div>
+                <div class="p-card__separator"></div>
+            </div>
+            <div class="p-card__body">
+                <ul class="p-card__feature">
+                  <li class="p-card__feature-item tx-500">Access to over 5000 publications</li>
+                    <li class="p-card__feature-item tx-500">Curated stories by the News Club</li>
+                    <li class="p-card__feature-item tx-500">Save and download your articles</li>
+                    <li class="p-card__feature-item tx-500">Monthly membership fee, cancel anytime</li>
+                    <li class="p-card__feature-item tx-500">25 Articles / month</li>
+                    <li class="p-card__feature-item tx-500">Best value deal</li>
+                </ul>
+            </div>
+            <div class="p-card__footer">
+                <%= form_tag subscriptions_path do %>
+                <%= hidden_field_tag 'plan_id', @plan2.id %>
+                <%= submit_tag 'Subscribe to MORE', class: "p-card__button" %>
+                <% end %>
+            </div>
+        </div>
     </div>
-
-
-
-    <div class="center-plan4 mdl-shadow--2dp">
-      <div class="p-card-heading">
-        <div class="p-card__title">Plus</div>
-        <div class="p-card__price"><span class="currency">10</span>€</div>
-        <div class="p-card__per">25 Articles / month</div>
-        <div class="p-card__separator"></div>
-      </div>
-      <div class="p-card__body">
-        <ul class="p-card__feature">
-          <li class="p-card__feature-item tx-500">25 Articles / month</li>
-          <li class="p-card__feature-item">Unlimited Mailboxes</li>
-          <li class="p-card__feature-item">3 Docs sites</li>
-          <li class="p-card__feature-item">Custom Fields and Teams</li>
-          <li class="p-card__feature-item">Premium Apps</li>
-          <li class="p-card__feature-item">SSO/SAML, IP restrictions</li>
-        </ul>
-      </div>
-      <div class="p-card__footer">
-         <%= form_tag subscriptions_path do %>
-            <%= hidden_field_tag 'plan_id', @plan2.id %>
-            <%= submit_tag 'Upgrade to Plus', class: "p-card__button" %>
-            <% end %>
-      </div>
-    </div>
-  </div>
 </div>
 </div>
-
-
-<

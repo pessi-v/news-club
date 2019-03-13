@@ -29,8 +29,20 @@
 .subscription-container{
 
 height: 500px;
-width: 300px;
+width: 800px;
+display: flex;
+justify-content: space-evenly;
+margin: 0 auto;
+
+  .plan-card {
+    width: 40%;
+    height: auto;
+    margin: 30px 10px;
+    background-color: #F9F9F9;
+  }
 }
+
+
 
 .center-plan3 {
   position: absolute;
