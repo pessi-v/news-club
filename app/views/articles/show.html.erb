@@ -132,6 +132,7 @@ function r(f) { /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) :
             <%= element.text %>
         </p>
         <% end %>
+
         <% html_doc.search('.content__article-body p').each do |element| %>
         <p>
             <%= element.text %>

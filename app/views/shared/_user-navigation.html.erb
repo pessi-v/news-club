@@ -1,73 +1,90 @@
-<div>
-<%= render 'shared/navbar' %>
-</div>
-<br>
-<br>
-<br>
+<h3>Select the publications which you would like to read.</h3>
+<h4>We'll recommend you articles from your selected sources</h4>
 <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
     <div class="mdl-tabs__tab-bar">
-        <a href="#publications-panel" class="mdl-tabs__tab is-active">PUBLICATIONS</a>
+        <a href="#publications-panel" class="mdl-tabs__tab is-active">NEWSPAPERS</a>
+        <a href="#magazines-panel" class="mdl-tabs__tab">MAGAZINES</a>
+        <a href="#online-panel" class="mdl-tabs__tab">ONLINE PUBLICATIONS</a>
         <a href="#authors-panel" class="mdl-tabs__tab">AUTHORS</a>
         <a href="#themes-panel" class="mdl-tabs__tab">THEMES</a>
-        <!-- <a href="#lannisters-panel" class="mdl-tabs__tab">TECHNOLOGY</a>
-        <a href="#targaryens-panel" class="mdl-tabs__tab">ENTERTAINMENT</a>
-        <a href="#lannisters-panel" class="mdl-tabs__tab">SCIENCE</a>
-        <a href="#targaryens-panel" class="mdl-tabs__tab">SPORTS</a>
-        <a href="#starks-panel" class="mdl-tabs__tab">CURATED</a>
-        <a href="#targaryens-panel" class="mdl-tabs__tab">FINANCE</a> -->
     </div>
     <div class="mdl-tabs__panel is-active" id="publications-panel">
-      <%#= form_tag(preference_path(current_user), method: :patch) do %>
-  <%# ['bloomberg', 'nyt', 'wp'].each do |name| %>
-    <%#= check_box_tag('preferences[]', name) %>
-    <%#= label_tag('preferences[]', name) %>
-  <%# end %>
-
-
-
-      <%= form_tag(preference_path(current_user), method: :patch) do %>
+        <%= form_tag(preference_path(current_user), method: :patch) do %>
+        <h3>Newspapers</h3>
         <div class="mdl-grid">
-         <% @sources.each do |source|%>
+            <% [ "australian-financial-review", "daily-mail", "financial-times", "independent", "mirror", "the-globe-and-mail",
+              "the-hindu", "the-irish-times", "the-jerusalem-post", "the-new-york-times", "the-telegraph",
+              "the-times-of-india", "usa-today", "the-wall-street-journal", "the-washington-post", "the-washington-times",].each do |source|%>
             <%= render 'shared/publication-card', source: source %>
-          <% end %>
+            <% end %>
         </div>
         <div>
-        <%= submit_tag 'SAVE FAVORITES', class: "cta-preferences" %>
-      <% end -%>
+            <%= submit_tag "Save\npreferences", class: "cta-preferences" %>
+            <% end -%>
         </div>
     </div>
-
-    <script type="text/javascript">
-      const pop_up = "<div class='pop_up'><h1>Saved</h1></div>"
-      document.querySelector(".cta-preferences").addEventListener("click", (event) => {
-        document.querySelector("body").insertAdjacentHTML('afterbegin', pop_up)
-      });
-    </script>
-
-
-    <style type="text/css">
-      .pop_up {
-          position: fixed;
-          background-color: green;
-          z-index: 40;
-          width: 100%;
-          font-size: 33px;
-          height: 70px;
-          bottom: 0;
-      }
-      h1 {
-        font-size: 15px;
-      }
-    </style>
-
+    <div class="mdl-tabs__panel" id="magazines-panel">
+        <%= form_tag(preference_path(current_user), method: :patch) do %>
+        <h3>Magazines</h3>
+        <div class="mdl-grid">
+            <% ["business-insider", "business-insider-uk", "entertainment-weekly", "financial-post", "fortune", "national-geographic", "national-review", "the-huffington-post",
+                "new-scientist", "newsweek", "new-york-magazine", "politico", "the-economist", "the-hill", "time", "vice-news",
+                "wired"].each do |source|%>
+            <%= render 'shared/publication-card', source: source %>
+            <% end %>
+        </div>
+        <div>
+            <%= submit_tag "Save\npreferences", class: "cta-preferences" %>
+            <% end -%>
+        </div>
+    </div>
+    <div class="mdl-tabs__panel" id="online-panel">
+        <%= form_tag(preference_path(current_user), method: :patch) do %>
+        <h3>Magazines</h3>
+        <div class="mdl-grid">
+            <% ["abc-news","abc-news-au","al-jazeera-english","ars-technica","associated-press","axios",
+                "bleacher-report","bloomberg","buzzfeed","cnbc","cnn","crypto-coins-news","engadget","espn",
+                "espn-cric-info","football-italia","four-four-two","ign","mashable","medical-news-today",
+                "msnbc","nbc-news","news24","news-com-au","next-big-future","nfl-news","nhl-news","polygon",
+                "recode","reuters","rte","techcrunch","techradar","the-next-web","the-sport-bible",
+                "the-verge"].each do |source|%>
+            <%= render 'shared/publication-card', source: source %>
+            <% end %>
+        </div>
+        <div>
+            <%= submit_tag "Save\npreferences", class: "cta-preferences" %>
+            <% end -%>
+        </div>
+    </div>
     <div class="mdl-tabs__panel" id="authors-panel">
         <div class="mdl-grid">
-          authors
+            ["Arwa Mahdawi","Jonathan Watts","Jessica Schladebeck","Elle Hunt","Mattha Busby","Carol Anderson","Damian Carrington","Katharine Murphy","Ayman Odeh","Oliver Milman","Katharine Murphy","Oliver Milman","Camille Stein","Niv Elis","Lynn Saxberg","Corey Atad","Chuck Rosenberg","Vlada Gelman","Joe Hojnacki","Drew Magary","Natalie Theodosi","Steve O'Hear","Connie Loizos","Kenneth Chang","Severin Carrell","Julia Alexander","Kate Clark","Sarah Perez","Lucas Matney","Devin Coldewey","Shane Goldmacher","Mike Ives","Muktita Suhartono","Kyle Orland","Jonathan Shieber","Damian Carrington","Gaby Hinsliff","Daniel Bortz","David Brooks","Roger Cohen","Connie Loizos","Erez Manela","Romain Dillet","Nathan Mattise"]
         </div>
     </div>
     <div class="mdl-tabs__panel" id="themes-panel">
         <div class="mdl-grid">
-          themes
+            themes
         </div>
     </div>
 </div>
+<script type="text/javascript">
+const pop_up = "<div class='pop_up'><h1>Saved</h1></div>"
+document.querySelector(".cta-preferences").addEventListener("click", (event) => {
+  document.querySelector("body").insertAdjacentHTML('afterbegin', pop_up)
+});
+</script>
+<style type="text/css">
+.pop_up {
+    position: fixed;
+    background-color: green;
+    z-index: 40;
+    width: 100%;
+    font-size: 33px;
+    height: 70px;
+    bottom: 0;
+}
+
+h1 {
+    font-size: 15px;
+}
+</style>
