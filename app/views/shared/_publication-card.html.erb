@@ -62,7 +62,6 @@
 
 <% asset_present = Dir.glob('app/assets/images/cover-images/*').any? {|path| path.include?(source['name'])} %>
 <% asset_name = asset_present ? "cover-images/#{source['name']}.jpg" : "cover-images/default.jpg" %>
-<%# raise %>
 <div class="demo-card-event mdl-card mdl-shadow--2dp" >
   <div class="background-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= image_path(asset_name) %>')">
   <div class="mdl-card__title mdl-card--expand">
