@@ -1,19 +1,25 @@
 .navigation-button {
   background: $yellow !important;
-  position: fixed !important;
-  top: 90px !important;
-  right: 90px !important;
+  position: absolute !important;
+  top: 700px !important;
+  left: 75px !important;
   color: $gray !important;
 }
 
 .quota-button {
   background: $magenta-opaque !important;
-  width: 70px !important;
-  height: 70px !important;
+  width: 60px !important;
+  height: 60px !important;
+  position: absolute;
+  top: 15px;
+  right: 100px;
+  z-index: 11;
+  border: 0px !important;
+  border-radius: 50%;
   // position: fixed !important;
   // top: 65px !important;
   // right: 30px !important;
-  color: $gray !important;
+  // color: $gray !important;
 }
 
 .login-btn {
@@ -32,4 +38,15 @@
   // top: 100px !important;
   // left: 35px !important;
   color: $gray !important;
+}
+
+.applause-btn {
+  fill: $magenta !important;
+  color: $magenta !important;
+  position: absolute !important;
+  top: 800px;
+  left: 75px;
+  z-index: 5;
+  // position: sticky;
+  // top: 0;
 }

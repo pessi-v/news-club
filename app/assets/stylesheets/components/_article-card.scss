@@ -15,18 +15,18 @@
         line-height: 1.4;
         margin: 0px;
         z-index: 4;
-        margin-left: 5px;
+        margin-left: 8px;
         font-weight: lighter;
     }
 
     h3 {
         color: $off-white;
-
+        font-family: "Merriweather";
         font-size: 18px;
-        line-height: 1.4;
+        line-height: 1.2;
         margin: 0px;
         z-index: 4;
-        margin-left: 5px;
+        margin-left: 8px;
         margin-top:5px;
     }
 
@@ -95,8 +95,8 @@
     .text-container {
       width: 90% !important;
       height: 90% !important;
-      text-align: justify;
-      margin-top: 25px;
+      text-align: left;
+      margin-top: 45px;
       // display: inline-block;
       // position: absolute;
       // left: 0;
@@ -108,7 +108,7 @@
       color: white;
       font-size: 16px;
       margin: 5px;
-
+      font-family: "Merriweather";
     }
 }
 
@@ -158,25 +158,5 @@
     position: absolute;
     bottom: -44px;
     left: 50px;
-}
-
-.image-article {
-  width: 100vw;
-  height: calc(100vh - 140px);
-  background-size: cover;
-  position: relative;
-  background-position: bottom left;
-}
-
-.article-content-container {
-    margin-right: 15vw;
-    margin-left: 15vw;
-}
-
-.applause-btn {
-  fill: $magenta !important;
-  color: $magenta !important;
-  position: sticky;
-  top: 0;
 }
 
