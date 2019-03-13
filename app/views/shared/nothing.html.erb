@@ -1,0 +1,73 @@
+<div>
+<%= render 'shared/navbar' %>
+</div>
+<br>
+<br>
+<br>
+<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+    <div class="mdl-tabs__tab-bar">
+        <a href="#publications-panel" class="mdl-tabs__tab is-active">PUBLICATIONS</a>
+        <a href="#authors-panel" class="mdl-tabs__tab">AUTHORS</a>
+        <a href="#themes-panel" class="mdl-tabs__tab">THEMES</a>
+        <!-- <a href="#lannisters-panel" class="mdl-tabs__tab">TECHNOLOGY</a>
+        <a href="#targaryens-panel" class="mdl-tabs__tab">ENTERTAINMENT</a>
+        <a href="#lannisters-panel" class="mdl-tabs__tab">SCIENCE</a>
+        <a href="#targaryens-panel" class="mdl-tabs__tab">SPORTS</a>
+        <a href="#starks-panel" class="mdl-tabs__tab">CURATED</a>
+        <a href="#targaryens-panel" class="mdl-tabs__tab">FINANCE</a> -->
+    </div>
+    <div class="mdl-tabs__panel is-active" id="publications-panel">
+      <%#= form_tag(preference_path(current_user), method: :patch) do %>
+  <%# ['bloomberg', 'nyt', 'wp'].each do |name| %>
+    <%#= check_box_tag('preferences[]', name) %>
+    <%#= label_tag('preferences[]', name) %>
+  <%# end %>
+
+
+
+      <%= form_tag(preference_path(current_user), method: :patch) do %>
+        <div class="mdl-grid">
+         <% @sources.each do |source|%>
+            <%= render 'shared/publication-card', source: source %>
+          <% end %>
+        </div>
+        <div>
+        <%= submit_tag 'SAVE FAVORITES', class: "cta-preferences" %>
+      <% end -%>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+      const pop_up = "<div class='pop_up'><h1>Saved</h1></div>"
+      document.querySelector(".cta-preferences").addEventListener("click", (event) => {
+        document.querySelector("body").insertAdjacentHTML('afterbegin', pop_up)
+      });
+    </script>
+
+
+    <style type="text/css">
+      .pop_up {
+          position: fixed;
+          background-color: green;
+          z-index: 40;
+          width: 100%;
+          font-size: 33px;
+          height: 70px;
+          bottom: 0;
+      }
+      h1 {
+        font-size: 15px;
+      }
+    </style>
+
+    <div class="mdl-tabs__panel" id="authors-panel">
+        <div class="mdl-grid">
+          authors
+        </div>
+    </div>
+    <div class="mdl-tabs__panel" id="themes-panel">
+        <div class="mdl-grid">
+          themes
+        </div>
+    </div>
+</div>

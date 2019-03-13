@@ -1,20 +1,6 @@
+<%= render 'shared/navbar' %>
+
 <%= render 'shared/user-navigation'%>
-
-
-  <button class="quota-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-    <i><%= current_user.readings.count %>/<%= current_user.subscription.plan.amount { |match|  } %></i>
-  </button>
-
-<%# raise %>
-
-<%# @sources.each do |p| %>
-<!-- <img src="//logo.clearbit.com/<%#= p %>"> -->
-<%# end %>
-<%#= link_to home_path(current_user) do %>
- <!-- <button class="navigation-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-    <i class="material-icons">arrow_back</i>
-  </button> -->
-<%# end %>
 
 
 <% if @snackbar %>

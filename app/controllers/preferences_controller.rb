@@ -5,6 +5,7 @@ class PreferencesController < ApplicationController
     @user = current_user
     @sources = fetch_sources
     @images = Dir.glob("app/assets/images/cover-images/*.jpg")
+    @authors = []
   end
 
   def update

@@ -26,8 +26,8 @@ class ArticlesController < ApplicationController
   end
 
   def home
-    # @all_user_articles = Article.tagged_with(current_user.publication_list, any: true)
-    @all_user_articles = Article.all.shuffle
+    @all_user_articles = Article.tagged_with(current_user.publication_list, any: true)
+    # @all_user_articles = Article.all.shuffle
     @user_read_articles = []
     current_user.readings.each do |reading|
       @user_read_articles << Article.find(reading.article_id)
