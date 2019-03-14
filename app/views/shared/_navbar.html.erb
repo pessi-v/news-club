@@ -32,7 +32,7 @@
         <%= link_to preferences_path do%>
         <li class="mdl-menu__item">Preferences</li>
         <% end %>
-        <%= link_to preferences_path do%>
+        <%= link_to home_path(id: current_user.id) do%>
         <li class="mdl-menu__item" style="color: rgb(0,174,239)">My News Club</li>
         <% end %>
         </li>
