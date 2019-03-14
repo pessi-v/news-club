@@ -86,35 +86,39 @@ r(function() {
 function r(f) { /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) : f() }
 </script>
 <% end %>
-<% if @allow %>
-<%= link_to home_path do %>
-<button class="navigation-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-    <i class="material-icons">arrow_back</i>
-</button>
-<% end %>
-<div class="applause-btn">
-    <applause-button color=$magenta, style="width: 60px; height: 60px;">
-    </applause-button>
-</div>
 
-<div class="facebook-btn">
-  <%= link_to ('<i class="fab fa-facebook-f"></i>').html_safe, articles_path %>
- <!--  <i class="fab fa-facebook-f"></i> -->
-</div>
 
-<div class="twitter-btn">
-  <%= link_to ('<i class="fab fa-twitter"></i>').html_safe, articles_path %>
-  <!-- <i class="fab fa-twitter"></i> -->
-</div>
+<div buttons-div style="margin: -180px;">
+  <% if @allow %>
+  <%= link_to home_path do %>
+  <button class="navigation-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+      <i class="material-icons">arrow_back</i>
+  </button>
+  <% end %>
+  <div class="applause-btn">
+      <applause-button color=$magenta, style="width: 60px; height: 60px;">
+      </applause-button>
+  </div>
 
-<div class="instagram-btn">
-  <%= link_to ('<i class="fab fa-instagram"></i>').html_safe, articles_path %>
-  <!-- <i class="fab fa-instagram"></i> -->
-</div>
+  <div class="facebook-btn">
+    <%= link_to ('<i class="fab fa-facebook-f"></i>').html_safe, articles_path %>
+   <!--  <i class="fab fa-facebook-f"></i> -->
+  </div>
 
-<div class="download-btn">
-  <%= link_to ('<i class="fas fa-arrow-circle-down"></i>').html_safe %>
-  <!-- <i class="fas fa-arrow-circle-down"></i> -->
+  <div class="twitter-btn">
+    <%= link_to ('<i class="fab fa-twitter"></i>').html_safe, articles_path %>
+    <!-- <i class="fab fa-twitter"></i> -->
+  </div>
+
+  <div class="instagram-btn">
+    <%= link_to ('<i class="fab fa-instagram"></i>').html_safe, articles_path %>
+    <!-- <i class="fab fa-instagram"></i> -->
+  </div>
+
+  <div class="download-btn">
+    <%= link_to ('<i class="fas fa-arrow-circle-down"></i>').html_safe %>
+    <!-- <i class="fas fa-arrow-circle-down"></i> -->
+  </div>
 </div>
 
 
