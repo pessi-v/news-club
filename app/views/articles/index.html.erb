@@ -51,7 +51,7 @@
                 </ul>
             </div>
             <div class="p-card__footer">
-                <%= form_tag subscriptions_path do %>
+                <%= link_to new_user_registration_path do %>
                 <%= hidden_field_tag 'plan_id', @plan1.id %>
                 <%= submit_tag 'Subscribe to REGULAR', class: "p-card__button regular_button" %>
                 <% end %>
@@ -79,7 +79,7 @@
                 </ul>
             </div>
             <div class="p-card__footer">
-                <%= form_tag subscriptions_path do %>
+                <%= link_to new_user_registration_path do %>
                 <%= hidden_field_tag 'plan_id', @plan2.id %>
                 <%= submit_tag 'Subscribe to MORE', class: "p-card__button" %>
                 <% end %>
