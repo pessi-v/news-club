@@ -4,7 +4,7 @@ plan2 = Plan.create(amount:25,price_cents:1000)
 plan3 = Plan.create(amount:500,price_cents:1000)
 
 Reading.destroy_all
-# Article.destroy_all
+Article.destroy_all
 Subscription.destroy_all
 User.destroy_all
 
