@@ -97,6 +97,27 @@ function r(f) { /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) :
     </applause-button>
 </div>
 
+<div class="facebook-btn">
+  <%= link_to ('<i class="fab fa-facebook-f"></i>').html_safe, articles_path %>
+ <!--  <i class="fab fa-facebook-f"></i> -->
+</div>
+
+<div class="twitter-btn">
+  <%= link_to ('<i class="fab fa-twitter"></i>').html_safe, articles_path %>
+  <!-- <i class="fab fa-twitter"></i> -->
+</div>
+
+<div class="instagram-btn">
+  <%= link_to ('<i class="fab fa-instagram"></i>').html_safe, articles_path %>
+  <!-- <i class="fab fa-instagram"></i> -->
+</div>
+
+<div class="download-btn">
+  <%= link_to ('<i class="fas fa-arrow-circle-down"></i>').html_safe %>
+  <!-- <i class="fas fa-arrow-circle-down"></i> -->
+</div>
+
+
     <div class="image-article" style="background-image: url('<%= image_path @article.image %>')">
         <div class="logo-img">
             <% addr = URI.parse(@article.url).host %>

@@ -50,3 +50,71 @@
   // position: sticky;
   // top: 0;
 }
+
+.facebook-btn {
+  position: absolute !important;
+  top: 880px;
+  left: 76px;
+  z-index: 5;
+  border: 1px solid #4069AC;
+    border-radius: 50%;
+    padding: 13px 21px;
+    i {
+      font-size: 30px;
+      color: #4069AC;
+    }
+}
+
+.twitter-btn{
+position: absolute !important;
+    top: 963px;
+    left: 74px;
+    z-index: 5;
+    border: 1px solid #00A3EC;
+    border-radius: 50%;
+    padding: 21px 23px;
+    i{
+      color: #00A3EC;
+      width: 15px;
+      height: 5px;
+      line-height: 50px;
+      font-size: 35.5px;
+
+    }
+.fa-twitter:before {
+    position: absolute;
+    top: 8px;
+    left: 14px;
+  }
+}
+
+
+.instagram-btn{
+    position: absolute !important;
+    top: 1050px;
+    left: 74px;
+    z-index: 5;
+    border: 1px solid #DD1B5D;
+    border-radius: 50%;
+    padding: 19px 22px;
+    i{
+      color: #DD1B5D;
+      font-size: 20px;
+    }
+}
+
+.download-btn{
+    position: absolute !important;
+    top: 1135px;
+    left: 76px;
+    z-index: 5;
+    border: 1px solid #48A4D6;
+    border-radius: 50%;
+    padding: 17px 18px;
+     -webkit-animation: pulse 1.5s infinite;
+    i{
+      color: #48A4D6;
+      font-size: 25px;
+    }
+}
+
