@@ -1,49 +1,58 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
-plan1 = Plan.create(amount: 10, price_cents: 500)
-plan2 = Plan.create(amount: 25, price_cents: 1000)
-plan3 = Plan.create(amount: 500, price_cents: 1000)
+# plan1 = Plan.create(amount:10,price_cents:500)
+# plan2 = Plan.create(amount:25,price_cents:1000)
+# plan3 = Plan.create(amount:500,price_cents:1000)
 
 Reading.destroy_all
-User.destroy_all
+# Article.destroy_all
 Subscription.destroy_all
-new_test_user = User.new(first_name:"test", last_name:"person", email:"test@email.com", password:"123123")
-new_test_user.publication_list.add("the-guardian", "new-scientist")
-new_test_user.writer_list.add("Sam Mintz")
-new_test_user.theme_list.add("space", "climate", "beer", "mushroom")
+User.destroy_all
+
+new_test_user = User.new(first_name:"best",last_name:"person",email:"best@email.com",password:"123123")
+new_test_user.publication_list.add("financial-times","the-new-york-times","the-telegraph",
+"the-times-of-india","the-wall-street-journal","the-washington-times","business-insider","financial-post","fortune","national-geographic","the-huffington-post",
+"new-scientist","newsweek","new-york-magazine","politico","the-economist")
+# new_test_user.writer_list.add("SamMintz")
+new_test_user.theme_list.add("space","climate","beer","mushroom")
 new_test_user.save!
 
-Subscription.create(plan_id: 3, user: new_test_user)
+another_test_user = User.new(first_name:"james",last_name:"bauer",email:"blank@email.com",password:"123123")
+# another_test_user.theme_list.add("space","climate","beer","mushroom")
+another_test_user.save!
 
-# url = 'https://newsapi.org/v2/everything?'\
-#   'q=forest OR mushroom OR summer OR flowers OR rojava OR techno OR sanders OR corbyn OR beer OR whisky OR anarchist OR&'\
-#   'sources=ars-technica,associated-press,bild,bloomberg,business-insider,business-insider,daily-mail,der-tagesspiegel,die-zeit,entertainment-weekly,espn,financial-post,financial-times,focus,fortune,gruenderszene,mirror,national-geographic,new-scientist,newsweek,new-york-magazine,politico,polygon,reuters,spiegel-online,techcrunch,techradar,the-economist,the-globe-and-mail,the-guardian-uk,the-hill,the-huffington-post,the-new-york-times,the-telegraph,the-verge,the-wall-street-journal,the-washington-times,time,wired,le-monde,liberation,la-repubblica' \
-#   'from=2019-03-01&'\
-#   'sortBy=publishedAt&'\
-#   "apiKey=#{ENV['NEWSAPI_API_KEY2']}&"\
-#   "pageSize=300"
+Subscription.create(plan_id:3,user:new_test_user)
+Subscription.create(plan_id:2,user:another_test_user)
 
-# req = open(url)
-# response_body = req.read
-# articles_json = JSON.parse(response_body)
-# articles_array = articles_json["articles"]
-# last_articles = []
-# articles_array.each do |a|
-#   article = Article.find_by(title: a["title"])
-#   unless article # check if article is already in the database
-#     article = Article.new(title: a["title"], author: a["author"] || a["source"], source: a["source"]["name"], url: a["url"], date: a["publishedAt"], content: a["content"] || "no content available", image: a["urlToImage"], description: a["description"])
-#     article.publication_list.add(a["source"]["id"])
-#     extractor = Phrasie::Extractor.new
-#     tagging = extractor.phrases(a["content"], occur: 1)
-#     tags = tagging.each { |p| p[0] }
-#     article.theme_list.add(tags)
-#     article.save!
-#   end
-#   last_articles << article
-# end
+
+def fetch_articles(url)
+  req = open(url)
+  response_body = req.read
+  articles_json = JSON.parse(response_body)
+  articles_array = articles_json["articles"]
+  last_articles = []
+  articles_array.each do |a|
+    article = Article.find_by(title:a["title"])
+    unless article #check if article is already in the database
+      author  = a["author"].blank? ? a["source"]["name"] : a["author"]
+      article = Article.new(title:a["title"],author: author,source:a["source"]["name"],url:a["url"],date:a["publishedAt"],content:a["content"] || "no content available",image:a["urlToImage"],description:a["description"])
+      article.publication_list.add(a["source"]["id"])
+    # extractor = Phrasie::Extractor.new
+    # tagging = extractor.phrases(a["content"],occur:1)
+    # tags = tagging.each{|p|p[0]}
+    # article.theme_list.add(tags)
+      article.save!
+    end
+  end
+end
+
+url = "https://newsapi.org/v2/top-headlines?sources=australian-financial-review,daily-mail,financial-times,independent,mirror,the-globe-and-mail,the-hindu,the-irish-times,the-jerusalem-post,the-new-york-times,the-telegraph,the-times-of-india,usa-today,the-wall-street-journal,the-washington-post,the-washington-times,business-insider,business-insider-uk,entertainment-weekly,financial-post,fortune,national-geographic,national-review,the-huffington-post,new-scientist,newsweek,new-york-magazine,politico,the-economist,the-hill,time,vice-news,abc-news,abc-news-au,al-jazeera-english,ars-technica,associated-press,axios,bleacher-report,bloomberg,buzzfeed,cnbc,cnn,crypto-coins-news,engadget,espn,espn-cric-info,football-italia,four-four-two,ign,mashable,medical-news-today,msnbc,nbc-news,news24,news-com-au,next-big-future,nfl-news,nhl-news,polygon,recode,reuters,rte,techcrunch,techradar,the-next-web,the-sport-bible,the-verge&from=2019-02-17&sortBy=publishedAt&apiKey=#{ENV['NEWSAPI_API_KEY']}&pageSize=100"
+fetch_articles(url)
+
+url = "https://newsapi.org/v2/top-headlines?sources=australian-financial-review,daily-mail,financial-times,independent,mirror,the-globe-and-mail,the-hindu,the-irish-times,the-jerusalem-post,the-new-york-times,the-telegraph,the-times-of-india,usa-today,the-wall-street-journal,the-washington-post,the-washington-times,business-insider,business-insider-uk,entertainment-weekly,financial-post,fortune,national-geographic,national-review,the-huffington-post,new-scientist,newsweek,new-york-magazine,politico,the-economist,the-hill,time,vice-news,abc-news,abc-news-au,al-jazeera-english,ars-technica,associated-press,axios,bleacher-report,bloomberg,buzzfeed,cnbc,cnn,crypto-coins-news,engadget,espn,espn-cric-info,football-italia,four-four-two,ign,mashable,medical-news-today,msnbc,nbc-news,news24,news-com-au,next-big-future,nfl-news,nhl-news,polygon,recode,reuters,rte,techcrunch,techradar,the-next-web,the-sport-bible,the-verge&from=2019-03-14&sortBy=publishedAt&apiKey=#{ENV['NEWSAPI_API_KEY']}&pageSize=20"
+fetch_articles(url)
+
+url = "https://newsapi.org/v2/everything?sources=financial-times,the-new-york-times,the-telegraph,the-wall-street-journal,the-washington-post,the-washington-times,business-insider,business-insider-uk,entertainment-weekly,financial-post,fortune,national-geographic,new-scientist,newsweek,new-york-magazine,the-economist,time,vice-news,associated-press,wired&from=2019-03-14&sortBy=publishedAt&apiKey=#{ENV['NEWSAPI_API_KEY']}&pageSize=20"
+fetch_articles(url)
+
+url = "https://newsapi.org/v2/top-headlines?sources=the-new-york-times,the-wall-street-journal,financial-post,national-geographic,the-huffington-post,new-scientist,newsweek,new-york-magazine,politico,time,vice-news,wired&from=2019-02-17&sortBy=publishedAt&apiKey=#{ENV['NEWSAPI_API_KEY']}&pageSize=40"
+fetch_articles(url)
