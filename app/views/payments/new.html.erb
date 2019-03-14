@@ -1,8 +1,24 @@
+<style type="text/css">
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #C137FC !important;
+    margin: 1em 111px !important;
+    padding: 0;
+  }
+  .p-card__feature {
+  list-style-type: none;
+  line-height: 18px !important;
+  margin-bottom: 30px !important;
+}
+</style>
+
 <div id="trapezoid-c"></div>
 <div id="trapezoid-m"></div>
 <div id="trapezoid-y"></div>
 <div class="subscription">
-    <div style="display: flex; flex-direction: column; justify-content: space-around; margin-bottom: 160px;">
+    <div style="display: flex; flex-direction: column; justify-content: space-around; margin-bottom: 54px; margin-top: 54px;">
         <h2 style="text-align: center;">Confirm your subscription</h2>
 
         <div class="plan-card mdl-shadow--2dp">
@@ -12,12 +28,17 @@
                 <%= @subscription.plan.amount %> articles for
                 <%= humanized_money_with_symbol(@subscription.amount) %>/month
             </h3>
-            <ul style="text-align: center;">
+            <ul class="p-card__feature" style="text-align: center;">
                 <li class="p-card__feature-item tx-500">Access to over 5000 publications</li>
+                <hr/>
                 <li class="p-card__feature-item tx-500">Curated stories by the News Club</li>
+                <hr/>
                 <li class="p-card__feature-item tx-500">Save and download your articles</li>
+                <hr/>
                 <li class="p-card__feature-item tx-500">Monthly membership fee, cancel anytime</li>
+                <hr/>
                 <li class="p-card__feature-item tx-500">10 Articles / month</li>
+                <hr/>
             </ul>
             <!-- </label> -->
             <div style="display: flex; justify-content: space-around;">

@@ -35,9 +35,12 @@
             </div>
             <div class="p-card__body">
                 <ul class="p-card__feature">
-                    <li class="p-card__feature-item tx-500">Access to over 5000 publications</li>
+                    <li class="p-card__feature-item tx-500">Access to over <strong>5000</strong> publications</li>
+                    <hr/>
                     <li class="p-card__feature-item tx-500">Curated stories by the News Club</li>
+                    <hr/>
                     <li class="p-card__feature-item tx-500">Save and download your articles</li>
+                    <hr/>
                     <li class="p-card__feature-item tx-500">Monthly membership fee, cancel anytime</li>
                     <!-- <li>stuff</li> -->
                     <!-- <li class="p-card__feature-item">5 Mailboxes, 1 Docs site</li>
@@ -50,7 +53,7 @@
             <div class="p-card__footer">
                 <%= form_tag subscriptions_path do %>
                 <%= hidden_field_tag 'plan_id', @plan1.id %>
-                <%= submit_tag 'Subscribe to REGULAR', class: "p-card__button" %>
+                <%= submit_tag 'Subscribe to REGULAR', class: "p-card__button regular_button" %>
                 <% end %>
             </div>
         </div>
@@ -64,10 +67,14 @@
             </div>
             <div class="p-card__body">
                 <ul class="p-card__feature">
-                    <li class="p-card__feature-item tx-500">Access to over 5000 publications</li>
+                    <li class="p-card__feature-item tx-500">Access to over <strong>5000</strong> publications</li>
+                    <hr/>
                     <li class="p-card__feature-item tx-500">Curated stories by the News Club</li>
+                    <hr/>
                     <li class="p-card__feature-item tx-500">Save and download your articles</li>
+                    <hr/>
                     <li class="p-card__feature-item tx-500">Monthly membership fee, cancel anytime</li>
+                    <hr/>
                     <li class="p-card__feature-item tx-500">Best value deal</li>
                 </ul>
             </div>
