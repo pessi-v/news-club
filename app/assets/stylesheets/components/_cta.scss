@@ -39,10 +39,11 @@
 
 .cta-preferences {
   // background: #efebe9;
-  background: $magenta-opaque;
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
+  position: absolute;
+  background: #3FA9F5;
+  width: 162px;
+  height: 52px;
+  border-radius: 2%;
   // border: 4px solid black;
   position: fixed;
   bottom: 50px;
@@ -54,8 +55,12 @@
   z-index: 9001;
   // font-weight: bold;
   border: 0px !important;
-  color: black;
-  font-family: "Merriweather";
+  color: #F9F9F9;
+  font-family: "roboto";
+  font-weight: bold;
+  font-size: 15px;
+  left: 85%;
+  text-transform: uppercase;
 }
 
 .cta-preferences:hover {
