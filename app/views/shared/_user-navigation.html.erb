@@ -1,5 +1,42 @@
-<h3>Select the publications which you would like to read.</h3>
-<h4>We'll recommend you articles from your selected sources</h4>
+
+<style type="text/css">
+
+  .head-section {
+    position: relative;
+    height: 150px;
+  }
+  .heading  {
+    position: absolute;
+    left: 21%;
+    top: 11%;
+    font-family: Merriweather;
+    font-weight: bold !important;
+    font-size: 50px;
+}
+  .subheading {
+    position: absolute;
+    left: 28%;
+    top: 41%;
+    margin-right: auto;
+    width: 50%;
+    padding: 10px;
+    font-family: Roboto;
+    font-weight: lighter;
+    font-size: 25px;
+    color: #333333;
+    line-height: 32px;
+ }
+  .preference_circle {
+    font-family: Roboto;
+    font-weight: bold;
+    display: block;
+
+  }
+</style>
+<div class="head-section">
+  <h3 class="heading">Choose your favorite publications </h3>
+  <h4 class="subheading">We'll give you recomendations for selected sources</h4>
+</div>
 <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
     <div class="mdl-tabs__tab-bar">
         <a href="#publications-panel" class="mdl-tabs__tab is-active">NEWSPAPERS</a>
@@ -18,8 +55,8 @@
             <%= render 'shared/publication-card', source: source %>
             <% end %>
         </div>
-        <div>
-            <%= submit_tag "Save\npreferences", class: "cta-preferences" %>
+        <div class="preference_circle">
+            <%= submit_tag "Save preferences", class: "cta-preferences" %>
             <% end -%>
         </div>
     </div>
@@ -52,7 +89,7 @@
             <% end %>
         </div>
         <div>
-            <%= submit_tag "Save\npreferences", class: "cta-preferences" %>
+            <%= submit_tag "Save preferences", class: "cta-preferences" %>
             <% end -%>
         </div>
     </div>
