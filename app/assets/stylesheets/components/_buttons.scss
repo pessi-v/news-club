@@ -45,6 +45,8 @@
   fill: $magenta !important;
   color: $magenta !important;
   position: absolute !important;
+  // width: 70px;
+  // height: 70px;
   top: 800px;
   left: 75px;
   z-index: 5;
@@ -55,7 +57,7 @@
 .facebook-btn {
   position: absolute !important;
   top: 940px;
-  left: 76px;
+  left: 75px;
   z-index: 5;
   border: 1px solid #4069AC;
     border-radius: 50%;
@@ -69,7 +71,7 @@
 .twitter-btn{
 position: absolute !important;
     top: 1023px;
-    left: 74px;
+    left: 75px;
     z-index: 5;
     border: 1px solid #00A3EC;
     border-radius: 50%;
@@ -93,7 +95,7 @@ position: absolute !important;
 .instagram-btn{
     position: absolute !important;
     top: 1110px;
-    left: 74px;
+    left: 75px;
     z-index: 5;
     border: 1px solid #DD1B5D;
     border-radius: 50%;
@@ -107,12 +109,12 @@ position: absolute !important;
 .download-btn{
     position: absolute !important;
     top: 1195px;
-    left: 76px;
+    left: 75px;
     z-index: 5;
     border: 1px solid #48A4D6;
     border-radius: 50%;
     padding: 17px 18px;
-     -webkit-animation: pulse 1.5s infinite;
+     // -webkit-animation: pulse 1.5s infinite;
     i{
       color: #48A4D6;
       font-size: 25px;

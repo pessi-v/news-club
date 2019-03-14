@@ -65,7 +65,7 @@
 <!-- </ul>
     </div>
     <div class="center">
-        <%= image_tag "news_club_logo_new.png", height: 60 %>
+        <%#= image_tag "news_club_logo_new.png", height: 60 %>
     </div>
 </div> -->
 <% html_file = open(@article.url).read %>
@@ -116,7 +116,9 @@ function r(f) { /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) :
   </div>
 
   <div class="download-btn">
-    <%= link_to ('<i class="fas fa-arrow-circle-down"></i>').html_safe %>
+    <a href="#" download="article.epub">
+      <i class="fas fa-arrow-circle-down"></i>
+    </a>
     <!-- <i class="fas fa-arrow-circle-down"></i> -->
   </div>
 </div>
@@ -163,13 +165,19 @@ function r(f) { /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) :
             <%= element.text %>
         </p>
         <% end %>
-        <div class="color">
+
             <% html_doc.search('.story-text p').each do |element| %>
             <p>
                 <%= element.text %>
             </p>
             <% end %>
-        </div>
+
+        <% html_doc.search('.story-content p').each do |element| %>
+        <p>
+            <%= element.text %>
+        </p>
+        <% end %>
+
         <% html_doc.search('.article-body p').each do |element| %>
         <p>
             <%= element.text %>
