@@ -57,14 +57,15 @@ class ArticlesController < ApplicationController
     last_articles = []
     articles_array.each do |a|
       article = Article.find_by(title: a["title"])
-      unless article # check if article is already in the database
+      article2 = Article.find_by(url: a["url"])
+      unless article || article2 # check if article is already in the database or
         author  = a["author"].blank? ? a["source"]["name"] : a["author"]
         article = Article.new(title: a["title"], author: author, source: a["source"]["name"], url: a["url"], date: a["publishedAt"], content: a["content"] || "no content available", image: a["urlToImage"], description: a["description"])
         article.publication_list.add(a["source"]["id"])
-        extractor = Phrasie::Extractor.new
-        tagging = extractor.phrases(a["content"], occur: 1)
-        tags = tagging.each { |p| p[0] }
-        article.theme_list.add(tags)
+        # extractor = Phrasie::Extractor.new
+        # tagging = extractor.phrases(a["content"], occur: 1)
+        # tags = tagging.each { |p| p[0] }
+        # article.theme_list.add(tags)
         article.save!
       end
       last_articles << article
