@@ -4,14 +4,17 @@
     <%#= image_tag "news_club_logo_new.png", class: "top-mini-banner" %>
 <!-- </div> -->
 <!-- menu -->
-<button class="quota-button mdl-shadow--2dp"><%= current_user.readings.count %>/<%= current_user.subscription.plan.amount { |match|  } %> <br> read</button>
+<!--
+<button class="quota-button mdl-shadow--2dp"><%= current_user.readings.count %>/<%= current_user.subscription.plan.amount { |match|  } %> <br> read</button>-->
 
 <!-- QUOTA -->
+
+<!--
 <button class="quota-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
     <i>
         <%= current_user.readings.count %>/
         <%= current_user.subscription.plan.amount { |match|  } %></i>
-</button>
+</button>-->
 <!--  -->
 <!-- end menu -->
 <%= render 'shared/home-navigation' %>
