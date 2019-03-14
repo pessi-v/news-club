@@ -12,6 +12,7 @@
 
     </div>
     <div class="image-container">
-        <%= image_tag a["image"] %>
+        <% source = a["image"].blank? ? "23.jpg" : a["image"] %>
+        <%= image_tag source %>
     </div>
 </div>
