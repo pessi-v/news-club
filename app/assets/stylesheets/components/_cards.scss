@@ -2,12 +2,10 @@
 .show-article-card {
     display: grid;
     width: 800px;
-    margin: 0 auto;
+    margin-right: 100px;
     height: auto;
     margin-top: 30px;
-    // margin: 15px auto;
     box-shadow: none !important;
-    // margin-left: 5px;
 
     img {
         // min-width: 100%;
@@ -52,14 +50,13 @@
     .article-content-container {
         width: 800px;
         height: auto;
-        margin: 0px auto;
+        // margin: 0px auto;
     }
 
 
 }
 
 .image-article {
-    margin-top: 200px;
     width: 100%;
     height: calc(100vh - 140px);
     background-size: cover;
