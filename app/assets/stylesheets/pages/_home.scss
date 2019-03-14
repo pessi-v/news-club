@@ -421,7 +421,7 @@ p {
 .center_mockup {
   position: absolute;
   left: 40%;
-  top: -20%;
+  top: 0%;
   margin-right: auto;
   width: 50%;
   padding: 10px;
@@ -429,7 +429,7 @@ p {
 .center_content {
   position: absolute;
   left: 20%;
-  top: 24%;
+  top: 38%;
   margin-right: auto;
   width: 28%;
   padding: 10px;
@@ -596,4 +596,29 @@ body {
   font-size: 26px;
   color: #394956;
   text-align: center;
+}
+.p-card__feature {
+  list-style-type: none;
+  line-height: 18px !important;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #C137FC !important;
+    margin: 1em 65px !important;
+    padding: 0;
+
+}
+.plan-card {
+    height: 440px !important;
+}
+
+.regular_button {
+  margin-top: 49px;
+}
+
+.quote-three {
+  height: 577px !important;
 }
