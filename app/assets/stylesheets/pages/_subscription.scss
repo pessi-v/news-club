@@ -10,9 +10,10 @@
 .subscription {
 
   h2 {
-  margin-top: 120px;
+  margin-top: 61px;
   font-weight: 900 !important;
-  font-size: 80px;
+  font-size: 37px;
+  color: #f9f9f9;
   font-family: 'Chivo';
   font-style: italic;
   text-align: center;
@@ -55,4 +56,20 @@ margin: 0 auto;
   left: 50%;
   top: 58%;
   background-color: #F9F9F9;
+}
+
+.form-subtitle {
+    margin-top: 44px;
+    font-size: 24px;
+    line-height: 28px;
+    color: #979797;
+}
+
+
+.first-form {
+  margin: 40px 30px;
+}
+
+.first-form-card {
+  margin: 94px auto;
 }

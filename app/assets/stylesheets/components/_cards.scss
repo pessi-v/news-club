@@ -76,19 +76,24 @@
 }
 
 .form-card {
-
     width: 550px;
     height: auto;
     background-color: $off-white;
     margin: 45px auto;
     text-align: center;
-
     h2 {
         color: #212121;
         margin-bottom: -50px;
         padding-top: 20px;
 
     }
+}
+
+.form-title {
+    color: #212121;
+    margin-bottom: -50px;
+    font-family: "Merriweather";
+    padding-top: 50px !important;
 }
 
 .form-inputs {

@@ -3,17 +3,17 @@
 <div id="trapezoid-y"></div>
 
 
-<div class="form-card mdl-shadow--4dp">
+<div class="first-form-card form-card mdl-shadow--4dp">
   <div class="form-login">
-    <h2>Welcome to<br>the News Club</h2>
+    <h2 class="form-title">Welcome to<br>the News Club</h2>
     <br>
     <br>
-    <h3 style="font-family: 'Helvetica">We'd like to get to<br>know you better:</h3>
+    <h3 class="form-subtitle" style="font-family: 'Helvetica">We'd like to get to<br>know you better:</h3>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= f.error_notification %>
 
-    <div class="form-inputs">
+    <div class="form-inputs first-form">
       <div class="mdl-textfield mdl-js-textfield">
         <%= f.input_field :first_name, class: "mdl-textfield__input" %>
         <label class="mdl-textfield__label" for="sample1">First name...</label>
