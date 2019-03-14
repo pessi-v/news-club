@@ -26,7 +26,9 @@ class ArticlesController < ApplicationController
   end
 
   def home
+
     @all_user_articles = Article.tagged_with(current_user.publication_list, any: true)
+    @latest = @all_user_articles.where(date: DateTime.parse('2019-03-14'))
     # @all_user_articles = Article.all.shuffle
     @user_read_articles = []
     current_user.readings.each do |reading|
@@ -41,13 +43,12 @@ class ArticlesController < ApplicationController
   end
 
   def fetch_articles
-    url = 'https://newsapi.org/v2/everything?'\
-      'q=Climate OR forest OR mushroom OR flower OR animals OR anarchist OR peace OR ethereum OR rojava OR techno OR sanders OR corbyn OR beer OR whisky OR pluto OR mars OR future OR linux OR future OR berlin OR finland Or indonesia OR brazil&'\
-      'from=2019-03-01&'\
-      'sources=ars-technica,associated-press,bild,bloomberg,business-insider,business-insider,daily-mail,der-tagesspiegel,die-zeit,entertainment-weekly,espn,financial-post,financial-times,focus,fortune,gruenderszene,mirror,national-geographic,new-scientist,newsweek,new-york-magazine,politico,polygon,reuters,spiegel-online,techcrunch,techradar,the-economist,the-globe-and-mail,the-guardian-uk,the-hill,the-huffington-post,the-new-york-times,the-telegraph,the-verge,the-wall-street-journal,the-washington-times,time,wired'\
+    url = 'https://newsapi.org/v2/top-headlines?'\
+      'from=2019-03-14&'\
+      'sources=associated-press,bild,business-insider,business-insider,daily-mail,der-tagesspiegel,die-zeit,entertainment-weekly,espn,financial-post,financial-times,focus,fortune,national-geographic,new-scientist,newsweek,new-york-magazine,politico,polygon,reuters,spiegel-online,techcrunch,techradar,the-economist,the-globe-and-mail,the-hill,the-huffington-post,the-new-york-times,the-wall-street-journal,the-washington-times,time,wired&'\
       'sortBy=publishedAt&'\
       "apiKey=#{ENV['NEWSAPI_API_KEY']}&"\
-      "pageSize=20"
+      "pageSize=40"
 
     req = open(url)
     response_body = req.read
@@ -57,7 +58,8 @@ class ArticlesController < ApplicationController
     articles_array.each do |a|
       article = Article.find_by(title: a["title"])
       unless article # check if article is already in the database
-        article = Article.new(title: a["title"], author: a["author"] || a["source"], source: a["source"]["name"], url: a["url"], date: a["publishedAt"], content: a["content"] || "no content available", image: a["urlToImage"], description: a["description"])
+        author  = a["author"].blank? ? a["source"]["name"] : a["author"]
+        article = Article.new(title: a["title"], author: author, source: a["source"]["name"], url: a["url"], date: a["publishedAt"], content: a["content"] || "no content available", image: a["urlToImage"], description: a["description"])
         article.publication_list.add(a["source"]["id"])
         extractor = Phrasie::Extractor.new
         tagging = extractor.phrases(a["content"], occur: 1)
