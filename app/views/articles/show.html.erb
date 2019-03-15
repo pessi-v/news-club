@@ -98,6 +98,9 @@ function r(f) { /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) :
         </div>
     </div>
 
+
+<!-- BUTTONS START -->
+      
 <div class="article-flex">
 
   <div class="buttons-div">
@@ -113,6 +116,7 @@ function r(f) { /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) :
           <applause-button color=$magenta, style="width: 60px; height: 60px;">
           </applause-button>
       </div>
+
     </div>
     <div class="lower-buttons">
 
@@ -139,7 +143,9 @@ function r(f) { /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) :
       </div>
     </div>
   </div>
-
+<!-- BUTTONS END -->
+  
+  
   <div class="show-article-card mdl-shadow--4dp">
 
       <div class="article-content-container" style="position: relative;">
@@ -186,6 +192,12 @@ function r(f) { /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) :
               <%= element.text %>
           </p>
           <% end %>
+        
+         <% html_doc.search('.article-text p').each do |element| %>
+        <p>
+            <%= element.text %>
+        </p>
+        <% end %>
 
           <% html_doc.search('.article-body p').each do |element| %>
           <p>
