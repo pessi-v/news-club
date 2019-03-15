@@ -70,7 +70,8 @@ class ArticlesController < ApplicationController
       end
       last_articles << article
     end
-    last_articles
+    last_articles.compact
+
   end
   # REDIRECT TO SIGN UP WHEN TRYING TO READ AN ARTICLE BEFORE TO CREATE AN ACCOUNT !!
   # WE COULD CANCEL AFTER THE DEMODAY

@@ -33,6 +33,22 @@
 
   }
 </style>
+<style type="text/css">
+.pop_up {
+    position: fixed;
+    background-color: green;
+    z-index: 40;
+    width: 100%;
+    font-size: 33px;
+    height: 70px;
+    bottom: 0;
+}
+
+h1 {
+    font-size: 15px;
+}
+</style>
+
 <div class="head-section">
   <h3 class="heading">Choose your favorite publications </h3>
   <h4 class="subheading">We'll give you recomendations for selected sources</h4>
@@ -56,7 +72,7 @@
             <% end %>
         </div>
         <div class="preference_circle">
-            <%= submit_tag "Save preferences", class: "cta-preferences" %>
+            <%= submit_tag "Save\npreferences", class: "cta-preferences" %>
             <% end -%>
         </div>
     </div>
@@ -89,7 +105,7 @@
             <% end %>
         </div>
         <div>
-            <%= submit_tag "Save preferences", class: "cta-preferences" %>
+            <%= submit_tag "Save\npreferences", class: "cta-preferences" %>
             <% end -%>
         </div>
     </div>
@@ -110,18 +126,3 @@ document.querySelector(".cta-preferences").addEventListener("click", (event) => 
   document.querySelector("body").insertAdjacentHTML('afterbegin', pop_up)
 });
 </script>
-<style type="text/css">
-.pop_up {
-    position: fixed;
-    background-color: green;
-    z-index: 40;
-    width: 100%;
-    font-size: 33px;
-    height: 70px;
-    bottom: 0;
-}
-
-h1 {
-    font-size: 15px;
-}
-</style>

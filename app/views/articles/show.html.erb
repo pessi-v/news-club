@@ -178,11 +178,18 @@ function r(f) { /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) :
         </p>
         <% end %>
 
+        <% html_doc.search('.smartbody text p').each do |element| %>
+        <p>
+            <%= element.text %>
+        </p>
+        <% end %>
+
         <% html_doc.search('.article-body p').each do |element| %>
         <p>
             <%= element.text %>
         </p>
         <% end %>
+
         <% html_doc.search('.article__content p').each do |element| %>
         <p>
             <%= element.text %>
@@ -190,6 +197,12 @@ function r(f) { /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) :
         <% end %>
 
         <% html_doc.search('.StoryBodyCompanionColumn p').each do |element| %>
+        <p>
+            <%= element.text %>
+        </p>
+        <% end %>
+
+        <% html_doc.search('.article-text p').each do |element| %>
         <p>
             <%= element.text %>
         </p>
