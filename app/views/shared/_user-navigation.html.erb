@@ -85,17 +85,16 @@ h1 {
         <%= form_tag(preference_path(current_user), method: :patch) do %>
         <!-- <h3 >Newspapers</h3> -->
         <div class="mdl-grid">
-            <% [ "australian-financial-review", "daily-mail", "financial-times", "independent", "mirror", "the-globe-and-mail",
-              "the-hindu", "the-irish-times", "the-jerusalem-post", "the-new-york-times", "the-telegraph",
-              "the-times-of-india", "usa-today", "the-wall-street-journal", "the-washington-post", "the-washington-times", "the-hill"].each do |source|%>
+
+            <% [ "the-irish-times",  "the-new-york-times", "the-hindu", "independent", "australian-financial-review", "financial-times", "mirror", "the-globe-and-mail",
+              "the-jerusalem-post", "the-telegraph",
+              "the-times-of-india", "usa-today", "the-wall-street-journal", "the-washington-post",  "daily-mail", "the-washington-times", "the-hill"].each do |source|%>
             <%= render 'shared/publication-card', source: source %>
             <% end %>
         </div>
+        <div class="preference_circle">
+            <%= submit_tag "Save  preferences", class: "cta-preferences" %>
 
-
-
-        <!-- <div class="preference_circle"> -->
-            <%= submit_tag "Save\npreferences", class: "cta-preferences" %>
             <% end -%>
         <!-- </div> -->
     </div>
@@ -110,7 +109,7 @@ h1 {
             <% end %>
         </div>
         <div>
-            <%= submit_tag "SAVE\nPREFERENCES", class: "cta-preferences" %>
+            <%= submit_tag "SAVE PREFERENCES", class: "cta-preferences" %>
             <% end -%>
         </div>
     </div>
