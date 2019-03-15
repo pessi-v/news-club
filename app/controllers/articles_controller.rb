@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
   def home
 
     @all_user_articles = Article.tagged_with(current_user.publication_list, any: true)
-    @latest = @all_user_articles.where(date: DateTime.parse('2019-03-14'))
+    @latest = @all_user_articles.where(date: DateTime.parse('2019-03-15'))
     # @all_user_articles = Article.all.shuffle
     @user_read_articles = []
     current_user.readings.each do |reading|
