@@ -100,7 +100,7 @@ function r(f) { /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) :
 
 
 <!-- BUTTONS START -->
-      
+
 <div class="article-flex">
 
   <div class="buttons-div">
@@ -144,8 +144,8 @@ function r(f) { /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) :
     </div>
   </div>
 <!-- BUTTONS END -->
-  
-  
+
+
   <div class="show-article-card mdl-shadow--4dp">
 
       <div class="article-content-container" style="position: relative;">
@@ -187,12 +187,19 @@ function r(f) { /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) :
               </p>
               <% end %>
 
+
+          <% html_doc.search('.StandardArticleBody_body p').each do |element| %>
+              <p>
+                  <%= element.text %>
+              </p>
+              <% end %>
+
           <% html_doc.search('.story-content p').each do |element| %>
           <p>
               <%= element.text %>
           </p>
           <% end %>
-        
+
          <% html_doc.search('.article-text p').each do |element| %>
         <p>
             <%= element.text %>

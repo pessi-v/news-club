@@ -44,10 +44,10 @@
                     <li class="p-card__feature-item">API and 50+ integrations</li> -->
                 </ul>
             </div>
-            <div class="p-card__footer">
+            <div class="p-card__footer2">
                 <%= form_tag subscriptions_path do %>
                 <%= hidden_field_tag 'plan_id', @plan1.id %>
-                <%= submit_tag 'Subscribe to REGULAR', class: "p-card__button regular_button" %>
+                <%= submit_tag 'Subscribe to REGULAR', class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
                 <% end %>
             </div>
         </div>
@@ -75,7 +75,7 @@
             <div class="p-card__footer">
                 <%= form_tag subscriptions_path do %>
                 <%= hidden_field_tag 'plan_id', @plan2.id %>
-                <%= submit_tag 'Subscribe to MORE', class: "p-card__button" %>
+                <%= submit_tag 'Subscribe to MORE', class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %>
                 <% end %>
             </div>
         </div>

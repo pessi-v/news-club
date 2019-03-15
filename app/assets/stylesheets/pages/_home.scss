@@ -517,7 +517,8 @@ body {
 
 .p-card__feature {
   line-height: 18px;
-  margin: 20px 30px 0 10px;
+  // margin: 20px 30px 0 10px;
+  padding: 0px;
   // list-style-image: url(https://sendeyo.com/up/d10856fc170b362463b0fccdb657e55b.svg);
 }
 
@@ -540,7 +541,18 @@ body {
 
 .p-card__footer {
   padding: 25px;
+  padding-left: 80px;
 }
+
+.p-card__footer2 {
+  // padding: 25px;
+  // padding-left: 40px;
+  position: absolute;
+  bottom: 50px;
+  left: 70px;
+
+}
+
 
 .p-card__button {
   box-sizing: border-box;
@@ -636,6 +648,8 @@ hr {
 }
 .plan-card {
     height: 440px !important;
+    position: relative;
+
 }
 
 .regular_button {
@@ -644,4 +658,8 @@ hr {
 
 .quote-three {
   height: 577px !important;
+}
+
+.mdl-grid {
+  padding: 8px 0px !important;
 }
