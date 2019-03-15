@@ -136,6 +136,11 @@ body {
     align-items: flex-end;
     width: 70%;
     height: 100%;
+    padding-top: 30px;
+    // padding-left: 50px;
+    // padding-right: 50px;
+    padding-bottom: 30px;
+    margin-bottom: 80px;
     // border: 1px dotted $magenta;
   }
   .new-quota {
@@ -224,6 +229,7 @@ body {
 }
 
 .todays-curated {
+  margin-top: 80px;
   width: 100%;
   // position:absolute;
   // left: 0;
