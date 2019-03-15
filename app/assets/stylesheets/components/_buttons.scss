@@ -1,8 +1,8 @@
 .navigation-button {
   background: $yellow !important;
-  position: absolute !important;
-  top: 700px !important;
-  left: 75px !important;
+  // position: absolute !important;
+  // top: 700px !important;
+  // left: 75px !important;
   color: $gray !important;
 
 }
@@ -29,7 +29,8 @@
 
 .menu-button {
   background: $cyan-opaque !important;
-  color: $gray !important;
+  color: white !important;
+  top: -10px;
 }
 
 .q-button {
@@ -41,24 +42,45 @@
   color: $gray !important;
 }
 
+.buttons-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 700px;
+  margin-top: 100px;
+}
+
+.top-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 200px;
+}
+
+.lower-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 400px;
+}
 .applause-btn {
   fill: $magenta !important;
   color: $magenta !important;
-  position: absolute !important;
+  // position: absolute !important;
   // width: 70px;
   // height: 70px;
-  top: 800px;
-  left: 75px;
-  z-index: 5;
+  // top: 800px;
+  // left: 75px;
+  // z-index: 5;
   // position: sticky;
   // top: 0;
 }
 
 .facebook-btn {
-  position: absolute !important;
-  top: 940px;
-  left: 75px;
-  z-index: 5;
+  // position: absolute !important;
+  // top: 940px;
+  // left: 75px;
+  // z-index: 5;
   border: 1px solid #4069AC;
     border-radius: 50%;
     padding: 13px 21px;
@@ -69,13 +91,13 @@
 }
 
 .twitter-btn{
-position: absolute !important;
-    top: 1023px;
-    left: 75px;
-    z-index: 5;
+    // position: absolute !important;
+    // top: 1023px;
+    // left: 75px;
+    // z-index: 5;
     border: 1px solid #00A3EC;
     border-radius: 50%;
-    padding: 21px 23px;
+    padding: 8px 23px 8px 16px;
     i{
       color: #00A3EC;
       width: 15px;
@@ -85,18 +107,18 @@ position: absolute !important;
 
     }
 .fa-twitter:before {
-    position: absolute;
-    top: 8px;
-    left: 14px;
+    // position: absolute;
+    // top: 8px;
+    // left: 14px;
   }
 }
 
 
 .instagram-btn{
-    position: absolute !important;
-    top: 1110px;
-    left: 75px;
-    z-index: 5;
+    // position: absolute !important;
+    // top: 1110px;
+    // left: 75px;
+    // z-index: 5;
     border: 1px solid #DD1B5D;
     border-radius: 50%;
     padding: 19px 22px;
@@ -107,9 +129,9 @@ position: absolute !important;
 }
 
 .download-btn{
-    position: absolute !important;
-    top: 1195px;
-    left: 75px;
+    // position: absolute !important;
+    // top: 1195px;
+    // left: 75px;
     z-index: 5;
     border: 1px solid #48A4D6;
     border-radius: 50%;

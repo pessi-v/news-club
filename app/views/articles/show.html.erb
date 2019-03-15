@@ -88,40 +88,7 @@ function r(f) { /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) :
 <% end %>
 
 
-<div buttons-div style="margin: -180px;">
-  <% if @allow %>
-  <%= link_to home_path do %>
-  <button class="navigation-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-      <i class="material-icons">arrow_back</i>
-  </button>
-  <% end %>
-  <div class="applause-btn">
-      <applause-button color=$magenta, style="width: 60px; height: 60px;">
-      </applause-button>
-  </div>
 
-  <div class="facebook-btn">
-    <%= link_to ('<i class="fab fa-facebook-f"></i>').html_safe, articles_path %>
-   <!--  <i class="fab fa-facebook-f"></i> -->
-  </div>
-
-  <div class="twitter-btn">
-    <%= link_to ('<i class="fab fa-twitter"></i>').html_safe, articles_path %>
-    <!-- <i class="fab fa-twitter"></i> -->
-  </div>
-
-  <div class="instagram-btn">
-    <%= link_to ('<i class="fab fa-instagram"></i>').html_safe, articles_path %>
-    <!-- <i class="fab fa-instagram"></i> -->
-  </div>
-
-  <div class="download-btn">
-    <a href="#" download="article.epub">
-      <i class="fas fa-arrow-circle-down"></i>
-    </a>
-    <!-- <i class="fas fa-arrow-circle-down"></i> -->
-  </div>
-</div>
 
 
     <div class="image-article" style="background-image: url('<%= image_path @article.image %>')">
@@ -131,96 +98,138 @@ function r(f) { /in/.test(document.readyState) ? setTimeout('r(' + f + ')', 9) :
         </div>
     </div>
 
-<div class="show-article-card mdl-shadow--4dp">
 
-    <div class="article-content-container" style="position: relative;">
-        <h3>
-            <%= @article.title %>
-        </h3>
-        <div class="container-datename">
-            <div class="author">
-                <%= @article.author %>
-            </div>
-            <div class="date">
-                <%= @article.date.strftime("%A %d %B %y") %>
-            </div>
-        </div>
-        <p><span class="first-letter">
-                <%#= html_doc.search('.body-content p')[0].text[0] %>
-                <%#= html_doc.search('.body-content p')[0].text[1..-1] %>
-        </p>
-        <%# html_doc.search('.body-content p')[1..-1].each do |element| %>
-        <p>
-            <%#= element.text.strip %>
-        </p>
-        <%# end %>
-        <% html_doc.search('.content__article-body p').each do |element| %>
-        <p>
-            <%= element.text %>
-        </p>
-        <% end %>
+<!-- BUTTONS START -->
+      
+<div class="article-flex">
 
-        <% html_doc.search('.content__article-body p').each do |element| %>
-        <p>
-            <%= element.text %>
-        </p>
-        <% end %>
+  <div class="buttons-div">
+    <div class="top-buttons">
 
-            <% html_doc.search('.story-text p').each do |element| %>
-            <p>
-                <%= element.text %>
-            </p>
-            <% end %>
+      <% if @allow %>
+      <%= link_to home_path do %>
+      <button class="navigation-button mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+          <i class="material-icons">arrow_back</i>
+      </button>
+      <% end %>
+      <div class="applause-btn">
+          <applause-button color=$magenta, style="width: 60px; height: 60px;">
+          </applause-button>
+      </div>
 
-        <% html_doc.search('.story-content p').each do |element| %>
-        <p>
-            <%= element.text %>
-        </p>
-        <% end %>
-
-        <% html_doc.search('.smartbody text p').each do |element| %>
-        <p>
-            <%= element.text %>
-        </p>
-        <% end %>
-
-        <% html_doc.search('.article-body p').each do |element| %>
-        <p>
-            <%= element.text %>
-        </p>
-        <% end %>
-
-        <% html_doc.search('.article__content p').each do |element| %>
-        <p>
-            <%= element.text %>
-        </p>
-        <% end %>
-
-        <% html_doc.search('.StoryBodyCompanionColumn p').each do |element| %>
-        <p>
-            <%= element.text %>
-        </p>
-        <% end %>
-
-        <% html_doc.search('.article-text p').each do |element| %>
-        <p>
-            <%= element.text %>
-        </p>
-        <% end %>
-
-        <% html_doc.search('.article-content p').each do |element| %>
-        <p>
-            <%= element.text %>
-        </p>
-        <% end %>
-
-        <% html_doc.search('.entry__text p').each do |element| %>
-        <p>
-            <%= element.text %>
-        </p>
-        <% end %>
     </div>
+    <div class="lower-buttons">
+
+      <div class="facebook-btn">
+        <%= link_to ('<i class="fab fa-facebook-f"></i>').html_safe, articles_path %>
+       <!--  <i class="fab fa-facebook-f"></i> -->
+      </div>
+
+      <div class="twitter-btn">
+        <%= link_to ('<i class="fab fa-twitter"></i>').html_safe, articles_path %>
+        <!-- <i class="fab fa-twitter"></i> -->
+      </div>
+
+      <div class="instagram-btn">
+        <%= link_to ('<i class="fab fa-instagram"></i>').html_safe, articles_path %>
+        <!-- <i class="fab fa-instagram"></i> -->
+      </div>
+
+      <div class="download-btn">
+        <a href="#" download="article.epub">
+          <i class="fas fa-arrow-circle-down"></i>
+        </a>
+        <!-- <i class="fas fa-arrow-circle-down"></i> -->
+      </div>
+    </div>
+  </div>
+<!-- BUTTONS END -->
+  
+  
+  <div class="show-article-card mdl-shadow--4dp">
+
+      <div class="article-content-container" style="position: relative;">
+          <h3>
+              <%= @article.title %>
+          </h3>
+          <div class="container-datename">
+              <div class="author">
+                  <%= @article.author %>
+              </div>
+              <div class="date">
+                  <%= @article.date.strftime("%A %d %B %y") %>
+              </div>
+          </div>
+          <p><span class="first-letter">
+                  <%#= html_doc.search('.body-content p')[0].text[0] %>
+                  <%#= html_doc.search('.body-content p')[0].text[1..-1] %>
+          </p>
+          <%# html_doc.search('.body-content p')[1..-1].each do |element| %>
+          <p>
+              <%#= element.text.strip %>
+          </p>
+          <%# end %>
+          <% html_doc.search('.content__article-body p').each do |element| %>
+          <p>
+              <%= element.text %>
+          </p>
+          <% end %>
+
+          <% html_doc.search('.content__article-body p').each do |element| %>
+          <p>
+              <%= element.text %>
+          </p>
+          <% end %>
+
+              <% html_doc.search('.story-text p').each do |element| %>
+              <p>
+                  <%= element.text %>
+              </p>
+              <% end %>
+
+          <% html_doc.search('.story-content p').each do |element| %>
+          <p>
+              <%= element.text %>
+          </p>
+          <% end %>
+        
+         <% html_doc.search('.article-text p').each do |element| %>
+        <p>
+            <%= element.text %>
+        </p>
+        <% end %>
+
+          <% html_doc.search('.article-body p').each do |element| %>
+          <p>
+              <%= element.text %>
+          </p>
+          <% end %>
+          <% html_doc.search('.article__content p').each do |element| %>
+          <p>
+              <%= element.text %>
+          </p>
+          <% end %>
+
+          <% html_doc.search('.StoryBodyCompanionColumn p').each do |element| %>
+          <p>
+              <%= element.text %>
+          </p>
+          <% end %>
+
+          <% html_doc.search('.article-content p').each do |element| %>
+          <p>
+              <%= element.text %>
+          </p>
+          <% end %>
+
+          <% html_doc.search('.entry__text p').each do |element| %>
+          <p>
+              <%= element.text %>
+          </p>
+          <% end %>
+      </div>
+  </div>
+  <% else %>
+  <h3>Unfortunately your subscription has run out!</h3>
+  <% end %>
 </div>
-<% else %>
-<h3>Unfortunately your subscription has run out!</h3>
-<% end %>

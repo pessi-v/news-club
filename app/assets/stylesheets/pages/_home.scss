@@ -138,6 +138,30 @@ body {
     height: 100%;
     // border: 1px dotted $magenta;
   }
+  .new-quota {
+    position: relative;
+    background-color: #F9F9F9;
+    height: 18%;
+    width: 100%;
+    padding-top: 20px;
+  }
+  .new-quota h3 {
+    position: absolute;
+    font-weight: lighter;
+    font-size: 30px;
+    color: #333333;
+    left: 22%;
+  }
+  .new-quota h1 {
+    position: absolute;
+    font-weight: lighter;
+    top: 47%;
+    left: 33%;
+    right: 7px;
+    font-size: 56px;
+    color: #3FA9F5;
+    font-family: "Merriweather";
+  }
 
   .recommendations-list {
 

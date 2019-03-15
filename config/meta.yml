@@ -2,4 +2,4 @@ meta_title: "News Club - instant access to the best journalism"
 meta_description: "A custom made curated feed just for our club members"
 meta_type: "News aggregator"
 meta_url: "http://www.newsclub.world/"
-meta_image: "logo.png" # should exist in `app/assets/images/`
+meta_image: "logofb.png" # should exist in `app/assets/images/`
