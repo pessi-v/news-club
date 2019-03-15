@@ -14,9 +14,9 @@
             <div class="articles-field">
                 <!-- <div class="mdl-grid"> -->
                 <% @all_user_articles[0..3].each do |a| %>
-                <%= link_to article_path(a) do %>
+                <%= link_to(article_path(a)) do %>
                 <!-- <div class="mdl-cell mdl-cell--4-col"> -->
-                <%= render 'shared/article-card', a: a %>
+                <%= render 'shared/article-card-home', a: a %>
                 <!-- </div> -->
                 <% end %>
                 <% end %>
