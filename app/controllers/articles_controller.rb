@@ -48,7 +48,7 @@ class ArticlesController < ApplicationController
       'sources=associated-press,bild,business-insider,business-insider,daily-mail,der-tagesspiegel,die-zeit,entertainment-weekly,espn,financial-post,financial-times,focus,fortune,national-geographic,new-scientist,newsweek,new-york-magazine,politico,polygon,reuters,spiegel-online,techcrunch,techradar,the-economist,the-globe-and-mail,the-hill,the-huffington-post,the-new-york-times,the-wall-street-journal,the-washington-times,time,wired&'\
       'sortBy=publishedAt&'\
       "apiKey=#{ENV['NEWSAPI_API_KEY']}&"\
-      "pageSize=40"
+      "pageSize=30"
 
     req = open(url)
     response_body = req.read
