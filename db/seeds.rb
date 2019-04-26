@@ -1,7 +1,8 @@
 
-# plan1 = Plan.create(amount:10,price_cents:500)
-# plan2 = Plan.create(amount:25,price_cents:1000)
+plan1 = Plan.create(amount:10,price_cents:500)
+plan2 = Plan.create(amount:25,price_cents:1000)
 # plan3 = Plan.create(amount:500,price_cents:1000)
+require 'date'
 
 
 #Reading.destroy_all
@@ -48,15 +49,14 @@ def fetch_articles(url)
 end
 
 
-url = "https://newsapi.org/v2/top-headlines?sources=australian-financial-review,daily-mail,financial-times,independent,mirror,the-globe-and-mail,the-hindu,the-irish-times,the-jerusalem-post,the-new-york-times,the-telegraph,the-times-of-india,usa-today,the-wall-street-journal,the-washington-post,the-washington-times,business-insider,business-insider-uk,entertainment-weekly,financial-post,fortune,national-geographic,national-review,the-huffington-post,new-scientist,newsweek,new-york-magazine,politico,the-economist,the-hill,time,vice-news,abc-news,abc-news-au,al-jazeera-english,ars-technica,associated-press,axios,bleacher-report,bloomberg,buzzfeed,cnbc,cnn,crypto-coins-news,engadget,espn,espn-cric-info,football-italia,four-four-two,ign,mashable,medical-news-today,msnbc,nbc-news,news24,news-com-au,next-big-future,nfl-news,nhl-news,polygon,recode,reuters,rte,techcrunch,techradar,the-next-web,the-sport-bible,the-verge&from=2019-02-10&sortBy=publishedAt&apiKey=#{ENV['NEWSAPI_API_KEY']}&pageSize=50"
-
+url = "https://newsapi.org/v2/top-headlines?sources=australian-financial-review,daily-mail,financial-times,independent,mirror,the-globe-and-mail,the-hindu,the-irish-times,the-jerusalem-post,the-new-york-times,the-telegraph,the-times-of-india,usa-today,the-wall-street-journal,the-washington-post,the-washington-times,business-insider,business-insider-uk,entertainment-weekly,financial-post,fortune,national-geographic,national-review,the-huffington-post,new-scientist,newsweek,new-york-magazine,politico,the-economist,the-hill,time,vice-news,abc-news,abc-news-au,al-jazeera-english,ars-technica,associated-press,axios,bleacher-report,bloomberg,buzzfeed,cnbc,cnn,crypto-coins-news,engadget,espn,espn-cric-info,football-italia,four-four-two,ign,mashable,medical-news-today,msnbc,nbc-news,news24,news-com-au,next-big-future,nfl-news,nhl-news,polygon,recode,reuters,rte,techcrunch,techradar,the-next-web,the-sport-bible,the-verge&from=#{Date.today-1}&sortBy=publishedAt&apiKey=#{ENV['NEWSAPI_API_KEY']}&pageSize=50"
 fetch_articles(url)
 
-url = "https://newsapi.org/v2/top-headlines?sources=australian-financial-review,daily-mail,financial-times,independent,mirror,the-globe-and-mail,the-hindu,the-irish-times,the-jerusalem-post,the-new-york-times,the-telegraph,the-times-of-india,usa-today,the-wall-street-journal,the-washington-post,the-washington-times,business-insider,business-insider-uk,entertainment-weekly,financial-post,fortune,national-geographic,national-review,the-huffington-post,new-scientist,newsweek,new-york-magazine,politico,the-economist,the-hill,time,vice-news,abc-news,abc-news-au,al-jazeera-english,ars-technica,associated-press,axios,bleacher-report,bloomberg,buzzfeed,cnbc,cnn,crypto-coins-news,engadget,espn,espn-cric-info,football-italia,four-four-two,ign,mashable,medical-news-today,msnbc,nbc-news,news24,news-com-au,next-big-future,nfl-news,nhl-news,polygon,recode,reuters,rte,techcrunch,techradar,the-next-web,the-sport-bible,the-verge&from=2019-03-15&sortBy=publishedAt&apiKey=#{ENV['NEWSAPI_API_KEY']}&pageSize=20"
+url = "https://newsapi.org/v2/top-headlines?sources=australian-financial-review,daily-mail,financial-times,independent,mirror,the-globe-and-mail,the-hindu,the-irish-times,the-jerusalem-post,the-new-york-times,the-telegraph,the-times-of-india,usa-today,the-wall-street-journal,the-washington-post,the-washington-times,business-insider,business-insider-uk,entertainment-weekly,financial-post,fortune,national-geographic,national-review,the-huffington-post,new-scientist,newsweek,new-york-magazine,politico,the-economist,the-hill,time,vice-news,abc-news,abc-news-au,al-jazeera-english,ars-technica,associated-press,axios,bleacher-report,bloomberg,buzzfeed,cnbc,cnn,crypto-coins-news,engadget,espn,espn-cric-info,football-italia,four-four-two,ign,mashable,medical-news-today,msnbc,nbc-news,news24,news-com-au,next-big-future,nfl-news,nhl-news,polygon,recode,reuters,rte,techcrunch,techradar,the-next-web,the-sport-bible,the-verge&from=#{Date.today-2}&sortBy=publishedAt&apiKey=#{ENV['NEWSAPI_API_KEY']}&pageSize=20"
 fetch_articles(url)
 
-url = "https://newsapi.org/v2/everything?sources=financial-times,the-new-york-times,the-telegraph,the-wall-street-journal,the-washington-post,the-washington-times,business-insider,business-insider-uk,entertainment-weekly,financial-post,fortune,national-geographic,new-scientist,newsweek,new-york-magazine,the-economist,time,vice-news,associated-press,wired&from=2019-03-15&sortBy=publishedAt&apiKey=#{ENV['NEWSAPI_API_KEY']}&pageSize=20"
+url = "https://newsapi.org/v2/everything?sources=financial-times,the-new-york-times,the-telegraph,the-wall-street-journal,the-washington-post,the-washington-times,business-insider,business-insider-uk,entertainment-weekly,financial-post,fortune,national-geographic,new-scientist,newsweek,new-york-magazine,the-economist,time,vice-news,associated-press,wired&from=#{Date.today-3}&sortBy=publishedAt&apiKey=#{ENV['NEWSAPI_API_KEY']}&pageSize=20"
 fetch_articles(url)
 
-url = "https://newsapi.org/v2/top-headlines?sources=the-new-york-times,the-wall-street-journal,financial-post,national-geographic,the-huffington-post,new-scientist,newsweek,new-york-magazine,politico,time,vice-news,wired&from=2019-03-15&sortBy=publishedAt&apiKey=#{ENV['NEWSAPI_API_KEY']}&pageSize=40"
+url = "https://newsapi.org/v2/top-headlines?sources=the-new-york-times,the-wall-street-journal,financial-post,national-geographic,the-huffington-post,new-scientist,newsweek,new-york-magazine,politico,time,vice-news,wired&from=#{Date.today-4}&sortBy=publishedAt&apiKey=#{ENV['NEWSAPI_API_KEY']}&pageSize=40"
 fetch_articles(url)
