@@ -1,5 +1,4 @@
 class PreferencesController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [:index]
 
   def index
     @user = current_user
@@ -21,10 +20,6 @@ class PreferencesController < ApplicationController
     @sources = fetch_sources
   end
 
-  # def image
-  #   @images = Dir.glob("app/assets/images/cover-images/*.jpg")
-  # end
-
   private
 
   def fetch_sources
@@ -37,10 +32,6 @@ class PreferencesController < ApplicationController
     sources_json = JSON.parse(response_body)
     sources = sources_json["sources"]
     return sources
-    # preferences.map! do |preference|
-    #   preference["url"]#.match('/\/+(\S+)\//')
-    # end
-    # preferences.uniq
   end
 
 end
